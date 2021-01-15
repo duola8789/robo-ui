@@ -1,5 +1,5 @@
 <template>
-    <div class="robo-403-404">
+    <div class="robo-error-page">
         <div class="image" :class="'image-' + pageType"></div>
         <div class="text-block">
             <p class="title">{{ pageTitle }}</p>
