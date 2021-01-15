@@ -19,4 +19,5 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
+export {install, ErrorPage};
 export default {install, ErrorPage};
