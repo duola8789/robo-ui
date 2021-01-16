@@ -1,6 +1,8 @@
 <template>
     <div class="robo-error-page">
-        <div class="image" :class="'image-' + pageType"></div>
+        <div class="image-block" :class="'image-' + pageType">
+            <img class="image" :src="image" alt="" />
+        </div>
         <div class="text-block">
             <p class="title">{{ pageTitle }}</p>
             <p class="info">如有疑问，请联系管理员</p>
@@ -10,6 +12,9 @@
 
 <script lang="ts">
 import {Component, Vue, Prop} from 'vue-property-decorator';
+
+import image403 from './images/403.png';
+import image404 from './images/404.png';
 
 @Component
 export default class RoboErrorPage extends Vue {
@@ -23,6 +28,10 @@ export default class RoboErrorPage extends Vue {
             return '404';
         }
         return this.$route.path === '/403' ? '403' : '404';
+    }
+
+    get image() {
+        return this.pageType === '403' ? image403 : image404;
     }
 
     get pageTitle() {
