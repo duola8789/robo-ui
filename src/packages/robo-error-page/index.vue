@@ -39,3 +39,51 @@ export default class RoboErrorPage extends Vue {
     }
 }
 </script>
+
+<style scoped lang="scss">
+.robo-error-page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1d2127;
+
+    .text-block {
+        display: inline-block;
+
+        .title {
+            font-size: 32px;
+            color: #eceded;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            font-size: 20px;
+            color: #bfc7d4;
+        }
+
+        @media (max-width: 1280px) {
+            .title {
+                font-size: 20px;
+                color: #eceded;
+                margin-bottom: 10px;
+            }
+
+            .info {
+                font-size: 14px;
+                color: #bfc7d4;
+            }
+        }
+    }
+
+    .image-block {
+        display: inline-block;
+        width: 228px;
+        height: 170px;
+
+        .image {
+            width: 100%;
+        }
+    }
+}
+</style>

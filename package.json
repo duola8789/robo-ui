@@ -16,9 +16,9 @@
     "typings": "types/index.d.ts",
     "dependencies": {
         "core-js": "^3.6.5",
+        "element-theme-robo": "git+https://github.com/duola8789/element-theme-robo.git",
         "element-ui": "^2.4.5",
         "vue": "^2.6.11",
-        "element-theme-robo": "git+https://github.com/duola8789/element-theme-robo.git",
         "vue-property-decorator": "^8.3.0",
         "vue-router": "^3.4.9",
         "vuex-module-decorators": "^0.11.0"
