@@ -13,6 +13,13 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuIcon: 'icon-home',
         componentPath: 'home'
     },
+    {
+        path: '/robo-ui',
+        menuTitle: 'RoboUI',
+        menuIcon: 'icon-filter-vintage',
+        componentPath: 'robo-ui/index',
+        children: [{path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'}]
+    },
     // {
     //     path: '/basic',
     //     menuTitle: 'Basic',

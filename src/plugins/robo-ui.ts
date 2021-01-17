@@ -1,11 +1,10 @@
-/**
- * Created By zh on 2021.01.04
- * 在此注册自定义组件为 Plugin
- */
 import Vue from 'vue';
-import RoboSymbolIcon from '@/packages/robo-symbol-icon/index.vue';
-import RoboErrorPage from '@/packages/robo-error-page/index.vue';
 
-[RoboSymbolIcon, RoboErrorPage].forEach((Comp) => {
+import RoboSymbolIcon from '@/packages/robo-font-icon/index.vue';
+import RoboErrorPage from '@/packages/robo-error-page/index.vue';
+import RoboAsideNavMenu from '@/packages/robo-aside-nav-menu/index.vue';
+import RoboAsideNav from '@/packages/robo-aside-nav/index.vue';
+
+[RoboSymbolIcon, RoboErrorPage, RoboAsideNavMenu, RoboAsideNav].forEach((Comp) => {
     Vue.component(Comp.name, Comp);
 });

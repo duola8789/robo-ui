@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <el-container class="root-container">
+            <robo-aside-nav :menus="menus" :text-overflow="true" />
             <el-main class="layout-main">
                 <router-view />
             </el-main>
