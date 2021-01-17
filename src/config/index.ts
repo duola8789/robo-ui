@@ -20,13 +20,13 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         componentPath: 'robo-ui/index',
         children: [{path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'}]
     },
-    // {
-    //     path: '/basic',
-    //     menuTitle: 'Basic',
-    //     menuIcon: 'icon-storage',
-    //     componentPath: 'basic/index',
-    //     children: [{path: 'button', componentPath: 'basic/pages/button', menuTitle: 'Ele Button'}]
-    // },
+    {
+        path: '/basic',
+        menuTitle: 'Basic',
+        menuIcon: 'icon-storage',
+        componentPath: 'basic/index',
+        children: [{path: 'button', componentPath: 'basic/pages/button', menuTitle: 'El Button'}]
+    },
     // {
     //     path: '/form',
     //     menuTitle: 'Form',
