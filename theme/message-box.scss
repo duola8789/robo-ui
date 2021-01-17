@@ -1,0 +1,191 @@
+@import 'mixins/mixins';
+@import 'common/var';
+@import 'common/popup';
+@import 'button';
+@import 'input';
+
+@include b(message-box) {
+    display: inline-block;
+    width: $--msgbox-width;
+    padding: 0 16px 24px;
+    vertical-align: middle;
+    background-color: $--color-white;
+    border-radius: $--msgbox-border-radius;
+    font-size: $--messagebox-font-size;
+    box-shadow: $--box-shadow-light;
+    text-align: left;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    @include e(wrapper) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;
+        }
+    }
+
+    @include e(header) {
+        position: relative;
+        padding: $--msgbox-padding-primary 0;
+        border-bottom: 1px solid #edf1f6;
+    }
+
+    @include e(title) {
+        padding-left: 0;
+        margin-bottom: 0;
+        font-size: $--messagebox-font-size;
+        line-height: 1;
+        color: $--messagebox-title-color;
+    }
+
+    @include e(headerbtn) {
+        position: absolute;
+        top: $--msgbox-padding-primary;
+        right: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: $--message-close-size;
+        cursor: pointer;
+
+        .el-message-box__close {
+            color: #000;
+        }
+
+        &:focus,
+        &:hover {
+            .el-message-box__close {
+                color: $--color-primary;
+            }
+        }
+    }
+
+    @include e(content) {
+        padding: 40px 32px;
+        color: $--messagebox-content-color;
+        font-size: $--messagebox-content-font-size;
+    }
+
+    @include e(container) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include e(input) {
+        padding-top: 15px;
+
+        & input.invalid {
+            border-color: $--color-danger;
+            &:focus {
+                border-color: $--color-danger;
+            }
+        }
+    }
+
+    @include e(status) {
+        margin-right: 8px;
+        font-size: 22px !important;
+        vertical-align: middle;
+
+        &::before {
+            // 防止图标切割
+            padding-left: 1px;
+        }
+
+        &.el-icon-success {
+            color: $--messagebox-success-color;
+        }
+
+        &.el-icon-info {
+            color: $--messagebox-info-color;
+        }
+
+        &.el-icon-warning {
+            color: $--messagebox-warning-color;
+        }
+
+        &.el-icon-error {
+            color: $--messagebox-danger-color;
+        }
+    }
+
+    @include e(message) {
+        margin: 0;
+        text-align: justify;
+
+        & p {
+            margin: 0;
+            line-height: 24px;
+        }
+    }
+
+    @include e(errormsg) {
+        color: $--color-danger;
+        font-size: $--messagebox-error-font-size;
+        min-height: 18px;
+        margin-top: 2px;
+    }
+
+    @include e(btns) {
+        text-align: center;
+
+        button {
+            @include button-size(
+                $--button-padding-vertical,
+                $--button-padding-horizontal,
+                $--button-font-size,
+                $--button-border-radius
+            );
+        }
+
+        & button:nth-child(2) {
+            margin-left: 16px;
+        }
+    }
+
+    @include e(btns-reverse) {
+        flex-direction: row-reverse;
+    }
+}
+
+.msgbox-fade-enter-active {
+    animation: msgbox-fade-in 0.3s;
+}
+
+.msgbox-fade-leave-active {
+    animation: msgbox-fade-out 0.3s;
+}
+
+@keyframes msgbox-fade-in {
+    0% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes msgbox-fade-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+}

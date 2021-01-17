@@ -10,17 +10,15 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/home',
         menuTitle: 'Home',
-        menuIcon: 'icon-home'
-    }
+        menuIcon: 'icon-home',
+        componentPath: 'home'
+    },
     // {
     //     path: '/basic',
     //     menuTitle: 'Basic',
     //     menuIcon: 'icon-storage',
     //     componentPath: 'basic/index',
-    //     children: [
-    //         {path: 'button', componentPath: 'basic/pages/button', menuTitle: 'Ele Button'},
-    //         {path: 'icon', componentPath: 'basic/pages/symbol-icon', menuTitle: 'Robo Symbol Icon'}
-    //     ]
+    //     children: [{path: 'button', componentPath: 'basic/pages/button', menuTitle: 'Ele Button'}]
     // },
     // {
     //     path: '/form',
@@ -63,7 +61,12 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     //     menuTitle: 'Navigation',
     //     menuIcon: 'icon-signal-wifi-statusba2',
     //     children: [{path: 'breadcrumb', componentPath: 'breadcrumb', menuTitle: 'Breadcrumb'}]
-    // }
+    // },
+    {
+        path: '*',
+        componentPath: 'common/error-page',
+        hideInMenu: true
+    }
 ];
 
 export const ROUTE_CONFIGS: RouteConfig[] = getRouteConfigHelper(PAGE_CONFIGS);

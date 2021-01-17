@@ -1,6 +1,8 @@
 /**
  * Created by zh on 2021/1/15.
  */
+import './lib/theme-robo/index.css';
+
 import ErrorPage from './src/packages/robo-error-page';
 
 const components = [ErrorPage];

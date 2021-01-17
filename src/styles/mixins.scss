@@ -1,0 +1,11 @@
+/**
+ * 可复用样式类, 在 SCSS 文件中可直接使用，例如 @include absCenter()
+ */
+// ElementUI select 前置标题宽度
+@mixin ele-select-prefix($wordLength) {
+    .el-input.el-input--prefix {
+        .el-input__inner {
+            padding-left: 40px + $wordLength * 8;
+        }
+    }
+}

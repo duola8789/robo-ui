@@ -9,11 +9,7 @@ const routes = [
         path: '/',
         redirect: '/home'
     },
-    ...ROUTE_CONFIGS,
-    {
-        path: '*',
-        component: () => import('@/packages/robo-error-page/index.vue')
-    }
+    ...ROUTE_CONFIGS
 ];
 
 const router = new VueRouter({routes});

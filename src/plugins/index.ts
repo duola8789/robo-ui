@@ -1,1 +1,2 @@
-import './element.ts';
+import './element-ui';
+import './robo-ui';
