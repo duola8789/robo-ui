@@ -14,16 +14,16 @@ import SelectMultiCheckbox from './src/packages/robo-select-multi-checkbox';
 import SelectMultiGroup from './src/packages/robo-select-multi-group';
 
 const components = [
-    {name: 'ErrorPage', ErrorPage},
-    {name: 'AsideNav', AsideNav},
-    {name: 'AsideNavMenu', AsideNavMenu},
-    {name: 'Breadcrumb', Breadcrumb},
-    {name: 'FontIcon', FontIcon},
-    {name: 'OverflowText', OverflowText},
-    {name: 'SelectAll', SelectAll},
-    {name: 'SelectMulti', SelectMulti},
-    {name: 'SelectMultiCheckbox', SelectMultiCheckbox},
-    {name: 'SelectMultiGroup', SelectMultiGroup}
+    {name: 'ErrorPage', comp: ErrorPage},
+    {name: 'AsideNav', comp: AsideNav},
+    {name: 'AsideNavMenu', comp: AsideNavMenu},
+    {name: 'Breadcrumb', comp: Breadcrumb},
+    {name: 'FontIcon', comp: FontIcon},
+    {name: 'OverflowText', comp: OverflowText},
+    {name: 'SelectAll', comp: SelectAll},
+    {name: 'SelectMulti', comp: SelectMulti},
+    {name: 'SelectMultiCheckbox', comp: SelectMultiCheckbox},
+    {name: 'SelectMultiGroup', comp: SelectMultiGroup}
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -31,7 +31,7 @@ const install = function(Vue) {
     // 判断是否安装
     if (!install.installed) {
         // 遍历注册全局组件
-        components.map((component) => Vue.component(component.name, component));
+        components.map((component) => Vue.component(component.name, component.comp));
     }
 };
 
@@ -41,6 +41,20 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
+    install,
+    ErrorPage,
+    AsideNav,
+    AsideNavMenu,
+    Breadcrumb,
+    FontIcon,
+    OverflowText,
+    SelectAll,
+    SelectMulti,
+    SelectMultiCheckbox,
+    SelectMultiGroup
+};
+
+export {
     install,
     ErrorPage,
     AsideNav,
