@@ -15,11 +15,7 @@ function compile() {
             })
         )
         .pipe(cssmin())
-        .pipe(dest('./theme-lib/theme-robo'));
-}
-
-function move() {
-    return src('./theme-lib/theme-robo/**.*').pipe(dest('./lib/theme-robo'));
+        .pipe(dest('./lib/theme-robo'));
 }
 
 function copyfont() {
@@ -32,5 +28,4 @@ function watchTheme() {
     watch('./theme/**/*.scss', series(compile));
 }
 
-exports.build = series(compile, move, copyfont);
-exports.watch = watchTheme;
+exports.watch = series(copyfont, watchTheme);

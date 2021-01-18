@@ -4,14 +4,16 @@
     "description": "UI component and Element Theme Baidu Robox Fe Team.",
     "author": "duola8789",
     "scripts": {
-        "serve": "vue-cli-service serve & yarn watch",
-        "build-theme": "gulp build",
-        "build":  "vue-cli-service build --target lib --name robo-ui --dest lib index.js && yarn build-theme",
+        "serve": " vue-cli-service serve & yarn watch",
+        "theme-back": "mv theme-robo lib && rm -rf lib2",
+        "theme-out": "mv lib/theme-robo .",
+        "build-lib": "vue-cli-service build --target lib --name robo-ui --dest lib index.js",
+        "build": "yarn theme-out && yarn build-lib && yarn theme-back",
         "lint": "vue-cli-service lint",
         "watch": "gulp watch",
         "prettier": "prettier --write '{src,theme}/**/*.{vue,ts,js,less,css,scss}'"
     },
-    "main": "lib/robo-ui.common.js",
+    "main": "index.js",
     "files": [
         "lib",
         "types"

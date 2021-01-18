@@ -4,26 +4,8 @@
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development';
-
-// 将打包后的 JS/CSS/IMG/FONTS 等资源统一放到 static 目录中
-const ASSERTS_DIR = 'static';
-
 module.exports = {
-    lintOnSave: isDev ? 'warning' : false,
-    assetsDir: isDev ? '' : ASSERTS_DIR,
-    publicPath: './',
-    devServer: {
-        port: 8006,
-        disableHostCheck: true,
-        proxy: {
-            '/inspection': {
-                target: 'http://test-telecontrol.baidu.com',
-                changeOrigin: true,
-                ws: true
-            }
-        }
-    },
+    lintOnSave: process.env.NODE_ENV === 'development' ? 'warning' : false,
     productionSourceMap: false,
     configureWebpack: {
         plugins: [
