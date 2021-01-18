@@ -14,16 +14,16 @@ import SelectMultiCheckbox from './src/packages/robo-select-multi-checkbox';
 import SelectMultiGroup from './src/packages/robo-select-multi-group';
 
 const components = [
-    {name: 'ErrorPage', comp: ErrorPage},
-    {name: 'AsideNav', comp: AsideNav},
-    {name: 'AsideNavMenu', comp: AsideNavMenu},
-    {name: 'Breadcrumb', comp: Breadcrumb},
-    {name: 'FontIcon', comp: FontIcon},
-    {name: 'OverflowText', comp: OverflowText},
-    {name: 'SelectAll', comp: SelectAll},
-    {name: 'SelectMulti', comp: SelectMulti},
-    {name: 'SelectMultiCheckbox', comp: SelectMultiCheckbox},
-    {name: 'SelectMultiGroup', comp: SelectMultiGroup}
+    {name: 'RoboErrorPage', comp: ErrorPage},
+    {name: 'RoboAsideNav', comp: AsideNav},
+    {name: 'RoboAsideNavMenu', comp: AsideNavMenu},
+    {name: 'RoboBreadcrumb', comp: Breadcrumb},
+    {name: 'RoboFontIcon', comp: FontIcon},
+    {name: 'RoboOverflowText', comp: OverflowText},
+    {name: 'RoboSelectAll', comp: SelectAll},
+    {name: 'RoboSelectMulti', comp: SelectMulti},
+    {name: 'RoboSelectMultiCheckbox', comp: SelectMultiCheckbox},
+    {name: 'RoboSelectMultiGroup', comp: SelectMultiGroup}
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
