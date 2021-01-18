@@ -6,13 +6,13 @@
     "scripts": {
         "serve": "vue-cli-service serve & yarn watch",
         "build-theme": "gulp build",
+        "build":  "vue-cli-service build --target lib --name robo-ui --dest lib index.js && yarn build-theme",
         "lint": "vue-cli-service lint",
         "watch": "gulp watch",
         "prettier": "prettier --write '{src,theme}/**/*.{vue,ts,js,less,css,scss}'"
     },
-    "main": "index.js",
+    "main": "lib/robo-ui.common.js",
     "files": [
-        "src/packages",
         "lib",
         "types"
     ],

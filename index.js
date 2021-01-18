@@ -2,7 +2,7 @@
  * Created by zh on 2021/1/15.
  * 新添加的组件，需要①添加到components数组中②添加到export对象中（为了按需导出）③添加到export default中（为了一次性引入）
  */
-import './lib/theme-robo/index.css';
+import './theme-lib/theme-robo/index.css';
 
 import AsideNav from './src/packages/robo-aside-nav';
 import AsideNavMenu from './src/packages/robo-aside-nav-menu';

@@ -1,4 +1,4 @@
-import '../../lib/theme-robo/index.css';
+import '../../theme-lib/theme-robo/index.css';
 import Vue from 'vue';
 import Element from 'element-ui';
 
