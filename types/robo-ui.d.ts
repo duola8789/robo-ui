@@ -10,6 +10,7 @@ import {RoboSelectMultiCheckbox} from './packages/select-multi-checkbox';
 import {RoboSelectMulti} from './packages/select-multi';
 import {RoboSelectMultiGroup} from './packages/select-multi-group';
 import {RoboBreadcrumb} from './packages/breadcrumb';
+import {RoboUserAvatar} from './packages/user-avatar';
 
 export function install(vue: typeof Vue): void;
 
@@ -23,3 +24,4 @@ export class SelectMultiCheckbox extends RoboSelectMultiCheckbox {}
 export class SelectMulti extends RoboSelectMulti {}
 export class SelectMultiGroup extends RoboSelectMultiGroup {}
 export class Breadcrumb extends RoboBreadcrumb {}
+export class UserAvatar extends RoboUserAvatar {}
