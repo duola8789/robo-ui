@@ -63,7 +63,7 @@ export default class RoboBreadcrumb extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .robo-breadcrumb {
     display: flex;
     justify-content: flex-start;

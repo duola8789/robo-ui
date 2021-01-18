@@ -2,8 +2,6 @@
  * Created by zh on 2021/1/15.
  * 新添加的组件，需要①添加到components数组中②添加到export对象中（为了按需导出）③添加到export default中（为了一次性引入）
  */
-import './theme-lib/theme-robo/index.css';
-
 import AsideNav from './src/packages/robo-aside-nav';
 import AsideNavMenu from './src/packages/robo-aside-nav-menu';
 import Breadcrumb from './src/packages/robo-breadcrumb';
@@ -42,19 +40,6 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export {
-    install,
-    ErrorPage,
-    AsideNav,
-    AsideNavMenu,
-    Breadcrumb,
-    FontIcon,
-    OverflowText,
-    SelectAll,
-    SelectMulti,
-    SelectMultiCheckbox,
-    SelectMultiGroup
-};
 export default {
     install,
     ErrorPage,

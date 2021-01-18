@@ -40,7 +40,7 @@ export default class RoboErrorPage extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .robo-error-page {
     height: 100%;
     display: flex;

@@ -26,7 +26,7 @@ export default class RoboAsideNav extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 $iconHoverColor: #409eff;
 $iconActiveColor: #2067b3;
 

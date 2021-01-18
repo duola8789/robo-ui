@@ -29,7 +29,7 @@ export default class RoboFontIcon extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .robo-font-icon {
     color: inherit;
     cursor: pointer;

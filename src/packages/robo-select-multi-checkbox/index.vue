@@ -74,7 +74,7 @@ export default class RoboSelectMultiCheckbox extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .robo-select-multi-checkbox {
     &.vertical {
         .checkbox-list {
@@ -84,7 +84,7 @@ export default class RoboSelectMultiCheckbox extends Vue {
                 padding: 0 16px;
                 cursor: pointer;
 
-                ::v-deep .el-checkbox {
+                .el-checkbox {
                     width: 100%;
                 }
 
@@ -107,7 +107,7 @@ export default class RoboSelectMultiCheckbox extends Vue {
                 margin-right: 16px;
                 cursor: pointer;
 
-                ::v-deep .el-checkbox {
+                .el-checkbox {
                     height: 100%;
                     width: 100%;
                     font-size: 0;

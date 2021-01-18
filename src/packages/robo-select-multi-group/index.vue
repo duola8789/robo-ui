@@ -303,7 +303,7 @@ export default class RoboSelectMultiGroup extends Vue {
             color: #6e768e;
         }
 
-        ::v-deep .el-checkbox {
+        .el-checkbox {
             height: 100%;
             width: 100%;
             font-size: 0;

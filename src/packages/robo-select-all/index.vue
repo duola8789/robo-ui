@@ -45,7 +45,7 @@ export default class RoboSelectAll extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .robo-select-all {
     display: flex;
     align-items: center;
