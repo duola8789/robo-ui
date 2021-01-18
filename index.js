@@ -54,7 +54,7 @@ export default {
     SelectMulti,
     SelectMultiCheckbox,
     SelectMultiGroup,
-    RoboUserAvatar
+    UserAvatar
 };
 
 export {
@@ -69,5 +69,5 @@ export {
     SelectMulti,
     SelectMultiCheckbox,
     SelectMultiGroup,
-    RoboUserAvatar
+    UserAvatar
 };
