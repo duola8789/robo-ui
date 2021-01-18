@@ -12,6 +12,7 @@ import SelectAll from './src/packages/robo-select-all';
 import SelectMulti from './src/packages/robo-select-multi';
 import SelectMultiCheckbox from './src/packages/robo-select-multi-checkbox';
 import SelectMultiGroup from './src/packages/robo-select-multi-group';
+import RoboUserAvatar from './src/packages/robo-user-avatar';
 
 const components = [
     {name: 'RoboErrorPage', comp: ErrorPage},
@@ -23,7 +24,8 @@ const components = [
     {name: 'RoboSelectAll', comp: SelectAll},
     {name: 'RoboSelectMulti', comp: SelectMulti},
     {name: 'RoboSelectMultiCheckbox', comp: SelectMultiCheckbox},
-    {name: 'RoboSelectMultiGroup', comp: SelectMultiGroup}
+    {name: 'RoboSelectMultiGroup', comp: SelectMultiGroup},
+    {name: 'RoboUserAvatar', comp: RoboUserAvatar}
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -51,7 +53,8 @@ export default {
     SelectAll,
     SelectMulti,
     SelectMultiCheckbox,
-    SelectMultiGroup
+    SelectMultiGroup,
+    RoboUserAvatar
 };
 
 export {
@@ -65,5 +68,6 @@ export {
     SelectAll,
     SelectMulti,
     SelectMultiCheckbox,
-    SelectMultiGroup
+    SelectMultiGroup,
+    RoboUserAvatar
 };
