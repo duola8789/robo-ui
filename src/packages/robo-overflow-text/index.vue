@@ -76,15 +76,13 @@ export default class RoboOverflowText extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .robo-overflow-text-container {
-    .robo-overflow-text-popover {
-        .robo-overflow-text {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            transition: color linear 0.2s;
-        }
+    .robo-overflow-text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: color linear 0.2s;
     }
 }
 </style>
