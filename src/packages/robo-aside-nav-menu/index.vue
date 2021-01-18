@@ -57,7 +57,7 @@ import RoboFontIcon from '../robo-font-icon/index.vue';
 export default class RoboAsideNavMenu extends Vue {
     @Prop({type: Boolean, required: true}) readonly isCollapsed!: boolean;
     @Prop({type: Array, required: true}) readonly menus!: TypeMenuConfig[];
-    @Prop({type: Boolean, default: false}) readonly textOverflow!: boolean;
+    @Prop({type: Boolean, default: true}) readonly textOverflow!: boolean;
     @Prop({type: Boolean, default: false}) readonly activeIcon!: boolean;
 
     defaultActive = '';

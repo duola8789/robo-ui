@@ -18,7 +18,25 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuTitle: 'RoboUI',
         menuIcon: 'icon-filter-vintage',
         componentPath: 'robo-ui/index',
-        children: [{path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'}]
+        children: [
+            {path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'},
+            {path: 'select-all', componentPath: 'robo-ui/pages/select-all', menuTitle: 'Robo Select All'},
+            {
+                path: 'select-multi-checkbox',
+                componentPath: 'robo-ui/pages/select-multi-checkbox',
+                menuTitle: 'Robo Select Multi Checkbox'
+            },
+            {
+                path: 'select-multi',
+                componentPath: 'robo-ui/pages/select-multi',
+                menuTitle: 'Robo Select Multi'
+            },
+            {
+                path: 'select-multi-group',
+                componentPath: 'robo-ui/pages/select-multi-group',
+                menuTitle: 'Robo Select Multi Group'
+            }
+        ]
     },
     {
         path: '/basic',
@@ -27,32 +45,16 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         componentPath: 'basic/index',
         children: [{path: 'button', componentPath: 'basic/pages/button', menuTitle: 'El Button'}]
     },
-    // {
-    //     path: '/form',
-    //     menuTitle: 'Form',
-    //     menuIcon: 'icon-content-copy',
-    //     componentPath: 'form/index',
-    //     children: [
-    //         {path: 'checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
-    //         {path: 'select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'},
-    //         {path: 'select-all', componentPath: 'form/pages/select-all', menuTitle: 'Robo Select All'},
-    //         {
-    //             path: 'select-multi-checkbox',
-    //             componentPath: 'form/pages/select-multi-checkbox',
-    //             menuTitle: 'Robo Select Multi Checkbox'
-    //         },
-    //         {
-    //             path: 'select-multi-simple',
-    //             componentPath: 'form/pages/select-multi-simple',
-    //             menuTitle: 'Robo Select Multi Simple'
-    //         },
-    //         {
-    //             path: 'select-multi-complex',
-    //             componentPath: 'form/pages/select-multi-complex',
-    //             menuTitle: 'Robo Select Multi Complex'
-    //         }
-    //     ]
-    // },
+    {
+        path: '/form',
+        menuTitle: 'Form',
+        menuIcon: 'icon-content-copy',
+        componentPath: 'form/index',
+        children: [
+            {path: 'checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
+            {path: 'select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'}
+        ]
+    },
     // {
     //     path: '/notice',
     //     menuTitle: 'Notice',

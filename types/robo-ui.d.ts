@@ -7,6 +7,9 @@ import {RoboAsideNavMenu} from './packages/aside-nav-menu';
 import {RoboAsideNav} from './packages/aside-nav';
 import {RoboSelectAll} from './packages/select-all';
 import {RoboSelectMultiCheckbox} from './packages/select-multi-checkbox';
+import {RoboSelectMulti} from './packages/select-multi';
+import {RoboSelectMultiGroup} from './packages/select-multi-group';
+import {RoboBreadcrumb} from './packages/breadcrumb';
 
 export function install(vue: typeof Vue): void;
 
@@ -17,3 +20,6 @@ export class AsideNavMenu extends RoboAsideNavMenu {}
 export class AsideNav extends RoboAsideNav {}
 export class SelectAll extends RoboSelectAll {}
 export class SelectMultiCheckbox extends RoboSelectMultiCheckbox {}
+export class SelectMulti extends RoboSelectMulti {}
+export class SelectMultiGroup extends RoboSelectMultiGroup {}
+export class Breadcrumb extends RoboBreadcrumb {}
