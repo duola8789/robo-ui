@@ -3,8 +3,8 @@
         <el-container class="root-container">
             <robo-aside-nav :menus="menus" :text-overflow="true" />
             <el-main class="layout-main">
-                <robo-breadcrumb :route="true" />
-                <router-view />
+                <robo-breadcrumb :route="true" @current-page-click="refresh = !refresh" />
+                <router-view :key="refresh" />
             </el-main>
         </el-container>
     </div>
@@ -17,6 +17,8 @@ import {MENU_CONFIG} from '@/config';
 @Component
 export default class App extends Vue {
     menus = MENU_CONFIG;
+
+    refresh = true;
 }
 </script>
 

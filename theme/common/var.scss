@@ -56,6 +56,8 @@ $--color-text-regular: #344156 !default;
 $--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2
 $--color-text-placeholder: #9fafc3 !default;
+/// color|1|Font Color|2
+$--color-text-robo: #6e768e !default;
 /// color|1|Border Color|3
 $--border-color-base: #edf1f6 !default;
 /// color|1|Border Color|3
@@ -154,7 +156,7 @@ $--checkbox-font-size: 14px !default;
 /// fontWeight||Font|1
 $--checkbox-font-weight: $--font-weight-primary !default;
 /// color||Color|0
-$--checkbox-font-color: #6e768e !default;
+$--checkbox-font-color: $--color-text-robo !default;
 $--checkbox-input-height: 16px !default;
 $--checkbox-input-width: 16px !default;
 /// borderRadius||Border|2
@@ -289,7 +291,7 @@ $--select-input-focus-border-color: $--color-primary !default;
 /// fontSize||Font|1
 $--select-input-font-size: 14px !default;
 
-$--select-option-color: #6e768e !default;
+$--select-option-color: $--color-text-robo !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $--color-white !default;
 /// height||Other|4
@@ -347,7 +349,7 @@ $--messagebox-font-size: $--font-size-base !default;
 /// fontSize||Font|1
 $--messagebox-content-font-size: $--font-size-base !default;
 /// color||Color|0
-$--messagebox-content-color: #6e768e !default;
+$--messagebox-content-color: $--color-text-robo !default;
 /// fontSize||Font|1
 $--messagebox-error-font-size: 12px !default;
 $--msgbox-padding-primary: 16px !default;
@@ -437,7 +439,7 @@ $--input-background-color: $--color-white !default;
 $--input-fill-disabled: $--disabled-fill-base !default;
 $--input-color-disabled: $--font-color-disabled-base !default;
 /// color||Color|0
-$--input-icon-color: #6e768e !default;
+$--input-icon-color: $--color-text-robo !default;
 /// color||Color|0
 $--input-placeholder-color: $--color-text-placeholder !default;
 $--input-max-width: 314px !default;

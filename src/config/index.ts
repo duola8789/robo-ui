@@ -65,12 +65,13 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     //         {path: 'message-box', componentPath: 'notice/pages/message-box', menuTitle: 'MessageBox'}
     //     ]
     // },
-    // {
-    //     path: '/navigation',
-    //     menuTitle: 'Navigation',
-    //     menuIcon: 'icon-signal-wifi-statusba2',
-    //     children: [{path: 'breadcrumb', componentPath: 'breadcrumb', menuTitle: 'Breadcrumb'}]
-    // },
+    {
+        path: '/navigation',
+        menuTitle: 'Navigation',
+        menuIcon: 'icon-signal-wifi-statusba2',
+        componentPath: 'navigation/index',
+        children: [{path: 'tab', componentPath: 'navigation/pages/tab', menuTitle: 'Tab'}]
+    },
     {
         path: '*',
         componentPath: 'common/error-page',
