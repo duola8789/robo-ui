@@ -37,7 +37,7 @@ $iconActiveColor: #2067b3;
         position: relative;
         height: 48px;
         line-height: 48px;
-        background: inherit;
+        background: #15152a;
         border-bottom: 1px solid #232342;
 
         .logo {
