@@ -51,6 +51,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuIcon: 'icon-content-copy',
         componentPath: 'form/index',
         children: [
+            {path: 'input', componentPath: 'form/pages/input', menuTitle: 'Ele Input'},
             {path: 'checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
             {path: 'select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'}
         ]

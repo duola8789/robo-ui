@@ -82,6 +82,7 @@
         font-size: $--input-font-size;
         cursor: pointer;
         transition: $--color-transition-base;
+        vertical-align: middle;
 
         &:hover {
             color: $--input-clear-hover-color;
@@ -170,7 +171,7 @@
         text-align: center;
         transition: all 0.3s;
         font-size: 12px;
-        line-height: $--input-height;
+        line-height: 1;
 
         &:after {
             content: '';
