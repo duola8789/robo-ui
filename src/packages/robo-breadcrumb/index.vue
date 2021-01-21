@@ -14,6 +14,8 @@
 // {
 //     breadcrumbTitle: string; // 展示的标题
 //     hideBreadcrumb?: boolean; // 将在对应的路由下隐藏面包屑
+//     tabTitles: ['TabA', 'TabB', 'TabC']， // 对应 Tab 下需要添加并且切换面包屑组件的情况，配合 route.query 和 tab-route-mixin 搭配使用
+
 // }
 import {Component, Vue, Emit, Prop} from 'vue-property-decorator';
 
@@ -30,15 +32,32 @@ export default class RoboBreadcrumb extends Vue {
     }
 
     get parentRouteList(): {path: string; title: string; query?: any}[] {
-        const {matched, meta = {}, query} = this.$route;
+        const {matched, query} = this.$route;
 
         return matched
-            .filter((v) => v.meta?.breadcrumbTitle && v.meta.breadcrumbTitle !== meta.breadcrumbTitle)
-            .map((v) => ({
-                path: v.path,
-                title: v.meta.breadcrumbTitle,
-                query: query || undefined
-            }));
+            .filter((v) => v.meta?.breadcrumbTitle)
+            .reduce((t, v) => {
+                const current = {
+                    path: v.path,
+                    title: v.meta.breadcrumbTitle,
+                    query: query || undefined
+                };
+
+                if (!Array.isArray(v.meta?.tabTitles) || v.meta?.tabTitles.length === 0) {
+                    return [...t, current];
+                }
+
+                const tabRouteTitle =
+                    typeof query?.tabIndex === 'string' ? v.meta.tabTitles[query?.tabIndex] : v.meta.tabTitles[0];
+                return [
+                    ...t,
+                    {
+                        path: v.path,
+                        title: tabRouteTitle,
+                        query: query || undefined
+                    }
+                ];
+            }, [] as any);
     }
 
     get routeList() {
