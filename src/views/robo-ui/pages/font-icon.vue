@@ -3,6 +3,7 @@
         <el-card header="使用 Symbol 方式引入阿里的 IconFont，将 icon 名称传给组件的 href 属性 ">
             <robo-font-icon href="icon-thumb-up" />
             <robo-font-icon href="icon-thumb-down" />
+            <code-example :code="code" />
         </el-card>
     </div>
 </template>
@@ -11,7 +12,11 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class SymbolIconPage extends Vue {}
+export default class SymbolIconPage extends Vue {
+    get code() {
+        return ['<robo-font-icon href="icon-thumb-up" />', '<robo-font-icon href="icon-thumb-down" />'];
+    }
+}
 </script>
 
 <style scoped lang="scss">
