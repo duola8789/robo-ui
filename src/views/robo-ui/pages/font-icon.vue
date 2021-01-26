@@ -1,11 +1,8 @@
 <template>
     <div class="page-container">
-        <el-card header="使用 Symbol 方式引入阿里的 IconFont ">
+        <el-card header="使用 Symbol 方式引入阿里的 IconFont，将 icon 名称传给组件的 href 属性 ">
             <robo-font-icon href="icon-thumb-up" />
             <robo-font-icon href="icon-thumb-down" />
-        </el-card>
-        <el-card header="加载失败时会展示默认图标">
-            <robo-font-icon href="icon-thumb-up123" />
         </el-card>
     </div>
 </template>
