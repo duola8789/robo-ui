@@ -109,7 +109,12 @@
 
     thead {
         color: $--table-header-font-color;
-        font-weight: 500;
+
+        th {
+            color: #6e768e;
+            background-color: #f8fafc;
+            font-weight: normal;
+        }
 
         &.is-group {
             th {

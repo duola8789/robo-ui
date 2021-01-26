@@ -9,17 +9,34 @@
         }
     }
     @include m(label-top) {
-        & .el-form-item__label {
-            float: none;
-            display: inline-block;
-            text-align: left;
-            padding: 0 0 10px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        & .el-form-item {
+            width: 320px;
+
+            .el-form-item__label {
+                float: none;
+                display: inline-block;
+                text-align: left;
+                padding: 0 0 10px 0;
+                direction: rtl;
+                line-height: 1;
+                margin-bottom: 4px;
+            }
+
+            .el-form-item__content {
+                & > div {
+                    width: 100%;
+                }
+            }
         }
     }
     @include m(inline) {
         & .el-form-item {
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 16px;
             vertical-align: top;
         }
         & .el-form-item__label {
@@ -33,10 +50,69 @@
         &.el-form--label-top .el-form-item__content {
             display: block;
         }
+
+        &.robo-form-in-border {
+            .el-form-item {
+                position: relative;
+                margin-bottom: 16px;
+            }
+
+            & .el-form-item__label {
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+                vertical-align: top;
+                z-index: 2;
+                padding-right: 0;
+            }
+
+            & .el-form-item__content {
+                .el-input__inner {
+                    &:not(.el-range-editor) {
+                        width: 280px;
+                    }
+
+                    padding-left: 80px;
+                }
+
+                .el-date-editor {
+                    &:not(.el-range-editor) {
+                        width: 280px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        .el-input__inner {
+                            padding-right: 0;
+
+                            &:not(:placeholder-shown) {
+                                + .el-input__prefix {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .el-input__suffix-inner {
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                }
+            }
+
+            & .is-required {
+                .el-form-item__content {
+                    .el-input__inner {
+                        padding-left: 90px;
+                    }
+                }
+            }
+        }
     }
 }
 @include b(form-item) {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     @include utils-clearfix;
 
     & .el-form-item {
@@ -97,7 +173,7 @@
         vertical-align: middle;
         float: left;
         font-size: $--form-label-font-size;
-        color: $--color-text-regular;
+        color: $--color-text-robo;
         line-height: 40px;
         padding: 0 12px 0 0;
         box-sizing: border-box;

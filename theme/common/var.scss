@@ -616,18 +616,18 @@ $--switch-button-size: 16px !default;
 $--dialog-background-color: $--color-white !default;
 $--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
 /// fontSize||Font|1
-$--dialog-title-font-size: $--font-size-large !default;
+$--dialog-title-font-size: $--font-size-base !default;
 /// fontSize||Font|1
 $--dialog-content-font-size: 14px !default;
 /// fontLineHeight||LineHeight|2
 $--dialog-font-line-height: $--font-line-height-primary !default;
 /// padding||Spacing|3
-$--dialog-padding-primary: 20px !default;
+$--dialog-padding-primary: 16px !default;
 
 /* Table
 -------------------------- */
 /// color||Color|0
-$--table-border-color: $--border-color-lighter !default;
+$--table-border-color: $--border-color-base !default;
 $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
 $--table-font-color: $--color-text-regular !default;
@@ -643,18 +643,18 @@ $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
 /* Pagination
 -------------------------- */
 /// fontSize||Font|1
-$--pagination-font-size: 13px !default;
+$--pagination-font-size: 14px !default;
 /// color||Color|0
-$--pagination-background-color: $--color-white !default;
+$--pagination-background-color: #f8fafc !default;
 /// color||Color|0
-$--pagination-font-color: $--color-text-primary !default;
+$--pagination-font-color: $--color-text-regular !default;
 $--pagination-border-radius: 3px !default;
 /// color||Color|0
 $--pagination-button-color: $--color-text-primary !default;
 /// height||Other|4
-$--pagination-button-width: 35.5px !default;
+$--pagination-button-width: 32px !default;
 /// height||Other|4
-$--pagination-button-height: 28px !default;
+$--pagination-button-height: 32px !default;
 /// color||Color|0
 $--pagination-button-disabled-color: $--color-text-placeholder !default;
 /// color||Color|0
@@ -847,19 +847,19 @@ $--carousel-indicator-out-color: $--border-color-hover !default;
 /* Collapse
 --------------------------*/
 /// color||Color|0
-$--collapse-border-color: $--border-color-lighter !default;
+$--collapse-border-color: $--border-color-base !default;
 /// height||Other|4
-$--collapse-header-height: 48px !default;
+$--collapse-header-height: 40px !default;
 /// color||Color|0
 $--collapse-header-background-color: $--color-white !default;
 /// color||Color|0
-$--collapse-header-font-color: $--color-text-primary !default;
+$--collapse-header-font-color: #181c32 !default;
 /// fontSize||Font|1
-$--collapse-header-font-size: 13px !default;
+$--collapse-header-font-size: 14px !default;
 /// color||Color|0
 $--collapse-content-background-color: $--color-white !default;
 /// fontSize||Font|1
-$--collapse-content-font-size: 13px !default;
+$--collapse-content-font-size: 14px !default;
 /// color||Color|0
 $--collapse-content-font-color: $--color-text-primary !default;
 

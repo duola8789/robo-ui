@@ -31,13 +31,14 @@
     }
 
     @include e(header) {
-        padding: $--dialog-padding-primary;
-        padding-bottom: 10px;
+        padding: $--dialog-padding-primary 0;
+        margin: 0 $--dialog-padding-primary;
+        border-bottom: 1px solid #edf1f6;
     }
 
     @include e(headerbtn) {
         position: absolute;
-        top: $--dialog-padding-primary;
+        top: 20px;
         right: $--dialog-padding-primary;
         padding: 0;
         background: transparent;
@@ -47,7 +48,7 @@
         font-size: $--message-close-size;
 
         .el-dialog__close {
-            color: $--color-info;
+            color: $--color-black;
         }
 
         &:focus,
@@ -61,21 +62,24 @@
     @include e(title) {
         line-height: $--dialog-font-line-height;
         font-size: $--dialog-title-font-size;
-        color: $--color-text-primary;
+        color: #181c32;
     }
 
     @include e(body) {
-        padding: ($--dialog-padding-primary + 10px) $--dialog-padding-primary;
+        padding: ($--dialog-padding-primary + 8px) $--dialog-padding-primary;
         color: $--color-text-regular;
         font-size: $--dialog-content-font-size;
         word-break: break-all;
     }
 
     @include e(footer) {
-        padding: $--dialog-padding-primary;
-        padding-top: 10px;
-        text-align: right;
+        padding: 32px 0 24px;
+        text-align: center;
         box-sizing: border-box;
+
+        .el-button {
+            padding: 9px 16px;
+        }
     }
 
     // 内容居中布局

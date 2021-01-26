@@ -38,6 +38,7 @@
             transition: transform 0.3s;
             transform: rotateZ(180deg);
             cursor: pointer;
+            vertical-align: middle;
 
             @include when(reverse) {
                 transform: rotateZ(0deg);

@@ -77,6 +77,17 @@
     width: 100%;
     @include scroll-bar;
 
+    @include e(inner) {
+        &:not(:placeholder-shown):hover,
+        &:not(:placeholder-shown):focus {
+            + .el-input__suffix {
+                .el-input__icon:not(.el-input__clear) {
+                    display: none;
+                }
+            }
+        }
+    }
+
     & .el-input__clear {
         color: $--input-icon-color;
         font-size: $--input-font-size;
@@ -166,20 +177,14 @@
     }
 
     @include e(icon) {
+        display: inline-flex;
+        align-items: center;
         height: 100%;
         width: 16px;
         text-align: center;
         transition: all 0.3s;
         font-size: 12px;
         line-height: 1;
-
-        &:after {
-            content: '';
-            height: 100%;
-            width: 0;
-            display: inline-block;
-            vertical-align: middle;
-        }
     }
 
     @include e(validateIcon) {

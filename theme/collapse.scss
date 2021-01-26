@@ -3,10 +3,11 @@
 @import 'common/transition';
 
 @include b(collapse) {
-    border-top: 1px solid $--collapse-border-color;
     border-bottom: 1px solid $--collapse-border-color;
 }
 @include b(collapse-item) {
+    padding-bottom: 24px;
+
     @include when(disabled) {
         .el-collapse-item__header {
             color: $--font-color-disabled-base;
@@ -14,6 +15,7 @@
         }
     }
     @include e(header) {
+        position: relative;
         display: flex;
         align-items: center;
         height: $--collapse-header-height;
@@ -23,22 +25,47 @@
         cursor: pointer;
         border-bottom: 1px solid $--collapse-border-color;
         font-size: $--collapse-header-font-size;
-        font-weight: 500;
         transition: border-bottom-color 0.3s;
         outline: none;
+        border-bottom: 1px solid $--collapse-border-color;
+        padding-left: 10px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 14px;
+            position: absolute;
+            left: 0;
+            bottom: 12px;
+            background-color: #175cf2;
+        }
+
         @include e(arrow) {
-            margin: 0 8px 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            margin: 0 16px 0 auto;
+            transform: rotate(90deg);
             transition: transform 0.3s;
-            font-weight: 300;
+            border: 1px solid #9fafc3;
+            border-radius: 50%;
+            font-size: 12px;
+            color: #9fafc3;
+            font-weight: bold;
+
             @include when(active) {
-                transform: rotate(90deg);
+                transform: rotate(-90deg);
+            }
+
+            &::before {
+                transform: scale(0.8);
             }
         }
         &.focusing:focus:not(:hover) {
             color: $--color-primary;
-        }
-        @include when(active) {
-            border-bottom-color: transparent;
         }
     }
 
@@ -47,11 +74,11 @@
         background-color: $--collapse-content-background-color;
         overflow: hidden;
         box-sizing: border-box;
-        border-bottom: 1px solid $--collapse-border-color;
     }
 
     @include e(content) {
-        padding-bottom: 25px;
+        padding-bottom: 8px;
+        padding-top: 24px;
         font-size: $--collapse-content-font-size;
         color: $--collapse-content-font-color;
         line-height: 1.769230769230769;

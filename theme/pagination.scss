@@ -7,7 +7,7 @@
     white-space: nowrap;
     padding: 2px 5px;
     color: $--pagination-font-color;
-    font-weight: bold;
+    font-weight: normal;
     @include utils-clearfix;
 
     span:not([class*='suffix']),
@@ -17,7 +17,7 @@
         min-width: $--pagination-button-width;
         height: $--pagination-button-height;
         line-height: $--pagination-button-height;
-        vertical-align: top;
+        vertical-align: middle;
         box-sizing: border-box;
     }
 
@@ -29,13 +29,13 @@
 
     // pagesize 的下拉 icon
     .el-input__suffix {
-        right: 0;
+        right: 16px;
         transform: scale(0.8);
     }
 
     .el-select .el-input {
-        width: 100px;
-        margin: 0 5px;
+        width: 106px;
+        margin: 0 8px;
 
         .el-input__inner {
             padding-right: 25px;
@@ -46,7 +46,7 @@
     button {
         border: none;
         padding: 0 6px;
-        background: transparent;
+        background: #f8fafc;
 
         &:focus {
             outline: none;
@@ -58,19 +58,33 @@
 
         &:disabled {
             color: $--pagination-button-disabled-color;
-            background-color: $--pagination-button-disabled-background-color;
             cursor: not-allowed;
         }
     }
 
     .btn-prev,
     .btn-next {
+        box-sizing: content-box;
+        padding: 3px 0;
         background: center center no-repeat;
         background-size: 16px;
-        background-color: $--pagination-background-color;
+        background-color: #f8fafc;
         cursor: pointer;
         margin: 0;
         color: $--pagination-button-color;
+        vertical-align: middle;
+        border-top: 1px solid #edf1f6;
+        border-bottom: 1px solid #edf1f6;
+
+        &.btn-prev {
+            border-radius: 4px 0 0 4px;
+            border-left: 1px solid #edf1f6;
+        }
+
+        &.btn-next {
+            border-radius: 0 4px 4px 0;
+            border-right: 1px solid #edf1f6;
+        }
 
         .el-icon {
             display: block;
@@ -80,11 +94,11 @@
     }
 
     .btn-prev {
-        padding-right: 12px;
+        padding-right: 0;
     }
 
     .btn-next {
-        padding-left: 12px;
+        padding-left: 0;
     }
 
     .el-pager li.disabled {
@@ -130,13 +144,28 @@
     }
 
     @include e(sizes) {
+        height: 40px !important;
+        line-height: 40px !important;
         margin: 0 10px 0 0;
         font-weight: normal;
         color: $--color-text-regular;
 
+        .el-select {
+            vertical-align: top;
+        }
+
+        .el-input {
+            height: 40px;
+        }
+
         .el-input .el-input__inner {
+            height: 40px !important;
+            line-height: 40px !important;
+            background: #f8fafc;
+            border: 1px solid #edf1f6;
             font-size: $--pagination-font-size;
-            padding-left: 8px;
+            padding: 0;
+            border-radius: 4px;
 
             &:hover {
                 border-color: $--pagination-hover-color;
@@ -145,9 +174,10 @@
     }
 
     @include e(total) {
-        margin-right: 10px;
+        margin-right: 11px;
         font-weight: normal;
         color: $--color-text-regular;
+        vertical-align: middle;
     }
 
     @include e(jump) {
@@ -239,24 +269,27 @@
     user-select: none;
     list-style: none;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     font-size: 0;
-    padding: 0;
+    padding: 3px 0;
     margin: 0;
+    background: #f8fafc;
+    border-top: 1px solid #edf1f6;
+    border-bottom: 1px solid #edf1f6;
 
     .more::before {
         line-height: 30px;
     }
 
     li {
-        padding: 0 4px;
         background: $--pagination-background-color;
-        vertical-align: top;
+        vertical-align: middle;
         display: inline-block;
         font-size: $--pagination-font-size;
         min-width: $--pagination-button-width;
         height: $--pagination-button-height;
         line-height: $--pagination-button-height;
+        border-radius: 4px;
         cursor: pointer;
         box-sizing: border-box;
         text-align: center;
@@ -289,7 +322,8 @@
         }
 
         &.active {
-            color: $--pagination-hover-color;
+            color: #fff;
+            background-color: $--pagination-hover-color;
             cursor: default;
         }
     }
