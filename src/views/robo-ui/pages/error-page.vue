@@ -20,9 +20,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class CheckAll extends Vue {
-    checked = false;
-
+export default class ErrorPage extends Vue {
     get code1() {
         return '<robo-error-page />';
     }

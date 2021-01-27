@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+import RoboUserAvatar from '@/packages/robo-user-avatar/index.vue';
 import RoboOverflowText from '@/packages/robo-overflow-text/index.vue';
 import RoboSymbolIcon from '@/packages/robo-font-icon/index.vue';
 import RoboErrorPage from '@/packages/robo-error-page/index.vue';
@@ -16,6 +17,7 @@ import Robo2ColumnsContainer from '@/packages/robo-2-columns-container/index.vue
 
 [
     RoboTag,
+    RoboUserAvatar,
     RoboOverflowText,
     RoboSymbolIcon,
     RoboErrorPage,

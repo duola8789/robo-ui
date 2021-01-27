@@ -13,7 +13,7 @@ import RoboFontIcon from '../robo-font-icon/index.vue';
 })
 export default class RoboUserAvatar extends Vue {
     @Prop({default: '', type: String}) avatar!: string;
-    @Prop({required: true, type: Number}) size!: number;
+    @Prop({default: 24, type: Number}) size!: number;
 
     get fontSize() {
         if (this.size > 24) {

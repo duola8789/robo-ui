@@ -22,6 +22,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
             {path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'},
             {path: 'overflow-text', componentPath: 'robo-ui/pages/overflow-text', menuTitle: 'Robo Overflow Text'},
             {path: 'tag', componentPath: 'robo-ui/pages/tag', menuTitle: 'Robo Tag'},
+            {path: 'avatar', componentPath: 'robo-ui/pages/avatar', menuTitle: 'Robo Avatar'},
             {path: 'check-all', componentPath: 'robo-ui/pages/check-all', menuTitle: 'Robo Check All'},
             {
                 path: 'checkbox-multi',
