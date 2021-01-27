@@ -17,21 +17,21 @@ import Robo2ColumnsContainer from '@/packages/robo-2-columns-container/index.vue
 import RoboInfo from '@/packages/robo-info/index.vue';
 
 [
-    RoboTag,
-    RoboUserAvatar,
-    RoboOverflowText,
-    RoboSymbolIcon,
-    RoboErrorPage,
-    RoboAsideNavMenu,
-    RoboAsideNav,
-    RoboBreadcrumb,
-    RoboCheckAll,
-    RoboCheckboxMulti,
-    RoboCheckboxMultiGroup,
-    RoboSelectMulti,
-    RoboSelectMultiGroup,
-    Robo2ColumnsContainer,
-    RoboInfo
-].forEach((Comp) => {
-    Vue.component(Comp.name, Comp);
+    {name: 'RoboTag', comp: RoboTag},
+    {name: 'RoboUserAvatar', comp: RoboUserAvatar},
+    {name: 'RoboOverflowText', comp: RoboOverflowText},
+    {name: 'RoboSymbolIcon', comp: RoboSymbolIcon},
+    {name: 'RoboErrorPage', comp: RoboErrorPage},
+    {name: 'RoboAsideNavMenu', comp: RoboAsideNavMenu},
+    {name: 'RoboAsideNav', comp: RoboAsideNav},
+    {name: 'RoboBreadcrumb', comp: RoboBreadcrumb},
+    {name: 'RoboCheckAll', comp: RoboCheckAll},
+    {name: 'RoboCheckboxMulti', comp: RoboCheckboxMulti},
+    {name: 'RoboCheckboxMultiGroup', comp: RoboCheckboxMultiGroup},
+    {name: 'RoboSelectMulti', comp: RoboSelectMulti},
+    {name: 'RoboSelectMultiGroup', comp: RoboSelectMultiGroup},
+    {name: 'Robo2ColumnsContainer', comp: Robo2ColumnsContainer},
+    {name: 'RoboInfo', comp: RoboInfo}
+].forEach((v) => {
+    Vue.component(v.name, v.comp);
 });

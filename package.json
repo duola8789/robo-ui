@@ -9,8 +9,10 @@
         "theme-out": "mv lib/theme-robo .",
         "build-lib": "vue-cli-service build --target lib --name robo-ui --dest lib index.js",
         "build": "yarn theme-out && yarn build-lib && yarn theme-back",
+        "build-app": "vue-cli-service build --modern",
         "lint": "vue-cli-service lint",
         "watch": "gulp watch",
+        "preview": "cd dist && npx http-server -a 127.0.0.1 -p 7000",
         "prettier": "prettier --write '{src,theme}/**/*.{vue,ts,js,less,css,scss}'"
     },
     "main": "index.js",

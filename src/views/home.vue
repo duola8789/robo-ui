@@ -2,7 +2,7 @@
     <el-card class="home-card" header="RoboUI For RoboX FE Team">
         <robo-info class="home-title">共包含两部分内容，共29个基础组件和业务组件（2020-01-27）</robo-info>
         <el-row :gutter="20">
-            <el-col :span="12">
+            <el-col :span="14">
                 <el-card header="Robo-UI组件：自研组件（共15）">
                     <div class="inside-card">
                         <el-card v-for="item in roboItems" :key="item.name" shadow="hover">
@@ -14,7 +14,7 @@
                     </div>
                 </el-card>
             </el-col>
-            <el-col :span="12">
+            <el-col :span="10">
                 <el-card header="ElementUI改造（theme-robo主题），用法不变，部分组件需要传入指定的参数（共14）">
                     <div class="inside-card">
                         <el-card v-for="item in eleItems" :key="item.name" shadow="hover">
