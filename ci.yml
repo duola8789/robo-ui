@@ -1,0 +1,12 @@
+Global:
+    tool: build_submitter
+
+Default:
+    profile: [production]
+
+Profiles:
+    - profile:
+      name: production
+      env: DECK_CENTOS6U3_K3
+      command: sh ./scripts/build.sh
+      release: true
