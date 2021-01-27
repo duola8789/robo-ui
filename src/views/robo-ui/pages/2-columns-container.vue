@@ -1,8 +1,9 @@
 <template>
     <div class="page-container">
-        <el-card
-            header="正常顺序：适用于系统中大部分新建、编辑布局，默认的 slot 为主体内容，命名为 aside 的 slot 为侧栏内容，可通过 main-title 和 aside-title 属性分别添加标题"
-        >
+        <el-card class="page-title">
+            适用于系统中大部分新建、编辑布局，默认的 slot 为主体内容，命名为 aside 的 slot 为侧栏内容
+        </el-card>
+        <el-card header="正常顺序（默认），可通过 main-title 和 aside-title 属性分别添加标题">
             <robo2-columns-container main-title="编辑车辆信息">
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">

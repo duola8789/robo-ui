@@ -1,12 +1,15 @@
 <template>
     <div class="page-container">
+        <el-card class="page-title">
+            带有缓存功能的Select多选组件，比el-select相比多了全选功能，选后展示方式也不同
+        </el-card>
         <el-card header="基础用法：与el-select相比多了前置标题和全选功能">
             <robo-select-multi title="吃货食谱" :options="options" :value.sync="value1" />
             <p class="select-content">我要吃：{{ food1 }}</p>
             <code-example :code="code1" />
         </el-card>
         <el-card header="改变宽度：传入 width 属性，这样可保证下拉框与输入框宽度一致">
-            <robo-select-multi title="吃货食谱" :options="options" :value.sync="value1" :width="400" />
+            <robo-select-multi title="吃货食谱" :options="options" :value.sync="value6" :width="400" />
             <p class="select-content">我要吃：{{ food1 }}</p>
             <code-example :code="code5" />
         </el-card>
@@ -43,6 +46,7 @@ export default class SelectMulti extends Vue {
     value3 = [];
     value4 = ['选项1'];
     value5 = [];
+    value6 = [];
 
     options = [
         {value: '选项1', label: '黄金糕'},

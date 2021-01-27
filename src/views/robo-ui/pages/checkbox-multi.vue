@@ -1,5 +1,6 @@
 <template>
     <div class="page-container">
+        <el-card class="page-title">带有缓存功能的Checkbox多选组件</el-card>
         <el-card
             header="横向使用（默认），传入数组 value 和筛选项 options 以及标题 title，所选值改变时，value 的初始值会被更新，并且会触发 change 事件"
         >

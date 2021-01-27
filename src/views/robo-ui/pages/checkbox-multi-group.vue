@@ -1,5 +1,6 @@
 <template>
     <div class="page-container">
+        <el-card class="page-title">带有缓存功能的Checkbox多选组件组合</el-card>
         <el-card
             header="使用缓存的简易用法（需配合 robo-option-cache 插件使用，需要提前配置好）- 传给 cache-config 一个由 cacheKey 组成的数组，另外传入的 value 中必须包含 cacheKey 中的字段"
         >
