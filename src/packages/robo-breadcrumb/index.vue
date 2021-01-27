@@ -14,8 +14,7 @@
 // {
 //     breadcrumbTitle: string; // 展示的标题
 //     hideBreadcrumb?: boolean; // 将在对应的路由下隐藏面包屑
-//     tabTitles: ['TabA', 'TabB', 'TabC']， // 对应 Tab 下需要添加并且切换面包屑组件的情况，配合 route.query 和 tab-route-mixin 搭配使用
-
+//     tabTitles: ['TabA', 'TabB', 'TabC']， // 对应 Tab 下需要添加并且切换面包屑组件的情况，配合 和 tab-route-mixin 搭配使用
 // }
 import {Component, Vue, Emit, Prop} from 'vue-property-decorator';
 
@@ -61,19 +60,14 @@ export default class RoboBreadcrumb extends Vue {
     }
 
     get routeList() {
-        const {meta = {}, query} = this.$route;
-        return (this.route ? this.parentRouteList : this.pathList).concat({
-            path: '',
-            title: meta?.breadcrumbTitle || '当前页面',
-            query: query || undefined
-        });
+        return this.route ? this.parentRouteList : this.pathList;
     }
 
     onClick(index: number, path: string, query: any) {
         if (index === 0) {
             return;
         }
-        if (path) {
+        if (path && path !== this.$route.path) {
             this.$router.push({path, query});
         } else {
             this.currentPageClick();

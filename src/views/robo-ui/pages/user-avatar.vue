@@ -22,7 +22,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class Avatar extends Vue {
+export default class UserAvatar extends Vue {
     get code1() {
         return '<robo-user-avatar avatar="http://image.oldzhou.cn/FvbG4f1poPPqZn_ndzEtSux--qvi" />';
     }

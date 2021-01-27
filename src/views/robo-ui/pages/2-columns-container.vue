@@ -90,7 +90,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class FormContainer extends Vue {
+export default class ColumnsContainer extends Vue {
     value = {
         name: '',
         region: '',
