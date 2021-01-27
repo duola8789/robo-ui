@@ -46,6 +46,11 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
                 path: '2-columns-container',
                 componentPath: 'robo-ui/pages/2-columns-container',
                 menuTitle: 'Robo 2 Columns Container'
+            },
+            {
+                path: 'error-page',
+                componentPath: 'robo-ui/pages/error-page',
+                menuTitle: 'Robo Error Page'
             }
         ]
     },

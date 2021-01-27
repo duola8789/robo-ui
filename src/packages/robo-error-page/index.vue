@@ -80,9 +80,11 @@ export default class RoboErrorPage extends Vue {
         display: inline-block;
         width: 228px;
         height: 170px;
+        margin-right: 16px;
 
         .image {
             width: 100%;
+            max-height: 100%;
         }
     }
 }
