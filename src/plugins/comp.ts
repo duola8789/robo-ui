@@ -2,6 +2,6 @@ import Vue from 'vue';
 
 import CodeExample from '@/components/code-example/index.vue';
 
-[CodeExample].forEach((Comp) => {
-    Vue.component(Comp.name, Comp);
+[{name: 'CodeExample', comp: CodeExample}].forEach((v) => {
+    Vue.component(v.name, v.comp);
 });
