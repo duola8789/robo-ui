@@ -3,7 +3,8 @@ import Vue, {ComponentOptions, AsyncComponent} from 'vue';
 export type TypeLazyLoadComp = ComponentOptions<Vue> | typeof Vue | AsyncComponent;
 
 export interface TypeRouteMeta {
-    breadcrumbTitle: string;
+    breadcrumbTitle?: string;
+    hideBreadcrumb?: boolean;
 }
 
 // componentPath 为 `./src/views` 下的文件名

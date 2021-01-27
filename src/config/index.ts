@@ -11,7 +11,10 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         path: '/home',
         menuTitle: 'Home',
         menuIcon: 'icon-home',
-        componentPath: 'home'
+        componentPath: 'home',
+        meta: {
+            hideBreadcrumb: true
+        }
     },
     {
         path: '/robo-ui',
@@ -24,6 +27,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
             {path: 'tag', componentPath: 'robo-ui/pages/tag', menuTitle: 'Robo Tag'},
             {path: 'user-avatar', componentPath: 'robo-ui/pages/user-avatar', menuTitle: 'Robo User Avatar'},
             {path: 'breadcrumb', componentPath: 'robo-ui/pages/breadcrumb', menuTitle: 'Robo Breadcrumb'},
+            {path: 'info', componentPath: 'robo-ui/pages/info', menuTitle: 'Robo Info'},
             {path: 'check-all', componentPath: 'robo-ui/pages/check-all', menuTitle: 'Robo Check All'},
             {
                 path: 'checkbox-multi',

@@ -18,7 +18,8 @@ function lazyLoadHelper(componentPath: string): TypeLazyLoadComp {
 function getRouteMetaHelper(pageConfig: TypePageConfig): TypeRouteMeta {
     const {meta, menuTitle = ''} = pageConfig;
     return {
-        breadcrumbTitle: meta?.breadcrumbTitle ? meta.breadcrumbTitle : menuTitle
+        breadcrumbTitle: meta?.breadcrumbTitle ? meta.breadcrumbTitle : menuTitle,
+        hideBreadcrumb: meta?.hideBreadcrumb ? meta.hideBreadcrumb : false
     };
 }
 
