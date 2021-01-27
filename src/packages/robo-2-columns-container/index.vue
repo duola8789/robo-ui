@@ -7,7 +7,7 @@
             <slot name="default"></slot>
         </div>
         <div class="robo-2-columns-aside">
-            <div class="robo-2-columns-block" v-for="(item, index) in asideBlocks" :key="item">
+            <div v-for="(item, index) in asideBlocks" :key="item" class="robo-2-columns-block">
                 <div class="robo-2-columns-header">
                     <slot :name="asideSlotName('aside-header', index)"></slot>
                 </div>

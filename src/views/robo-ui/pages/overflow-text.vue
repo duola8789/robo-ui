@@ -26,7 +26,7 @@
         </el-card>
         <el-card header="可以设置 tooltip 的自定义类型，传入 popperClass 属性">
             <div class="text-overflow-wrapper">
-                <robo-overflow-text content="这是一段超长文字这是一段超长文字这是一段超长文字" popperClass="hello" />
+                <robo-overflow-text content="这是一段超长文字这是一段超长文字这是一段超长文字" popper-class="hello" />
             </div>
             <code-example :code="code4" />
         </el-card>

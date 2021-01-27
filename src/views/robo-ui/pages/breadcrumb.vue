@@ -5,7 +5,7 @@
             相同，会触发 current-page-click 事件
         </el-card>
         <el-card header="非路由模式：传入 route 为 false，并且传入具体的 pathList 配置">
-            <robo-breadcrumb :route="false" :pathList="pathList" @current-page-click="onClick" />
+            <robo-breadcrumb :route="false" :path-list="pathList" @current-page-click="onClick" />
             <code-example :code="code1" />
         </el-card>
         <el-card header="路由模式：不需要传入外参数，但是需要在 router.meta 中进行配置 breadcrumbTitle">
@@ -39,7 +39,7 @@ export default class Breadcrumb extends Vue {
     }
 
     get code1() {
-        return ['<robo-breadcrumb :route="false" :pathList="pathList" @current-page-click="onClick" />'];
+        return ['<robo-breadcrumb :route="false" :path-list="pathList" @current-page-click="onClick" />'];
     }
 
     get code2() {
