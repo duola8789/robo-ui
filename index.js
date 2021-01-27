@@ -8,11 +8,15 @@ import Breadcrumb from './src/packages/robo-breadcrumb';
 import ErrorPage from './src/packages/robo-error-page';
 import FontIcon from './src/packages/robo-font-icon';
 import OverflowText from './src/packages/robo-overflow-text';
-import SelectAll from './src/packages/robo-check-all';
+import CheckAll from './src/packages/robo-check-all';
 import SelectMulti from './src/packages/robo-select-multi';
-import SelectMultiCheckbox from './src/packages/robo-checkbox-multi';
 import SelectMultiGroup from './src/packages/robo-select-multi-group';
+import CheckboxMulti from './src/packages/robo-checkbox-multi';
+import CheckboxMultiGroup from './src/packages/robo-select-multi-group';
 import UserAvatar from './src/packages/robo-user-avatar';
+import ColumnsContainer from './src/packages/robo-2-columns-container';
+import Info from './src/packages/robo-info';
+import Tag from './src/packages/robo-tag';
 
 const components = [
     {name: 'RoboErrorPage', comp: ErrorPage},
@@ -21,11 +25,15 @@ const components = [
     {name: 'RoboBreadcrumb', comp: Breadcrumb},
     {name: 'RoboFontIcon', comp: FontIcon},
     {name: 'RoboOverflowText', comp: OverflowText},
-    {name: 'RoboSelectAll', comp: SelectAll},
     {name: 'RoboSelectMulti', comp: SelectMulti},
-    {name: 'RoboSelectMultiCheckbox', comp: SelectMultiCheckbox},
     {name: 'RoboSelectMultiGroup', comp: SelectMultiGroup},
-    {name: 'RoboUserAvatar', comp: UserAvatar}
+    {name: 'RoboCheckboxMulti', comp: CheckboxMulti},
+    {name: 'RoboCheckboxMultiGroup', comp: CheckboxMultiGroup},
+    {name: 'RoboUserAvatar', comp: UserAvatar},
+    {name: 'RoboColumnsContainer', comp: ColumnsContainer},
+    {name: 'RoboCheckAll', comp: CheckAll},
+    {name: 'RoboInfo', comp: Info},
+    {name: 'RoboTag', comp: Tag}
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -44,30 +52,38 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
     install,
-    ErrorPage,
     AsideNav,
     AsideNavMenu,
     Breadcrumb,
+    ErrorPage,
     FontIcon,
     OverflowText,
-    SelectAll,
+    CheckAll,
     SelectMulti,
-    SelectMultiCheckbox,
     SelectMultiGroup,
-    UserAvatar
+    CheckboxMulti,
+    CheckboxMultiGroup,
+    UserAvatar,
+    ColumnsContainer,
+    Info,
+    Tag
 };
 
 export {
     install,
-    ErrorPage,
     AsideNav,
     AsideNavMenu,
     Breadcrumb,
+    ErrorPage,
     FontIcon,
     OverflowText,
-    SelectAll,
+    CheckAll,
     SelectMulti,
-    SelectMultiCheckbox,
     SelectMultiGroup,
-    UserAvatar
+    CheckboxMulti,
+    CheckboxMultiGroup,
+    UserAvatar,
+    ColumnsContainer,
+    Info,
+    Tag
 };
