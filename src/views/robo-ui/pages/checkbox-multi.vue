@@ -77,7 +77,7 @@ export default class SelectMultiCheckbox extends Vue {
     ];
 
     onChange(checkedList: string[]) {
-        console.log(checkedList);
+        this.$message.success(checkedList.join(', '));
     }
 
     get food1() {

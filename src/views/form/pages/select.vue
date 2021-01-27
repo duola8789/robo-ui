@@ -37,7 +37,7 @@
                 <el-option v-for="item in []" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
         </el-card>
-        <el-card header="多选 - Tag形式（特殊形式使用 Robo Select Multi Simple）">
+        <el-card header="多选 - Tag形式（特殊形式使用 <robo-select-multi> 组件）">
             <el-select v-model="value3" multiple placeholder="请选择">
                 <el-option
                     v-for="item in options"
@@ -63,9 +63,9 @@
                 ></el-option>
             </el-select>
         </el-card>
-        <el-card header="前置图标：需要配合 @include ele-select-prefix(x) 这个 mixin 实现，传入前置字符数">
-            <el-select v-model="value4" class="select-1" placeholder="请选择">
-                <div slot="prefix">项目：</div>
+        <el-card header="前置图标，使用 prefiex 配合 robo-font-icon 实现">
+            <el-select v-model="value4" placeholder="请选择">
+                <robo-font-icon slot="prefix" href="icon-search"></robo-font-icon>
                 <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -73,24 +73,7 @@
                     :value="item.value"
                 ></el-option>
             </el-select>
-            <el-select v-model="value4" class="select-2" placeholder="请选择" size="small">
-                <div slot="prefix">车辆属性：</div>
-                <el-option
-                    v-for="item in options"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value"
-                ></el-option>
-            </el-select>
-            <el-select v-model="value4" placeholder="请选择" size="mini">
-                <robo-symbol-icon slot="prefix" href="icon-search"></robo-symbol-icon>
-                <el-option
-                    v-for="item in options"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value"
-                ></el-option>
-            </el-select>
+            <code-example :code="code1" />
         </el-card>
         <el-card header="有禁用选项">
             <el-select v-model="value5" placeholder="请选择">
@@ -207,6 +190,20 @@ export default class ButtonPage extends Vue {
     value5 = '';
     value6 = '';
     value7 = '';
+
+    get code1() {
+        return (
+            '<el-select v-model="value4" placeholder="请选择">\n' +
+            '    <robo-font-icon slot="prefix" href="icon-search"></robo-font-icon>\n' +
+            '    <el-option\n' +
+            '        v-for="item in options"\n' +
+            '        :key="item.value"\n' +
+            '        :label="item.label"\n' +
+            '        :value="item.value"\n' +
+            '    ></el-option>\n' +
+            '</el-select>'
+        );
+    }
 }
 </script>
 <style lang="scss">
@@ -217,14 +214,6 @@ export default class ButtonPage extends Vue {
         &:last-child {
             margin-right: 0;
         }
-    }
-
-    .select-1 {
-        @include ele-select-prefix(3);
-    }
-
-    .select-2 {
-        @include ele-select-prefix(5);
     }
 }
 </style>

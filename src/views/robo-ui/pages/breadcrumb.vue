@@ -35,7 +35,7 @@ export default class Breadcrumb extends Vue {
     pathList = [{path: '/robo-ui', title: 'RoboUI'}, {path: '/robo-ui/tag', title: 'RoboTag'}, {title: 'Current'}];
 
     onClick() {
-        console.log('Hello');
+        this.$message.success('Hello');
     }
 
     get code1() {

@@ -49,6 +49,8 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component
 export default class OverflowText extends Vue {
+    visible = false;
+
     get code1() {
         return [
             '<div class="text-overflow-wrapper">\n' +

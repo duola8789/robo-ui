@@ -21,15 +21,15 @@ export default class CheckAll extends Vue {
     checked = false;
 
     onSelectAll(val: boolean) {
-        console.log('Check all ', val);
+        this.$message.success('Check all: ' + val);
     }
 
     onSave() {
-        console.log('Save');
+        this.$message.success('save');
     }
 
     onClear() {
-        console.log('Clear');
+        this.$message.success('clear');
     }
 
     get code() {
