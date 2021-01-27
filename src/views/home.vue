@@ -1,9 +1,9 @@
 <template>
     <el-card class="home-card" header="RoboUI For RoboX FE Team">
-        <robo-info class="home-title">共包含两部分内容，共28个基础组件和业务组件（2020-01-27）</robo-info>
+        <robo-info class="home-title">共包含两部分内容，共29个基础组件和业务组件（2020-01-27）</robo-info>
         <el-row :gutter="20">
             <el-col :span="12">
-                <el-card header="Robo-UI组件：自研组件（14）">
+                <el-card header="Robo-UI组件：自研组件（共15）">
                     <div class="inside-card">
                         <el-card v-for="item in roboItems" :key="item.name" shadow="hover">
                             <div class="item" @click="onClick('/robo-ui', item.url)">
@@ -15,7 +15,7 @@
                 </el-card>
             </el-col>
             <el-col :span="12">
-                <el-card header="ElementUI改造（theme-robo主题）（14），用法不变（部分组件需要传入指定的参数）">
+                <el-card header="ElementUI改造（theme-robo主题），用法不变，部分组件需要传入指定的参数（共14）">
                     <div class="inside-card">
                         <el-card v-for="item in eleItems" :key="item.name" shadow="hover">
                             <div class="item" @click="onClick('', item.url)">
@@ -48,6 +48,7 @@ export default class HomePage extends Vue {
             {name: '缓存Select', code: '<robo-select-multi />', url: '/select-multi'},
             {name: '缓存Select组', code: '<robo-select-multi-group />', url: '/select-multi-group'},
             {name: '两栏布局', code: '<robo-2-columns-container />', url: '/2-columns-container'},
+            {name: '异常页面', code: '<robo-error-page />', url: '/error-page'},
             {name: '导航', code: '<robo-aside-nav-menu />'},
             {name: '侧边栏', code: '<robo-aside-nav />'}
         ];
