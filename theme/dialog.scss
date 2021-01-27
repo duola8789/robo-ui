@@ -31,14 +31,15 @@
     }
 
     @include e(header) {
-        padding: $--dialog-padding-primary 0;
         margin: 0 $--dialog-padding-primary;
         border-bottom: 1px solid #edf1f6;
+        height: $--dialog-header-height;
+        line-height: $--dialog-header-height;
     }
 
     @include e(headerbtn) {
         position: absolute;
-        top: 20px;
+        top: 16px;
         right: $--dialog-padding-primary;
         padding: 0;
         background: transparent;
@@ -60,7 +61,7 @@
     }
 
     @include e(title) {
-        line-height: $--dialog-font-line-height;
+        line-height: $--dialog-header-height;
         font-size: $--dialog-title-font-size;
         color: #181c32;
     }
