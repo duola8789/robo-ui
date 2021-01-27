@@ -1,12 +1,13 @@
 <template>
-    <el-aside class="layout-aside" :class="isCollapsed ? 'is-collapsed' : ''" width="auto">
-        <div class="layout-aside-header">
+    <el-aside class="robo-aside-nav" :class="isCollapsed ? 'is-collapsed' : ''" width="auto">
+        <div class="robo-aside-nav-header">
             <div class="logo"></div>
             <div class="collapse-icon-container" @click="isCollapsed = !isCollapsed">
                 <robo-font-icon class="collapse-icon" href="icon-view-headline" />
             </div>
         </div>
         <robo-aside-nav-menu :is-collapsed="isCollapsed" :menus="menus" :text-overflow="textOverflow" />
+        <div class="robo-aside-bar"></div>
     </el-aside>
 </template>
 
@@ -15,6 +16,8 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import RoboAsideNavMenu from '../robo-aside-nav-menu/index.vue';
 import RoboFontIcon from '../robo-font-icon/index.vue';
 
+// TODO: 可拖拽
+// TODO: width 参数
 @Component({
     components: {RoboAsideNavMenu, RoboFontIcon}
 })
@@ -30,10 +33,10 @@ export default class RoboAsideNav extends Vue {
 $iconHoverColor: #409eff;
 $iconActiveColor: #2067b3;
 
-.layout-aside {
+.robo-aside-nav {
     background: #18182a;
 
-    .layout-aside-header {
+    .robo-aside-nav-header {
         position: relative;
         height: 48px;
         line-height: 48px;
@@ -88,7 +91,7 @@ $iconActiveColor: #2067b3;
     }
 
     &.is-collapsed {
-        .layout-aside-header {
+        .robo-aside-nav-header {
             cursor: pointer;
             user-select: none;
 

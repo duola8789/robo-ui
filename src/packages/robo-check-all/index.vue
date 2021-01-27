@@ -1,5 +1,5 @@
 <template>
-    <div class="robo-select-all">
+    <div class="robo-check-all">
         <el-checkbox v-model="checked">{{ label }}</el-checkbox>
         <div class="button-group">
             <el-button type="text" class="clear-btn" @click="clear">清空</el-button>
@@ -12,7 +12,7 @@
 import {Component, Vue, Prop, Emit} from 'vue-property-decorator';
 
 @Component
-export default class RoboSelectAll extends Vue {
+export default class RoboCheckAll extends Vue {
     @Prop({type: Boolean, required: true}) value!: boolean;
     @Prop({type: String, default: '全选'}) label!: string;
     @Prop({type: Boolean, default: true}) showSaveBtn!: string;
@@ -46,7 +46,7 @@ export default class RoboSelectAll extends Vue {
 </script>
 
 <style lang="scss">
-.robo-select-all {
+.robo-check-all {
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -8,9 +8,9 @@ import Breadcrumb from './src/packages/robo-breadcrumb';
 import ErrorPage from './src/packages/robo-error-page';
 import FontIcon from './src/packages/robo-font-icon';
 import OverflowText from './src/packages/robo-overflow-text';
-import SelectAll from './src/packages/robo-select-all';
+import SelectAll from './src/packages/robo-check-all';
 import SelectMulti from './src/packages/robo-select-multi';
-import SelectMultiCheckbox from './src/packages/robo-select-multi-checkbox';
+import SelectMultiCheckbox from './src/packages/robo-checkbox-multi';
 import SelectMultiGroup from './src/packages/robo-select-multi-group';
 import UserAvatar from './src/packages/robo-user-avatar';
 

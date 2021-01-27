@@ -1,30 +1,36 @@
 <template>
-    <el-checkbox-group v-model="selectedList" class="robo-select-multi-checkbox" :class="direction">
-        <ul class="checkbox-list">
-            <li v-for="option in cacheOptions" :key="option.value" class="checkbox-item">
-                <el-checkbox :label="option.value">
-                    {{ option.label }}
-                </el-checkbox>
-            </li>
-        </ul>
-    </el-checkbox-group>
+    <div class="robo-checkbox-multi" :class="direction">
+        <div v-if="showTitle" class="label" :style="{flexBasis: titleLength + 'px'}">{{ title }}</div>
+        <div class="content">
+            <el-checkbox v-if="showCheckAll" v-model="checkAll" class="checkbox-all">全选</el-checkbox>
+            <el-checkbox-group v-model="selectedList" class="checkbox-list">
+                <div v-for="option in cacheOptions" :key="option.value" class="checkbox-item">
+                    <el-checkbox :label="option.value">
+                        {{ option.label }}
+                    </el-checkbox>
+                </div>
+            </el-checkbox-group>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue, Prop, Emit, Watch} from 'vue-property-decorator';
 
-import RoboOverflowText from '../robo-overflow-text/index.vue';
-import RoboSelectAll from '../robo-select-all/index.vue';
+@Component
+export default class RoboCheckboxMulti extends Vue {
+    @Prop({type: Array}) options!: {value: any; label: string}[];
+    @Prop({type: String}) cacheKey!: any;
 
-@Component({
-    components: {RoboSelectAll, RoboOverflowText}
-})
-export default class RoboSelectMultiCheckbox extends Vue {
-    @Prop({type: [Array]}) options!: {value: any; label: string}[];
-    @Prop({type: [Object, String]}) cacheKey!: any;
-
+    @Prop({type: String, default: ''}) title!: string;
+    @Prop({type: Number, default: 56}) titleLength!: number;
     @Prop({type: Array, required: true}) value!: Array<string | number>;
     @Prop({type: String, default: 'horizontal'}) direction!: 'vertical' | 'horizontal';
+    @Prop({type: Boolean, default: true}) showCheckAll!: boolean;
+
+    get showTitle() {
+        return this.direction === 'horizontal' && this.title;
+    }
 
     get cacheOptions() {
         if (Array.isArray(this.options)) {
@@ -46,6 +52,22 @@ export default class RoboSelectMultiCheckbox extends Vue {
     set selectedList(newVal: Array<string | number>) {
         this.emitUpdate(newVal);
         this.emitChange(newVal);
+    }
+
+    get checkAll() {
+        if (!Array.isArray(this.cacheOptions) || this.cacheOptions.length === 0) {
+            return false;
+        }
+        return this.cacheOptions.length === this.selectedList.length;
+    }
+    set checkAll(isCheckAll: boolean) {
+        if (isCheckAll) {
+            if (Array.isArray(this.cacheOptions) && this.cacheOptions.length > 0) {
+                this.selectedList = this.cacheOptions.map((v) => v.value);
+            }
+        } else {
+            this.selectedList = [];
+        }
     }
 
     @Watch('cacheOptions')
@@ -75,8 +97,15 @@ export default class RoboSelectMultiCheckbox extends Vue {
 </script>
 
 <style lang="scss">
-.robo-select-multi-checkbox {
+.robo-checkbox-multi {
     &.vertical {
+        .checkbox-all {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 16px;
+            cursor: pointer;
+        }
+
         .checkbox-list {
             .checkbox-item {
                 height: 40px;
@@ -96,16 +125,41 @@ export default class RoboSelectMultiCheckbox extends Vue {
     }
 
     &.horizontal {
-        .checkbox-list {
+        display: flex;
+        align-items: flex-start;
+
+        .label {
+            margin-right: 16px;
+            flex: 0 0 auto;
+            padding: 10px 0;
+            line-height: 20px;
+        }
+
+        .content {
             display: flex;
-            align-items: center;
-            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .checkbox-all {
+            flex: 0;
+            display: inline-block;
+            font-size: 0;
+            padding: 10px 0;
+            margin-right: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-list {
+            margin-left: -68px;
+            text-indent: 68px;
 
             .checkbox-item {
+                display: inline-block;
                 font-size: 0;
                 padding: 10px 0;
                 margin-right: 16px;
                 cursor: pointer;
+                text-indent: 0;
 
                 .el-checkbox {
                     height: 100%;

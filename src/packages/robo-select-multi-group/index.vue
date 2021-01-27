@@ -32,7 +32,7 @@
         <div class="robo-select-multi-group-content">
             <template>
                 <div class="option-header" :class="noOptions ? 'hide-border' : ''">
-                    <robo-select-all
+                    <robo-check-all
                         v-if="!noOptions"
                         :value.sync="isSelectAll"
                         :show-save-btn="false"
@@ -46,7 +46,7 @@
                             <div :key="group.cacheKey + 'title'" class="option-title">
                                 <robo-overflow-text :content="group.groupTitle" :visible="isInputActive" />
                             </div>
-                            <robo-select-multi-checkbox
+                            <robo-checkbox-multi
                                 :key="group.cacheKey + 'option'"
                                 :options="group.options"
                                 :cache-key="group.cacheKey"
@@ -66,8 +66,8 @@
 import {Component, Vue, Prop, Emit} from 'vue-property-decorator';
 
 import RoboOverflowText from '../robo-overflow-text/index.vue';
-import RoboSelectAll from '../robo-select-all/index.vue';
-import RoboSelectMultiCheckbox from '../robo-select-multi-checkbox/index.vue';
+import RoboSelectAll from '../robo-check-all/index.vue';
+import RoboSelectMultiCheckbox from '../robo-checkbox-multi/index.vue';
 
 @Component({
     components: {RoboSelectAll, RoboOverflowText, RoboSelectMultiCheckbox}

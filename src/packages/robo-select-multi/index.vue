@@ -11,7 +11,7 @@
         <div
             slot="reference"
             class="robo-select-multi-reference"
-            :class="isInputActive ? 'is-active' : ''"
+            :class="[isInputActive ? 'is-active' : '', hideTitle ? 'no-title' : ' ']"
             :style="{width: width + 'px'}"
         >
             <span v-if="!hideTitle && cacheTitle" class="robo-select-multi-title">{{ cacheTitle }}</span>
@@ -32,7 +32,7 @@
         <div class="robo-select-multi-content">
             <template>
                 <div class="option-header" :class="noOptions ? 'hide-border' : ''">
-                    <robo-select-all
+                    <robo-check-all
                         v-if="!noOptions"
                         :value.sync="isSelectAll"
                         :show-save-btn="false"
@@ -40,10 +40,11 @@
                     />
                     <p v-else class="empty">暂无数据</p>
                 </div>
-                <robo-select-multi-checkbox
+                <robo-checkbox-multi
                     :options="options"
                     :cache-key="cacheKey"
-                    :value.sync="value"
+                    :value.sync="selectedList"
+                    :show-check-all="false"
                     direction="vertical"
                 />
             </template>
@@ -54,11 +55,11 @@
 <script lang="ts">
 import {Component, Vue, Prop, Emit} from 'vue-property-decorator';
 
-import RoboSelectAll from '../robo-select-all/index.vue';
-import RoboSelectMultiCheckbox from '../robo-select-multi-checkbox/index.vue';
+import RoboCheckAll from '../robo-check-all/index.vue';
+import RoboSelectMultiCheckbox from '../robo-checkbox-multi/index.vue';
 
 @Component({
-    components: {RoboSelectAll, RoboSelectMultiCheckbox}
+    components: {RoboCheckAll, RoboSelectMultiCheckbox}
 })
 export default class RoboSelectMulti extends Vue {
     @Prop({type: [Array]}) options!: {value: any; label: string}[];
@@ -206,6 +207,8 @@ export default class RoboSelectMulti extends Vue {
         }
 
         .placeholder {
+            display: flex;
+            align-items: center;
             color: #9fafc3;
         }
 
@@ -260,10 +263,25 @@ export default class RoboSelectMulti extends Vue {
             padding: 4px 0;
             max-height: 256px;
             overflow-y: auto;
-            margin-top: 1px;
             background: #fff;
             box-shadow: 0 2px 8px 0 #dcdee0;
             border-radius: 4px;
+
+            &[x-placement^='top'] {
+                margin-bottom: 1px;
+            }
+
+            &[x-placement^='bottom'] {
+                margin-top: 1px;
+            }
+
+            &[x-placement^='left'] {
+                margin-right: 1px;
+            }
+
+            &[x-placement^='right'] {
+                margin-left: 1px;
+            }
 
             .popper__arrow {
                 display: none;
