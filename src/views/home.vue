@@ -1,5 +1,5 @@
 <template>
-    <el-card class="home-card" header="RoboUI For RoboX FE Team">
+    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.1)">
         <robo-info class="home-title">共包含两部分内容，共29个基础组件和业务组件（2020-01-27）</robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
