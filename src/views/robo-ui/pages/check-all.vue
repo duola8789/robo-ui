@@ -1,11 +1,9 @@
 <template>
     <div class="page-container">
         <el-card class="page-title">带有清空和保存功能的全选组件</el-card>
-        <el-card
-            header="传入 value 作为初始值（布尔值），全选时触发 select-all 事件，保存时触发 save 组件，清空时触发 onClear 事件"
-        >
+        <el-card header="传入 value 作为初始值（布尔值），全选时触发 select-all 事件，保存时触发 save 组件">
             <div class="check-all-container">
-                <robo-check-all :value.sync="checked" @select-all="onSelectAll" @save="onSave" @clear="onClear" />
+                <robo-check-all :value.sync="checked" @select-all="onSelectAll" @save="onSave" />
             </div>
             <p style="margin-top: 10px;">checked：{{ checked }}</p>
             <code-example :code="code" />
@@ -26,10 +24,6 @@ export default class CheckAll extends Vue {
 
     onSave() {
         this.$message.success('save');
-    }
-
-    onClear() {
-        this.$message.success('clear');
     }
 
     get code() {

@@ -17,16 +17,6 @@ export default class RoboCheckAll extends Vue {
     @Prop({type: String, default: '全选'}) label!: string;
     @Prop({type: Boolean, default: true}) showSaveBtn!: string;
 
-    @Emit('update:value')
-    updateValue(newVal: boolean) {
-        return newVal;
-    }
-
-    @Emit()
-    selectAll(newVal: boolean) {
-        return newVal;
-    }
-
     get checked() {
         return this.value;
     }
@@ -35,9 +25,18 @@ export default class RoboCheckAll extends Vue {
         this.selectAll(newVal);
     }
 
-    @Emit()
     clear() {
         this.checked = false;
+    }
+
+    @Emit('update:value')
+    updateValue(newVal: boolean) {
+        return newVal;
+    }
+
+    @Emit()
+    selectAll(newVal: boolean) {
+        return newVal;
     }
 
     @Emit()
