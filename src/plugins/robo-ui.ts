@@ -14,6 +14,7 @@ import RoboCheckboxMultiGroup from '@/packages/robo-checkbox-multi-group/index.v
 import RoboSelectMultiGroup from '@/packages/robo-select-multi-group/index.vue';
 import RoboTag from '@/packages/robo-tag/index.vue';
 import Robo2ColumnsContainer from '@/packages/robo-2-columns-container/index.vue';
+import RoboInfo from '@/packages/robo-info/index.vue';
 
 [
     RoboTag,
@@ -29,7 +30,8 @@ import Robo2ColumnsContainer from '@/packages/robo-2-columns-container/index.vue
     RoboCheckboxMultiGroup,
     RoboSelectMulti,
     RoboSelectMultiGroup,
-    Robo2ColumnsContainer
+    Robo2ColumnsContainer,
+    RoboInfo
 ].forEach((Comp) => {
     Vue.component(Comp.name, Comp);
 });

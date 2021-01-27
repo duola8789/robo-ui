@@ -66,7 +66,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuTitle: 'Basic',
         menuIcon: 'icon-storage',
         componentPath: 'basic/index',
-        children: [{path: 'button', componentPath: 'basic/pages/button', menuTitle: 'El Button'}]
+        children: [{path: 'el-button', componentPath: 'basic/pages/button', menuTitle: 'El Button'}]
     },
     {
         path: '/form',
@@ -74,11 +74,11 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuIcon: 'icon-content-copy',
         componentPath: 'form/index',
         children: [
-            {path: 'input', componentPath: 'form/pages/input', menuTitle: 'Ele Input'},
-            {path: 'checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
-            {path: 'select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'},
-            {path: 'datepicker', componentPath: 'form/pages/datepicker', menuTitle: 'Ele Date Picker'},
-            {path: 'form', componentPath: 'form/pages/form', menuTitle: 'Ele Form'}
+            {path: 'el-input', componentPath: 'form/pages/input', menuTitle: 'Ele Input'},
+            {path: 'el-checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
+            {path: 'el-select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'},
+            {path: 'el-datepicker', componentPath: 'form/pages/datepicker', menuTitle: 'Ele Date Picker'},
+            {path: 'el-form', componentPath: 'form/pages/form', menuTitle: 'Ele Form'}
         ]
     },
     {
@@ -87,8 +87,8 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuIcon: 'icon-data-usage',
         componentPath: 'data/index',
         children: [
-            {path: 'table', componentPath: 'data/pages/table', menuTitle: 'Ele Table'},
-            {path: 'pagination', componentPath: 'data/pages/pagination', menuTitle: 'Ele Pagination'}
+            {path: 'el-table', componentPath: 'data/pages/table', menuTitle: 'Ele Table'},
+            {path: 'el-pagination', componentPath: 'data/pages/pagination', menuTitle: 'Ele Pagination'}
         ]
     },
     {
@@ -97,9 +97,9 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuIcon: 'icon-hearing',
         componentPath: 'notice/index',
         children: [
-            {path: 'message', componentPath: 'notice/pages/message', menuTitle: 'Ele Message'},
-            {path: 'message-box', componentPath: 'notice/pages/message-box', menuTitle: 'Ele MessageBox'},
-            {path: 'loading', componentPath: 'notice/pages/loading', menuTitle: 'Ele Loading'}
+            {path: 'el-message', componentPath: 'notice/pages/message', menuTitle: 'Ele Message'},
+            {path: 'el-message-box', componentPath: 'notice/pages/message-box', menuTitle: 'Ele MessageBox'},
+            {path: 'el-loading', componentPath: 'notice/pages/loading', menuTitle: 'Ele Loading'}
         ]
     },
     {
@@ -107,7 +107,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuTitle: 'Navigation',
         menuIcon: 'icon-signal-wifi-statusba2',
         componentPath: 'navigation/index',
-        children: [{path: 'tab', componentPath: 'navigation/pages/tab', menuTitle: 'Tab'}]
+        children: [{path: 'el-tab', componentPath: 'navigation/pages/tab', menuTitle: 'Ele Tab'}]
     },
     {
         path: '/others',
