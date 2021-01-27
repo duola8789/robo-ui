@@ -1,7 +1,7 @@
 <template>
     <el-card class="code-card" header="代码示例">
         <pre class="code-container">
-            <span class="code-item" v-for="item in _code" :key="item" v-text="item"></span>
+            <span v-for="item in _code" :key="item" class="code-item" v-text="item" ></span>
         </pre>
     </el-card>
 </template>
@@ -33,7 +33,7 @@ export default class CodeExample extends Vue {
     .code-item {
         display: block;
         width: 100%;
-        padding: 8px 0;
+        padding: 6px 0;
         color: #3182bd;
         font-family: monospace;
         line-height: 1.4;

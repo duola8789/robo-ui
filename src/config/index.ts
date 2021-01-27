@@ -20,11 +20,17 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         componentPath: 'robo-ui/index',
         children: [
             {path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'},
-            {path: 'select-all', componentPath: 'robo-ui/pages/select-all', menuTitle: 'Robo Select All'},
+            {path: 'tag', componentPath: 'robo-ui/pages/tag', menuTitle: 'Robo Tag'},
+            {path: 'check-all', componentPath: 'robo-ui/pages/check-all', menuTitle: 'Robo Check All'},
             {
-                path: 'select-multi-checkbox',
-                componentPath: 'robo-ui/pages/select-multi-checkbox',
-                menuTitle: 'Robo Select Multi Checkbox'
+                path: 'checkbox-multi',
+                componentPath: 'robo-ui/pages/checkbox-multi',
+                menuTitle: 'Robo Checkbox Multi'
+            },
+            {
+                path: 'checkbox-multi-group',
+                componentPath: 'robo-ui/pages/checkbox-multi-group',
+                menuTitle: 'Robo Checkbox Multi Group'
             },
             {
                 path: 'select-multi',
@@ -35,6 +41,11 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
                 path: 'select-multi-group',
                 componentPath: 'robo-ui/pages/select-multi-group',
                 menuTitle: 'Robo Select Multi Group'
+            },
+            {
+                path: '2-columns-container',
+                componentPath: 'robo-ui/pages/2-columns-container',
+                menuTitle: 'Robo 2 Columns Container'
             }
         ]
     },
@@ -53,25 +64,48 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         children: [
             {path: 'input', componentPath: 'form/pages/input', menuTitle: 'Ele Input'},
             {path: 'checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
-            {path: 'select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'}
+            {path: 'select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'},
+            {path: 'datepicker', componentPath: 'form/pages/datepicker', menuTitle: 'Ele Date Picker'},
+            {path: 'form', componentPath: 'form/pages/form', menuTitle: 'Ele Form'}
         ]
     },
-    // {
-    //     path: '/notice',
-    //     menuTitle: 'Notice',
-    //     menuIcon: 'icon-hearing',
-    //     componentPath: 'notice/index',
-    //     children: [
-    //         {path: 'message', componentPath: 'notice/pages/message', menuTitle: 'Message'},
-    //         {path: 'message-box', componentPath: 'notice/pages/message-box', menuTitle: 'MessageBox'}
-    //     ]
-    // },
+    {
+        path: '/data',
+        menuTitle: 'Data',
+        menuIcon: 'icon-data-usage',
+        componentPath: 'data/index',
+        children: [
+            {path: 'table', componentPath: 'data/pages/table', menuTitle: 'Ele Table'},
+            {path: 'pagination', componentPath: 'data/pages/pagination', menuTitle: 'Ele Pagination'}
+        ]
+    },
+    {
+        path: '/notice',
+        menuTitle: 'Notice',
+        menuIcon: 'icon-hearing',
+        componentPath: 'notice/index',
+        children: [
+            {path: 'message', componentPath: 'notice/pages/message', menuTitle: 'Ele Message'},
+            {path: 'message-box', componentPath: 'notice/pages/message-box', menuTitle: 'Ele MessageBox'},
+            {path: 'loading', componentPath: 'notice/pages/loading', menuTitle: 'Ele Loading'}
+        ]
+    },
     {
         path: '/navigation',
         menuTitle: 'Navigation',
         menuIcon: 'icon-signal-wifi-statusba2',
         componentPath: 'navigation/index',
         children: [{path: 'tab', componentPath: 'navigation/pages/tab', menuTitle: 'Tab'}]
+    },
+    {
+        path: '/others',
+        menuTitle: 'Others',
+        menuIcon: 'icon-speaker-notes',
+        componentPath: 'others/index',
+        children: [
+            {path: 'el-dialog', componentPath: 'others/pages/dialog', menuTitle: 'Ele Dialog'},
+            {path: 'el-collapse', componentPath: 'others/pages/collapse', menuTitle: 'Ele Collapse'}
+        ]
     },
     {
         path: '*',
