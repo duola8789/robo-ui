@@ -1,4 +1,5 @@
 @import '../common/var';
+@import '../mixins/mixins';
 
 @include b(time-panel) {
     margin: 5px 0;
@@ -12,6 +13,9 @@
     z-index: $--index-top;
     user-select: none;
     box-sizing: content-box;
+    padding: 4px 0;
+
+    @include popper-no-arrow();
 
     @include e(content) {
         font-size: 0;

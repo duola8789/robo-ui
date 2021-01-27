@@ -52,6 +52,10 @@
         }
 
         &.robo-form-in-border {
+            .robo-select-multi-reference.no-title {
+                padding-left: 80px;
+            }
+
             .el-form-item {
                 position: relative;
                 margin-bottom: 16px;
@@ -60,14 +64,15 @@
             & .el-form-item__label {
                 position: absolute;
                 left: 16px;
-                top: 50%;
-                transform: translateY(-50%);
-                vertical-align: top;
+                height: 38px;
+                top: 2px;
                 z-index: 2;
                 padding-right: 0;
             }
 
             & .el-form-item__content {
+                height: 40px;
+
                 .el-input__inner {
                     &:not(.el-range-editor) {
                         width: 280px;

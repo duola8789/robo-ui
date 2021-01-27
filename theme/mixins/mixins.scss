@@ -197,3 +197,35 @@
         @content;
     }
 }
+
+// ROBO-UI
+@mixin popper-no-arrow() {
+    &.el-popper {
+        .popper__arrow {
+            display: none;
+        }
+
+        &[x-placement^='bottom'] {
+            margin-top: 1px;
+        }
+
+        &[x-placement^='top'] {
+            margin-bottom: 1px;
+        }
+
+        &[x-placement^='right'] {
+            margin-left: 1px;
+        }
+
+        &[x-placement^='left'] {
+            margin-right: 1px;
+        }
+
+        border: $--select-dropdown-border;
+        border-radius: $--border-radius-base;
+        background-color: $--select-dropdown-background;
+        box-shadow: $--select-dropdown-shadow;
+        box-sizing: border-box;
+        margin: 1px 0 0 !important;
+    }
+}
