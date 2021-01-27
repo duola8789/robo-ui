@@ -38,5 +38,11 @@ export default class CodeExample extends Vue {
         font-family: monospace;
         line-height: 1.4;
     }
+
+    ::v-deep {
+        .el-card__body {
+            background: #fff;
+        }
+    }
 }
 </style>
