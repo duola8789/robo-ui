@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 import RoboUserAvatar from '@/packages/robo-user-avatar/index.vue';
 import RoboOverflowText from '@/packages/robo-overflow-text/index.vue';
-import RoboSymbolIcon from '@/packages/robo-font-icon/index.vue';
+import RoboFontIcon from '@/packages/robo-font-icon/index.vue';
 import RoboErrorPage from '@/packages/robo-error-page/index.vue';
 import RoboAsideNavMenu from '@/packages/robo-aside-nav-menu/index.vue';
 import RoboAsideNav from '@/packages/robo-aside-nav/index.vue';
@@ -20,7 +20,7 @@ import RoboInfo from '@/packages/robo-info/index.vue';
     {name: 'RoboTag', comp: RoboTag},
     {name: 'RoboUserAvatar', comp: RoboUserAvatar},
     {name: 'RoboOverflowText', comp: RoboOverflowText},
-    {name: 'RoboSymbolIcon', comp: RoboSymbolIcon},
+    {name: 'RoboFontIcon', comp: RoboFontIcon},
     {name: 'RoboErrorPage', comp: RoboErrorPage},
     {name: 'RoboAsideNavMenu', comp: RoboAsideNavMenu},
     {name: 'RoboAsideNav', comp: RoboAsideNav},
