@@ -1,6 +1,7 @@
 <template>
     <div class="page-container">
-        <el-card header="使用 Symbol 方式引入阿里的 IconFont，将 icon 名称传给组件的 href 属性 ">
+        <el-card class="page-title">使用 Symbol 方式引入阿里的 IconFont</el-card>
+        <el-card header="将 icon 名称传给组件的 href 属性 ">
             <robo-font-icon href="icon-thumb-up" />
             <robo-font-icon href="icon-thumb-down" />
             <code-example :code="code" />

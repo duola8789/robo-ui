@@ -26,9 +26,9 @@ import {Component, Vue, Prop, Watch, Ref} from 'vue-property-decorator';
 
 @Component
 export default class RoboOverflowText extends Vue {
+    @Prop({required: true, type: String}) readonly content!: string;
     @Prop({default: 'hover', type: String}) readonly trigger!: string;
     @Prop({default: 'top', type: String}) readonly placement!: string;
-    @Prop({required: true, type: String}) readonly content!: string;
     @Prop({default: '', type: String}) readonly popperClass!: string;
     @Prop({default: false, type: Boolean}) readonly visible!: boolean;
 

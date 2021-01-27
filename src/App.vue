@@ -51,6 +51,10 @@ body {
         background: #18182a;
     }
 
+    .layout-main {
+        background-color: #f0f2f5;
+    }
+
     .aside-header {
         position: relative;
         height: 48px;
@@ -104,6 +108,16 @@ input:focus::-webkit-contacts-auto-fill-button {
 .page-container {
     > .el-card {
         margin-bottom: 16px;
+
+        &.page-title {
+            color: #1989fa;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .el-card__header {
+            font-weight: bold;
+        }
 
         &:last-child {
             margin-bottom: 0;

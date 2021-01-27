@@ -1,5 +1,6 @@
 <template>
     <div class="page-container">
+        <el-card class="page-title">用于403或404异常页面</el-card>
         <el-card header="默认使用：不传入 type 参数时，会根据当前 Url 自动确定渲染 404 还是 403 页面，默认 404 页面">
             <robo-error-page />
             <code-example :code="code1" />
