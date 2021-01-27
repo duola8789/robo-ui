@@ -25,7 +25,7 @@ echo "yarn: v$(yarn -v)"
 yarn install
 
 # 区分环境进行构建
-build_command="build"
+build_command="build-app"
 
 # 编译日志中打印执行的编译命令
 echo "build_command: $build_command"
