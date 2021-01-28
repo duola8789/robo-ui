@@ -4,7 +4,7 @@
 import RoboSelectMultiGroup from './index.vue';
 
 RoboSelectMultiGroup.install = function(Vue) {
-    Vue.component(RoboSelectMultiGroup.name, RoboSelectMultiGroup);
+    Vue.component('RoboSelectMultiGroup', RoboSelectMultiGroup);
 };
 
 export default RoboSelectMultiGroup;

@@ -4,7 +4,7 @@
 import RoboErrorPage from './index.vue';
 
 RoboErrorPage.install = function(Vue) {
-    Vue.component(RoboErrorPage.name, RoboErrorPage);
+    Vue.component('RoboErrorPage', RoboErrorPage);
 };
 
 export default RoboErrorPage;

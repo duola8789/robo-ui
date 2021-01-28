@@ -4,7 +4,7 @@
 import RoboOverflowText from './index.vue';
 
 RoboOverflowText.install = function(Vue) {
-    Vue.component(RoboOverflowText.name, RoboOverflowText);
+    Vue.component('RoboOverflowText', RoboOverflowText);
 };
 
 export default RoboOverflowText;

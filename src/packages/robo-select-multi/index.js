@@ -4,7 +4,7 @@
 import RoboSelectMulti from './index.vue';
 
 RoboSelectMulti.install = function(Vue) {
-    Vue.component(RoboSelectMulti.name, RoboSelectMulti);
+    Vue.component('RoboSelectMulti', RoboSelectMulti);
 };
 
 export default RoboSelectMulti;

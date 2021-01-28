@@ -4,7 +4,7 @@
 import RoboAsideNavMenu from './index.vue';
 
 RoboAsideNavMenu.install = function(Vue) {
-    Vue.component(RoboAsideNavMenu.name, RoboAsideNavMenu);
+    Vue.component('RoboAsideNavMenu', RoboAsideNavMenu);
 };
 
 export default RoboAsideNavMenu;

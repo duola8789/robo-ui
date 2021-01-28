@@ -4,7 +4,7 @@
 import RoboCheckAll from './index.vue';
 
 RoboCheckAll.install = function(Vue) {
-    Vue.component(RoboCheckAll.name, RoboCheckAll);
+    Vue.component('RoboCheckAll', RoboCheckAll);
 };
 
 export default RoboCheckAll;

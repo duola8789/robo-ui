@@ -4,7 +4,7 @@
 import RoboInfo from './index.vue';
 
 RoboInfo.install = function(Vue) {
-    Vue.component(RoboInfo.name, RoboInfo);
+    Vue.component('RoboInfo', RoboInfo);
 };
 
 export default RoboInfo;

@@ -4,7 +4,7 @@
 import RoboUserAvatar from './index.vue';
 
 RoboUserAvatar.install = function(Vue) {
-    Vue.component(RoboUserAvatar.name, RoboUserAvatar);
+    Vue.component('RoboUserAvatar', RoboUserAvatar);
 };
 
 export default RoboUserAvatar;

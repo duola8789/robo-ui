@@ -4,7 +4,7 @@
 import RoboCheckboxMulti from './index.vue';
 
 RoboCheckboxMulti.install = function(Vue) {
-    Vue.component(RoboCheckboxMulti.name, RoboCheckboxMulti);
+    Vue.component('RoboCheckboxMulti', RoboCheckboxMulti);
 };
 
 export default RoboCheckboxMulti;

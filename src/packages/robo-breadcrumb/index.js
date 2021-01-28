@@ -4,7 +4,7 @@
 import RoboBreadcrumb from './index.vue';
 
 RoboBreadcrumb.install = function(Vue) {
-    Vue.component(RoboBreadcrumb.name, RoboBreadcrumb);
+    Vue.component('RoboBreadcrumb', RoboBreadcrumb);
 };
 
 export default RoboBreadcrumb;

@@ -4,7 +4,7 @@
 import RoboTag from './index.vue';
 
 RoboTag.install = function(Vue) {
-    Vue.component(RoboTag.name, RoboTag);
+    Vue.component('RoboTag', RoboTag);
 };
 
 export default RoboTag;

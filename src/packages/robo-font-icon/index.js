@@ -4,7 +4,7 @@
 import RoboFontIcon from './index.vue';
 
 RoboFontIcon.install = function(Vue) {
-    Vue.component(RoboFontIcon.name, RoboFontIcon);
+    Vue.component('RoboFontIcon', RoboFontIcon);
 };
 
 export default RoboFontIcon;

@@ -4,7 +4,7 @@
 import RoboCheckboxMultiGroup from './index.vue';
 
 RoboCheckboxMultiGroup.install = function(Vue) {
-    Vue.component(RoboCheckboxMultiGroup.name, RoboCheckboxMultiGroup);
+    Vue.component('RoboCheckboxMultiGroup', RoboCheckboxMultiGroup);
 };
 
 export default RoboCheckboxMultiGroup;
