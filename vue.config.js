@@ -6,6 +6,9 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     lintOnSave: process.env.NODE_ENV === 'development' ? 'warning' : false,
+    devServer: {
+        disableHostCheck: true
+    },
     productionSourceMap: false,
     configureWebpack: {
         plugins: [
