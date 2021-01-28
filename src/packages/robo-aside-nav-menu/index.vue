@@ -30,7 +30,6 @@
                             placement="right"
                         />
                         <span v-else>{{ item.title }}</span>
-                        {{ $route.path.startsWith(menu.path) }}
                     </el-menu-item>
                 </el-submenu>
             </template>
