@@ -9,7 +9,7 @@ module.exports = {
     devServer: {
         disableHostCheck: true
     },
-    productionSourceMap: false,
+    // productionSourceMap: false,
     configureWebpack: {
         plugins: [
             new StyleLintPlugin({
