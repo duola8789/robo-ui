@@ -51,7 +51,7 @@ export default class RoboOverflowText extends Vue {
             if (this.contentEl) {
                 this.isOverflow = this.contentEl.clientWidth < this.contentEl.scrollWidth;
             }
-        }, 50);
+        });
     }
 
     // 判断元素的 clientWidth 是否小于 scrollWidth，是的话说明溢出，需要剪切
