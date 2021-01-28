@@ -50,6 +50,7 @@ export default class RoboBreadcrumb extends Vue {
                     typeof query?.tabIndex === 'string' ? v.meta.tabTitles[query?.tabIndex] : v.meta.tabTitles[0];
                 return [
                     ...t,
+                    current,
                     {
                         path: v.path,
                         title: tabRouteTitle,
@@ -67,10 +68,16 @@ export default class RoboBreadcrumb extends Vue {
         if (index === 0) {
             return;
         }
-        if (path && path !== this.$route.path) {
-            this.$router.push({path, query});
-        } else {
+        if (index === this.routeList.length - 1) {
             this.currentPageClick();
+            return;
+        }
+        if (path) {
+            if (typeof query?.tabIndex === 'string') {
+                this.$router.push({path, query: {...query, tabIndex: 0}}).catch(() => {});
+            } else {
+                this.$router.push({path, query}).catch(() => {});
+            }
         }
     }
 }
