@@ -44,7 +44,7 @@
                     <div class="options-group">
                         <template v-for="group in cacheOptionsGroups">
                             <div :key="group.cacheKey + 'title'" class="option-title">
-                                <robo-overflow-text :content="group.groupTitle" :visible="isInputActive" />
+                                {{ group.groupTitle }}
                             </div>
                             <robo-checkbox-multi
                                 :key="group.cacheKey + 'option'"
@@ -290,7 +290,7 @@ export default class RoboSelectMultiGroup extends Vue {
 
         .options-group {
             display: grid;
-            grid-template-columns: minmax(auto, 80px) auto;
+            grid-template-columns: auto 430px;
             grid-column-gap: 16px;
             padding: 0 16px;
             font-size: 14px;
@@ -322,14 +322,29 @@ export default class RoboSelectMultiGroup extends Vue {
 
     &-popper {
         &.el-popper.el-popover {
-            width: 560px !important;
+            width: auto !important;
             padding: 4px 0;
             max-height: 268px;
             overflow-y: auto;
-            margin-top: 1px;
             background: #fff;
             box-shadow: 0 2px 8px 0 #dcdee0;
             border-radius: 4px;
+
+            &[x-placement^='top'] {
+                margin-bottom: 1px;
+            }
+
+            &[x-placement^='bottom'] {
+                margin-top: 1px;
+            }
+
+            &[x-placement^='right'] {
+                margin-left: 1px;
+            }
+
+            &[x-placement^='left'] {
+                margin-right: 1px;
+            }
 
             .popper__arrow {
                 display: none;
