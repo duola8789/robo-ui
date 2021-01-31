@@ -142,6 +142,27 @@
             $--button-primary-background-color,
             $--button-primary-border-color
         );
+
+        &:hover,
+        &:focus {
+            background: #377fec;
+            border-color: #377fec;
+            color: #fff;
+        }
+
+        &:active {
+            border-color: #044cb9;
+            color: #fff;
+            background-color: #044cb9;
+            outline: none;
+        }
+
+        &.is-active {
+            border-color: #044cb9;
+            color: #fff;
+            background-color: #044cb9;
+            outline: none;
+        }
     }
     @include m(success) {
         @include button-variant(
@@ -165,20 +186,39 @@
         );
     }
     @include m(info) {
-        @include button-variant(
-            $--button-info-font-color,
-            $--button-info-background-color,
-            $--button-info-border-color
-        );
+        color: $--button-info-font-color;
+        background-color: $--button-info-background-color;
+        border-color: $--button-info-border-color;
+
+        &:hover,
+        &:focus {
+            border-color: #055fe7;
+            color: #055fe7;
+            background: #fff;
+        }
+
+        &:active {
+            border-color: #044cb9;
+            color: #044cb9;
+            background: #fff;
+            outline: none;
+        }
+
+        &.is-active {
+            border-color: #044cb9;
+            color: #044cb9;
+            background: #fff;
+            outline: none;
+        }
 
         &.is-disabled {
             &,
             &:hover,
             &:focus,
             &:active {
-                color: $--button-disabled-font-color;
-                background-color: $--button-disabled-background-color;
-                border-color: $--button-disabled-border-color;
+                color: #c2c4c7;
+                background-color: #fff;
+                border-color: #ecedf1;
             }
         }
     }

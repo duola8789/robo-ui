@@ -16,7 +16,7 @@ $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !defau
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #1f66ff !default;
+$--color-primary: #055fe7 !default;
 /// color|1|Background Color|4
 $--color-white: #ffffff !default;
 /// color|1|Background Color|4
@@ -551,9 +551,9 @@ $--button-default-background-color: $--color-white !default;
 $--button-default-border-color: $--border-color-base !default;
 
 /// color||Color|0
-$--button-disabled-font-color: $--color-text-placeholder !default;
+$--button-disabled-font-color: #aeafb4 !default;
 /// color||Color|0
-$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-background-color: #ecedf1 !default;
 /// color||Color|0
 $--button-disabled-border-color: $--border-color-lighter !default;
 
@@ -582,9 +582,9 @@ $--button-danger-font-color: $--color-white !default;
 /// color||Color|0
 $--button-danger-background-color: $--color-danger !default;
 /// color||Color|0
-$--button-info-border-color: $--color-primary !default;
+$--button-info-border-color: #aeb5c2 !default;
 /// color||Color|0
-$--button-info-font-color: $--color-primary !default;
+$--button-info-font-color: #2e3846 !default;
 /// color||Color|0
 $--button-info-background-color: $--color-white !default;
 

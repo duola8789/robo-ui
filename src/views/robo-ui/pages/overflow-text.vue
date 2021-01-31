@@ -104,6 +104,6 @@ export default class OverflowText extends Vue {
 }
 
 .hello {
-    color: #1f66ff !important;
+    color: #055fe7 !important;
 }
 </style>
