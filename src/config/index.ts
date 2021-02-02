@@ -107,7 +107,10 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         menuTitle: 'Navigation',
         menuIcon: 'icon-signal-wifi-statusba2',
         componentPath: 'navigation/index',
-        children: [{path: 'el-tab', componentPath: 'navigation/pages/tab', menuTitle: 'Ele Tab'}]
+        children: [
+            {path: 'el-tab', componentPath: 'navigation/pages/tab', menuTitle: 'Ele Tab'},
+            {path: 'el-dropdown', componentPath: 'navigation/pages/dropdown', menuTitle: 'Ele Dropdown'}
+        ]
     },
     {
         path: '/others',

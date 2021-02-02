@@ -68,6 +68,7 @@ export default class HomePage extends Vue {
             {name: 'MessageBox', url: '/notice/el-message-box'},
             {name: 'Loading', url: '/notice/el-loading'},
             {name: 'Tab', url: '/navigation/el-tab'},
+            {name: 'Dropdown', url: '/navigation/el-dropdown'},
             {name: 'Dialog', url: '/others/el-dialog'},
             {name: 'Collapse', url: '/others/el-collapse'}
         ];

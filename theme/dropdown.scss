@@ -76,19 +76,21 @@
     border-radius: $--border-radius-base;
     box-shadow: $--dropdown-menu-box-shadow;
 
+    @include popper-no-arrow();
+
     @include e(item) {
         list-style: none;
         line-height: 36px;
         padding: 0 20px;
         margin: 0;
         font-size: $--font-size-base;
-        color: $--color-text-regular;
+        color: $--color-text-robo;
         cursor: pointer;
         outline: none;
         &:not(.is-disabled):hover,
         &:focus {
             background-color: $--dropdown-menuItem-hover-fill;
-            color: $--dropdown-menuItem-hover-color;
+            color: $--color-text-regular;
         }
 
         i {

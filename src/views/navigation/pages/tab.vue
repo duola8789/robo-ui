@@ -15,7 +15,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 
 @Component
-export default class ButtonPage extends Vue {
+export default class Tab extends Vue {
     activeName1 = '选项1';
 
     options = [
