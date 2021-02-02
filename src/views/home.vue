@@ -1,9 +1,11 @@
 <template>
     <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.1)">
-        <robo-info class="home-title">共包含两部分内容，共29个基础组件和业务组件（2020-01-27）</robo-info>
+        <robo-info class="home-title">
+            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-02）
+        </robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
-                <el-card header="Robo-UI组件：自研组件（共15）">
+                <el-card :header="roboHeader">
                     <div class="inside-card">
                         <el-card v-for="item in roboItems" :key="item.name" shadow="hover">
                             <div class="item" @click="onClick('/robo-ui', item.url)">
@@ -15,7 +17,7 @@
                 </el-card>
             </el-col>
             <el-col :span="10">
-                <el-card header="ElementUI改造（theme-robo主题），用法不变，部分组件需要传入指定的参数（共14）">
+                <el-card :header="eleHeader">
                     <div class="inside-card">
                         <el-card v-for="item in eleItems" :key="item.name" shadow="hover">
                             <div class="item" @click="onClick('', item.url)">
@@ -72,6 +74,18 @@ export default class HomePage extends Vue {
             {name: 'Dialog', url: '/others/el-dialog'},
             {name: 'Collapse', url: '/others/el-collapse'}
         ];
+    }
+
+    get roboHeader() {
+        return `Robo-UI组件：自研组件（共${this.roboItems.length}个）`;
+    }
+
+    get eleHeader() {
+        return `  ElementUI改造（theme-robo主题），用法不变，部分组件需要传入指定的参数（共${this.eleItems.length}）`;
+    }
+
+    get totalLength() {
+        return this.roboItems.length + this.eleItems.length;
     }
 
     onClick(base: string, path?: string) {
