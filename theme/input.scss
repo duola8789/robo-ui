@@ -77,17 +77,6 @@
     width: 100%;
     @include scroll-bar;
 
-    @include e(inner) {
-        &:not(:placeholder-shown):hover,
-        &:not(:placeholder-shown):focus {
-            + .el-input__suffix {
-                .el-input__icon:not(.el-input__clear) {
-                    display: none;
-                }
-            }
-        }
-    }
-
     & .el-input__clear {
         color: $--input-icon-color;
         font-size: $--input-font-size;
