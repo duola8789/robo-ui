@@ -5,10 +5,14 @@
 
 @include b(pagination) {
     white-space: nowrap;
-    padding: 2px 5px;
+    padding: 2px 0;
     color: $--pagination-font-color;
     font-weight: normal;
     @include utils-clearfix;
+
+    & :last-child {
+        margin-right: 0;
+    }
 
     span:not([class*='suffix']),
     button {
@@ -156,6 +160,7 @@
 
         .el-input {
             height: 40px;
+            margin-right: 0 !important;
         }
 
         .el-input .el-input__inner {
