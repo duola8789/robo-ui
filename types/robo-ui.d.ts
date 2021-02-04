@@ -14,7 +14,7 @@ import {RoboCheckboxMulti} from './packages/checkbox-multi';
 import {RoboCheckboxMultiGroup} from './packages/checkbox-multi-group';
 import {RoboInfo} from './packages/info';
 import {RoboTag} from './packages/tag';
-import {Robo2ColumnsContainer} from './packages/columns-container';
+import {RoboColumnsContainer} from './packages/columns-container';
 
 export function install(vue: typeof Vue): void;
 
@@ -32,4 +32,4 @@ export class UserAvatar extends RoboUserAvatar {}
 export class CheckboxMulti extends RoboCheckboxMulti {}
 export class Info extends RoboInfo {}
 export class Tag extends RoboTag {}
-export class ColumnsContainer extends Robo2ColumnsContainer {}
+export class ColumnsContainer extends RoboColumnsContainer {}
