@@ -1,14 +1,14 @@
 <template>
     <div class="robo-columns-container" :class="revert ? 'is-revert' : ''">
         <div class="robo-columns-main robo-columns-block">
-            <div class="robo-columns-header">
+            <div v-if="$slots['main-header']" class="robo-columns-header">
                 <slot name="main-header"></slot>
             </div>
             <slot name="default"></slot>
         </div>
         <div class="robo-columns-aside">
-            <div v-for="(item, index) in asideBlocks" :key="item" class="robo-columns-block">
-                <div class="robo-columns-header">
+            <div v-for="(item, index) in asideBlocks" :key="item" class="robo-columns-block robo-aside-columns-block">
+                <div v-if="$slots[asideSlotName('aside-header', index)]" class="robo-columns-header">
                     <slot :name="asideSlotName('aside-header', index)"></slot>
                 </div>
                 <slot :name="asideSlotName('aside', index)"></slot>
@@ -41,12 +41,12 @@ export default class RoboColumnsContainer extends Vue {
     justify-content: flex-start;
 
     .robo-columns-main {
-        flex: 28 1 896px;
+        flex: 1 1 896px;
         margin-right: 16px;
     }
 
     .robo-columns-aside {
-        flex: 9 1 288px;
+        flex: 0 1 288px;
 
         > div {
             padding: 16px;
@@ -75,6 +75,20 @@ export default class RoboColumnsContainer extends Vue {
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        &.robo-aside-columns-block {
+            padding: 24px;
+
+            .el-button {
+                width: 100%;
+                margin-bottom: 16px;
+                margin-left: 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 

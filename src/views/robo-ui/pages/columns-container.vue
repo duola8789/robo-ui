@@ -224,16 +224,6 @@ export default class ColumnsContainer extends Vue {
 
 <style scoped lang="scss">
 .page-container {
-    .sav-btn {
-        width: 100%;
-        margin-bottom: 16px;
-    }
-
-    .cancel-btn {
-        margin-left: 0;
-        width: 100%;
-    }
-
     .inside-container {
         padding: 32px 96px 64px;
     }
