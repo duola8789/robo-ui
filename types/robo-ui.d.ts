@@ -15,6 +15,7 @@ import {RoboCheckboxMultiGroup} from './packages/checkbox-multi-group';
 import {RoboInfo} from './packages/info';
 import {RoboTag} from './packages/tag';
 import {RoboColumnsContainer} from './packages/columns-container';
+import {RoboFormTitle} from './packages/form-title';
 
 export function install(vue: typeof Vue): void;
 
@@ -33,3 +34,4 @@ export class CheckboxMulti extends RoboCheckboxMulti {}
 export class Info extends RoboInfo {}
 export class Tag extends RoboTag {}
 export class ColumnsContainer extends RoboColumnsContainer {}
+export class FormTitle extends RoboFormTitle {}

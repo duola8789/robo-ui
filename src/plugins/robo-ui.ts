@@ -15,6 +15,7 @@ import RoboSelectMultiGroup from '@/packages/robo-select-multi-group/index.vue';
 import RoboTag from '@/packages/robo-tag/index.vue';
 import RoboColumnsContainer from '@/packages/robo-columns-container/index.vue';
 import RoboInfo from '@/packages/robo-info/index.vue';
+import RoboFormTitle from '@/packages/robo-form-title/index.vue';
 
 [
     {name: 'RoboTag', comp: RoboTag},
@@ -31,7 +32,9 @@ import RoboInfo from '@/packages/robo-info/index.vue';
     {name: 'RoboSelectMulti', comp: RoboSelectMulti},
     {name: 'RoboSelectMultiGroup', comp: RoboSelectMultiGroup},
     {name: 'RoboColumnsContainer', comp: RoboColumnsContainer},
-    {name: 'RoboInfo', comp: RoboInfo}
+    {name: 'RoboInfo', comp: RoboInfo},
+    {name: 'RoboInfo', comp: RoboInfo},
+    {name: 'RoboFormTitle', comp: RoboFormTitle}
 ].forEach((v) => {
     Vue.component(v.name, v.comp);
 });

@@ -28,6 +28,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
             {path: 'user-avatar', componentPath: 'robo-ui/pages/user-avatar', menuTitle: 'Robo User Avatar'},
             {path: 'breadcrumb', componentPath: 'robo-ui/pages/breadcrumb', menuTitle: 'Robo Breadcrumb'},
             {path: 'info', componentPath: 'robo-ui/pages/info', menuTitle: 'Robo Info'},
+            {path: 'form-title', componentPath: 'robo-ui/pages/form-title', menuTitle: 'Robo Form Title'},
             {path: 'check-all', componentPath: 'robo-ui/pages/check-all', menuTitle: 'Robo Check All'},
             {
                 path: 'checkbox-multi',
