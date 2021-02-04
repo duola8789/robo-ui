@@ -3,7 +3,7 @@
  */
 import RoboColumnsContainer from './index.vue';
 
-RoboColumnsContainer.install = function(Vue) {
+RoboColumnsContainer.install = function install(Vue) {
     Vue.component('RoboColumnsContainer', RoboColumnsContainer);
 };
 
