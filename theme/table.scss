@@ -153,6 +153,10 @@
                 visibility: hidden;
             }
         }
+
+        .el-button.el-button--text {
+            padding: 0;
+        }
     }
 
     @include m(medium) {

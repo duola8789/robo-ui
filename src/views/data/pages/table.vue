@@ -21,6 +21,7 @@
                     :label="column.label"
                     :width="column.width"
                 ></el-table-column>
+                <el-table-column><el-button type="text">Hello</el-button></el-table-column>
             </el-table>
         </el-card>
     </div>
