@@ -30,7 +30,7 @@ const components = [
     {name: 'RoboCheckboxMulti', comp: CheckboxMulti},
     {name: 'RoboCheckboxMultiGroup', comp: CheckboxMultiGroup},
     {name: 'RoboUserAvatar', comp: UserAvatar},
-    {name: 'RoboColumnsContainer', comp: ColumnsContainer},
+    {name: 'Robo2ColumnsContainer', comp: ColumnsContainer},
     {name: 'RoboCheckAll', comp: CheckAll},
     {name: 'RoboInfo', comp: Info},
     {name: 'RoboTag', comp: Tag}
