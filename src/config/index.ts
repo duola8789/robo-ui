@@ -50,9 +50,9 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
                 menuTitle: 'Robo Select Multi Group'
             },
             {
-                path: '2-columns-container',
-                componentPath: 'robo-ui/pages/2-columns-container',
-                menuTitle: 'Robo 2 Columns Container'
+                path: 'columns-container',
+                componentPath: 'robo-ui/pages/columns-container',
+                menuTitle: 'Robo Columns Container'
             },
             {
                 path: 'error-page',

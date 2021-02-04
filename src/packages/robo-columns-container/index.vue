@@ -1,14 +1,14 @@
 <template>
     <div class="robo-columns-container" :class="revert ? 'is-revert' : ''">
-        <div class="robo-2-columns-main robo-2-columns-block">
-            <div class="robo-2-columns-header">
+        <div class="robo-columns-main robo-columns-block">
+            <div class="robo-columns-header">
                 <slot name="main-header"></slot>
             </div>
             <slot name="default"></slot>
         </div>
-        <div class="robo-2-columns-aside">
-            <div v-for="(item, index) in asideBlocks" :key="item" class="robo-2-columns-block">
-                <div class="robo-2-columns-header">
+        <div class="robo-columns-aside">
+            <div v-for="(item, index) in asideBlocks" :key="item" class="robo-columns-block">
+                <div class="robo-columns-header">
                     <slot :name="asideSlotName('aside-header', index)"></slot>
                 </div>
                 <slot :name="asideSlotName('aside', index)"></slot>
@@ -40,12 +40,12 @@ export default class RoboColumnsContainer extends Vue {
     align-items: flex-start;
     justify-content: flex-start;
 
-    .robo-2-columns-main {
+    .robo-columns-main {
         flex: 28 1 896px;
         margin-right: 16px;
     }
 
-    .robo-2-columns-aside {
+    .robo-columns-aside {
         flex: 9 1 288px;
 
         > div {
@@ -58,16 +58,16 @@ export default class RoboColumnsContainer extends Vue {
     &.is-revert {
         flex-direction: row-reverse;
 
-        .robo-2-columns-main {
+        .robo-columns-main {
             margin-right: 0;
         }
 
-        .robo-2-columns-aside {
+        .robo-columns-aside {
             margin-right: 16px;
         }
     }
 
-    .robo-2-columns-block {
+    .robo-columns-block {
         padding: 16px;
         background: #fff;
         border-radius: 2px;
@@ -78,7 +78,7 @@ export default class RoboColumnsContainer extends Vue {
         }
     }
 
-    .robo-2-columns-header {
+    .robo-columns-header {
         font-size: 16px;
         color: #181c32;
         line-height: 1;

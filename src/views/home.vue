@@ -49,7 +49,7 @@ export default class HomePage extends Vue {
             {name: '缓存Checkbox组', code: '<robo-checkbox-multi-group />', url: '/checkbox-multi-group'},
             {name: '缓存Select', code: '<robo-select-multi />', url: '/select-multi'},
             {name: '缓存Select组', code: '<robo-select-multi-group />', url: '/select-multi-group'},
-            {name: '两栏布局', code: '<robo-2-columns-container />', url: '/2-columns-container'},
+            {name: '两栏布局', code: '<robo-columns-container />', url: '/columns-container'},
             {name: '异常页面', code: '<robo-error-page />', url: '/error-page'},
             {name: '导航', code: '<robo-aside-nav-menu />'},
             {name: '侧边栏', code: '<robo-aside-nav />'}
