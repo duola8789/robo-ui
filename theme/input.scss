@@ -83,6 +83,7 @@
         cursor: pointer;
         transition: $--color-transition-base;
         vertical-align: middle;
+        margin-left: 8px;
 
         &:hover {
             color: $--input-clear-hover-color;
