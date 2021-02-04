@@ -14,7 +14,7 @@ import SelectMultiGroup from './src/packages/robo-select-multi-group';
 import CheckboxMulti from './src/packages/robo-checkbox-multi';
 import CheckboxMultiGroup from './src/packages/robo-checkbox-multi-group';
 import UserAvatar from './src/packages/robo-user-avatar';
-import ColumnsContainer from './src/packages/robo-2-columns-container';
+import ColumnsContainer from './src/packages/robo-columns-container';
 import Info from './src/packages/robo-info';
 import Tag from './src/packages/robo-tag';
 

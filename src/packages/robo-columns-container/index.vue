@@ -1,5 +1,5 @@
 <template>
-    <div class="robo-2-columns-container" :class="revert ? 'is-revert' : ''">
+    <div class="robo-columns-container" :class="revert ? 'is-revert' : ''">
         <div class="robo-2-columns-main robo-2-columns-block">
             <div class="robo-2-columns-header">
                 <slot name="main-header"></slot>
@@ -21,7 +21,7 @@
 import {Component, Vue, Prop} from 'vue-property-decorator';
 
 @Component
-export default class Robo2ColumnsContainer extends Vue {
+export default class RoboColumnsContainer extends Vue {
     @Prop({type: Number, default: 1}) asideBlocks!: number;
     @Prop({type: Boolean, default: false}) revert!: boolean;
 
@@ -35,7 +35,7 @@ export default class Robo2ColumnsContainer extends Vue {
 </script>
 
 <style lang="scss">
-.robo-2-columns-container {
+.robo-columns-container {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;

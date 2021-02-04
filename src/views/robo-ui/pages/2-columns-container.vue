@@ -4,7 +4,7 @@
         <el-card
             header="正常顺序（默认），default slot 传入主题标题，main-header slot 传入主体标题，aside slot 传入侧边栏内容 aside-header slot传入侧边栏标题"
         >
-            <robo2-columns-container>
+            <robo-columns-container>
                 <span slot="main-header">编辑车辆信息</span>
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">
@@ -42,11 +42,11 @@
                     <el-button type="primary" class="sav-btn">保存</el-button>
                     <el-button class="cancel-btn">无效</el-button>
                 </div>
-            </robo2-columns-container>
+            </robo-columns-container>
             <code-example :code="code1" />
         </el-card>
         <el-card header="反向顺序：当侧边栏在左侧时，可以传入 revert 为 true 调整顺序">
-            <robo2-columns-container main-title="编辑车辆信息" aside-title="操作区域" :revert="true">
+            <robo-columns-container main-title="编辑车辆信息" aside-title="操作区域" :revert="true">
                 <span slot="main-header">编辑车辆信息</span>
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">
@@ -84,13 +84,13 @@
                     <el-button type="primary" class="sav-btn">保存</el-button>
                     <el-button class="cancel-btn">无效</el-button>
                 </div>
-            </robo2-columns-container>
+            </robo-columns-container>
             <code-example :code="code2" />
         </el-card>
         <el-card
             header="侧边栏模块数：可以为 aside-blocks 传入数字，实现侧边栏多个模块，第一个模块的 slot 名称不变，第二个模块的 slot 为 aside-slot-2"
         >
-            <robo2-columns-container :aside-blocks="2">
+            <robo-columns-container :aside-blocks="2">
                 <span slot="main-header">编辑车辆信息</span>
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">
@@ -133,7 +133,7 @@
                     <el-button type="primary" class="sav-btn">保存</el-button>
                     <el-button class="cancel-btn">无效</el-button>
                 </div>
-            </robo2-columns-container>
+            </robo-columns-container>
             <code-example :code="code3" />
         </el-card>
     </div>
@@ -155,7 +155,7 @@ export default class ColumnsContainer extends Vue {
 
     get code1() {
         return (
-            '<robo2-columns-container>\n' +
+            '<robo-columns-container>\n' +
             '    <span slot="main-header">编辑车辆信息</span>\n' +
             '    <div class="inside-container">\n' +
             '        <el-form label-position="top" :model="value">\n' +
@@ -190,17 +190,17 @@ export default class ColumnsContainer extends Vue {
             '        <el-button type="primary" class="sav-btn">保存</el-button>\n' +
             '        <el-button class="cancel-btn">无效</el-button>\n' +
             '    </div>\n' +
-            '</robo2-columns-container>'
+            '</robo-columns-container>'
         );
     }
 
     get code2() {
-        return '<robo2-columns-container :revert="true" />';
+        return '<robo-columns-container :revert="true" />';
     }
 
     get code3() {
         return (
-            '<robo2-columns-container :aside-blocks="2">\n' +
+            '<robo-columns-container :aside-blocks="2">\n' +
             '    <span slot="main-header">编辑车辆信息</span>\n' +
             '    <div class="inside-container">\n' +
             '        <el-form label-position="top" :model="value">\n' +
@@ -216,7 +216,7 @@ export default class ColumnsContainer extends Vue {
             '        <el-button type="primary" class="sav-btn">保存</el-button>\n' +
             '        <el-button class="cancel-btn">无效</el-button>\n' +
             '    </div>\n' +
-            '</robo2-columns-container>'
+            '</robo-columns-container>'
         );
     }
 }

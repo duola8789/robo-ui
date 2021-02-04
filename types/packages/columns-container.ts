@@ -1,3 +1,3 @@
 import {RoboUIComponent} from '../component';
 
-export declare class Robo2ColumnsContainer extends RoboUIComponent {}
+export declare class RoboColumnsContainer extends RoboUIComponent {}
