@@ -9,7 +9,7 @@
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">
                         <el-form-item label="名称" label-width="80px" required>
-                            <el-input v-model="value.name" placehloder="请输入"></el-input>
+                            <el-input v-model="value.name" placeholder="请输入"></el-input>
                         </el-form-item>
                         <el-form-item label="活动区域">
                             <el-select v-model="value.region" placeholder="活动区域">
@@ -51,7 +51,7 @@
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">
                         <el-form-item label="名称" label-width="80px" required>
-                            <el-input v-model="value.name" placehloder="请输入"></el-input>
+                            <el-input v-model="value.name" placeholder="请输入"></el-input>
                         </el-form-item>
                         <el-form-item label="活动区域">
                             <el-select v-model="value.region" placeholder="活动区域">
@@ -95,7 +95,7 @@
                 <div class="inside-container">
                     <el-form label-position="top" :model="value">
                         <el-form-item label="名称" label-width="80px" required>
-                            <el-input v-model="value.name" placehloder="请输入"></el-input>
+                            <el-input v-model="value.name" placeholder="请输入"></el-input>
                         </el-form-item>
                         <el-form-item label="活动区域">
                             <el-select v-model="value.region" placeholder="活动区域">
@@ -160,7 +160,7 @@ export default class ColumnsContainer extends Vue {
             '    <div class="inside-container">\n' +
             '        <el-form label-position="top" :model="value">\n' +
             '            <el-form-item label="名称" label-width="80px" required>\n' +
-            '                <el-input v-model="value.name" placehloder="请输入"></el-input>\n' +
+            '                <el-input v-model="value.name" placeholder="请输入"></el-input>\n' +
             '            </el-form-item>\n' +
             '            <el-form-item label="活动区域">\n' +
             '                <el-select v-model="value.region" placeholder="活动区域">\n' +

@@ -183,7 +183,7 @@ export default class SelectMultiCheckbox extends Vue {
             '<robo-checkbox-multi :options="options2" :value.sync="value7" title="吃货食谱" />',
             `value7 = [];`,
             `options2 = [
-    {value: '选项1', label: '黄金糕, disabled: true'},
+    {value: '选项1', label: '黄金糕, disabled: true},
     {value: '选项2', label: '双皮奶'},
     {value: '选项3', label: '蚵仔煎'},
     {value: '选项4', label: '龙须面'},
@@ -194,7 +194,7 @@ export default class SelectMultiCheckbox extends Vue {
 
     get code7() {
         return [
-            '<robo-checkbox-multi :options="options" :value.sync="value8" :max="1" title="吃货食谱" />',
+            '<robo-checkbox-multi :options="options" :value.sync="value8" :max="2" title="吃货食谱" />',
             `value8 = [];`,
             `options = [
     {value: '选项1', label: '黄金糕'},

@@ -15,11 +15,23 @@
             <p class="select-content">我要玩：{{ sport2 }}</p>
             <code-example :code="code2" />
         </el-card>
-        <el-card header="不使用缓存时 -  传给 cache-config 一个由 configItem 组成的数组，并传入具体的 options">
+        <el-card header="不使用缓存时 - 传给 cache-config 一个由 configItem 组成的数组，并传入具体的 options">
             <robo-checkbox-multi-group :cache-config="cacheConfig3" :value.sync="value3" />
             <p class="select-content">我要吃：{{ food3 }}</p>
             <p class="select-content">我要玩：{{ sport3 }}</p>
             <code-example :code="code3" />
+        </el-card>
+        <el-card header="可为 cache-config 对象的 max 属性传入一个正整数，控制每一个组别的最大可选择数">
+            <robo-checkbox-multi-group :cache-config="cacheConfig5" :value.sync="value5" />
+            <p class="select-content">我只吃2个：{{ food5 }}</p>
+            <p class="select-content">我只玩1下：{{ sport5 }}</p>
+            <code-example :code="code5" />
+        </el-card>
+        <el-card header="可在 cache-config在 options 中设置 disabled 为 ture，来禁用某个选项">
+            <robo-checkbox-multi-group :cache-config="cacheConfig6" :value.sync="value6" />
+            <p class="select-content">我不吃黄金糕：{{ food6 }}</p>
+            <p class="select-content">我不去跑步 ：{{ sport6 }}</p>
+            <code-example :code="code6" />
         </el-card>
         <el-card header="传入 title-length，控制 title 整体宽度，让左侧 title 的宽度保持一致">
             <robo-checkbox-multi-group :cache-config="cacheConfig4" :title-length="140" :value.sync="value4" />
@@ -60,6 +72,26 @@ export default class CheckboxMultiGroup extends Vue {
         }
     ];
     cacheConfig4 = [{cacheKey: 'recipe', groupTitle: '我到底该吃点什么呢'}, {cacheKey: 'sport'}];
+    cacheConfig5 = [
+        {cacheKey: 'recipe', max: 2},
+        {cacheKey: 'sport', max: 1}
+    ];
+    cacheConfig6 = [
+        {
+            cacheKey: 'recipe',
+            options: [
+                {value: '选项1', label: '黄金糕', disabled: true},
+                {value: '选项2', label: '双皮奶'}
+            ]
+        },
+        {
+            cacheKey: 'sport',
+            options: [
+                {value: '选项1', label: '跑步', disabled: true},
+                {value: '选项2', label: '打球'}
+            ]
+        }
+    ];
 
     value1 = {recipe: [], sport: []};
     value2 = {
@@ -68,6 +100,8 @@ export default class CheckboxMultiGroup extends Vue {
     };
     value3 = {recipe: [], sport: []};
     value4 = {recipe: [], sport: []};
+    value5 = {recipe: ['选项1', '选项2', '选项3'], sport: []};
+    value6 = {recipe: [], sport: []};
 
     options1 = [
         {value: '选项1', label: '黄金糕'},
@@ -108,6 +142,14 @@ export default class CheckboxMultiGroup extends Vue {
         return getFoodToEat(this.value4.recipe, this.options1);
     }
 
+    get food5() {
+        return getFoodToEat(this.value5.recipe, this.options1);
+    }
+
+    get food6() {
+        return getFoodToEat(this.value6.recipe, this.options1);
+    }
+
     get sport1() {
         return getFoodToEat(this.value1.sport, this.options2);
     }
@@ -122,6 +164,14 @@ export default class CheckboxMultiGroup extends Vue {
 
     get sport4() {
         return getFoodToEat(this.value3.sport, this.options4);
+    }
+
+    get sport5() {
+        return getFoodToEat(this.value5.sport, this.options4);
+    }
+
+    get sport6() {
+        return getFoodToEat(this.value6.sport, this.options2);
     }
 
     get code1() {
@@ -173,6 +223,36 @@ export default class CheckboxMultiGroup extends Vue {
             '<robo-checkbox-multi-group :cache-config="cacheConfig4" :title-length="140" :value.sync="value4" />',
             "cacheConfig4 = [{cacheKey: 'recipe', groupTitle: '我到底该吃点什么呢'}, {cacheKey: 'sport'}];",
             'value4 = {recipe: [], sport: []};'
+        ];
+    }
+
+    get code5() {
+        return [
+            '<robo-checkbox-multi-group :cache-config="cacheConfig5" :value.sync="value5" />',
+            "cacheConfig5 = [{cacheKey: 'recipe', max: 2}, {cacheKey: 'sport'，max: 2}];",
+            'value5 = {recipe: [], sport: []};'
+        ];
+    }
+
+    get code6() {
+        return [
+            '<robo-checkbox-multi-group :cache-config="cacheConfig6" :value.sync="value6" />',
+            'cacheConfig6 = [\n' +
+                '    {\n' +
+                "        cacheKey: 'recipe',\n" +
+                '        options: [\n' +
+                "            {value: '选项1', label: '黄金糕', disabled: true},\n" +
+                "            {value: '选项2', label: '双皮奶'}\n" +
+                '        ]\n' +
+                '    },\n' +
+                '    {\n' +
+                "        cacheKey: 'sport',\n" +
+                '        options: [\n' +
+                "            {value: '选项1', label: '跑步', disabled: true},\n" +
+                "            {value: '选项2', label: '打球'}\n" +
+                '        ]\n' +
+                '    }\n' +
+                '];'
         ];
     }
 }

@@ -18,6 +18,16 @@
             <p class="select-content">我要吃：{{ food2 }}</p>
             <code-example :code="code2" />
         </el-card>
+        <el-card header="设置最大可选择数目，为 max 属性传入一个大于0的正整数即可">
+            <robo-select-multi :hide-title="true" :options="options" :value.sync="value7" :max="2" />
+            <p class="select-content">我只能吃两个：{{ food3 }}</p>
+            <code-example :code="code6" />
+        </el-card>
+        <el-card header="设置不可点击选项，为该 option 添加 disabled: true 即可">
+            <robo-select-multi :hide-title="true" :options="options2" :value.sync="value8" />
+            <p class="select-content">我不爱吃黄金糕：{{ food8 }}</p>
+            <code-example :code="code7" />
+        </el-card>
         <el-card header="空选项">
             <robo-select-multi :options="[]" :value.sync="value3" />
             <p class="select-content">吃个屁</p>
@@ -47,9 +57,19 @@ export default class SelectMulti extends Vue {
     value4 = ['选项1'];
     value5 = [];
     value6 = [];
+    value7 = [];
+    value8 = [];
 
     options = [
         {value: '选项1', label: '黄金糕'},
+        {value: '选项2', label: '双皮奶'},
+        {value: '选项3', label: '蚵仔煎'},
+        {value: '选项4', label: '龙须面'},
+        {value: '选项5', label: '北京烤鸭'}
+    ];
+
+    options2 = [
+        {value: '选项1', label: '黄金糕', disabled: true},
         {value: '选项2', label: '双皮奶'},
         {value: '选项3', label: '蚵仔煎'},
         {value: '选项4', label: '龙须面'},
@@ -62,6 +82,10 @@ export default class SelectMulti extends Vue {
 
     get food2() {
         return this.value2.map((v) => this.options.find((option) => option.value === v)!.label).join(', ');
+    }
+
+    get food3() {
+        return this.value7.map((v) => this.options.find((option) => option.value === v)!.label).join(', ');
     }
 
     get code1() {
@@ -95,6 +119,24 @@ export default class SelectMulti extends Vue {
 
     get code5() {
         return ['<robo-select-multi title="吃货食谱" :options="options" :value.sync="value1" :width="400" />'];
+    }
+
+    get code6() {
+        return '<robo-select-multi :hide-title="true" :options="options" :value.sync="value7" :max="2" />';
+    }
+
+    get code7() {
+        return [
+            '<robo-select-multi title="吃货食谱" :options="options2" :value.sync="value8" />',
+            'value8 = [];',
+            `options = [
+    {value: '选项1', label: '黄金糕', disabled: true},
+    {value: '选项2', label: '双皮奶'},
+    {value: '选项3', label: '蚵仔煎'},
+    {value: '选项4', label: '龙须面'},
+    {value: '选项5', label: '北京烤鸭'}
+];`
+        ];
     }
 }
 </script>

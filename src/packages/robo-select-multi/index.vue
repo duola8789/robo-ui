@@ -17,7 +17,7 @@
             <span v-if="!hideTitle && cacheTitle" class="robo-select-multi-title">{{ cacheTitle }}</span>
             <div class="robo-select-multi-input">
                 <div v-if="inputValue" class="input-value-container">
-                    <p v-if="isSelectAll" class="input-value-all">{{ inputValue }}</p>
+                    <p v-if="isSelectAll && !this.max" class="input-value-all">{{ inputValue }}</p>
                     <p v-else class="input-value">
                         <span>已选择</span>
                         <span class="input-value-count">{{ inputValue }}</span>
@@ -45,6 +45,7 @@
                     :cache-key="cacheKey"
                     :value.sync="selectedList"
                     :show-check-all="false"
+                    :max="max"
                     direction="vertical"
                 />
             </template>
@@ -62,12 +63,12 @@ import RoboSelectMultiCheckbox from '../robo-checkbox-multi/index.vue';
     components: {RoboCheckAll, RoboSelectMultiCheckbox}
 })
 export default class RoboSelectMulti extends Vue {
-    @Prop({type: [Array]}) options!: {value: any; label: string}[];
+    @Prop({type: [Array]}) options!: TypeRoboOptionItem[];
     @Prop({type: [Object, String]}) cacheKey!: any;
 
     @Prop({type: Array, required: true}) value!: Array<string | number>;
     @Prop({type: String}) title!: string;
-    @Prop({type: Boolean, default: true}) multi!: boolean;
+    @Prop({type: Number}) max!: number | undefined;
     @Prop({type: Boolean, default: false}) hideTitle!: boolean;
     @Prop({type: Number, default: 280}) width!: string;
     @Prop({type: String, default: '请选择'}) placeholder!: string;
@@ -82,7 +83,7 @@ export default class RoboSelectMulti extends Vue {
         this.emitChange(newVal);
     }
 
-    get cacheOptions(): {value: string | number; label: string}[] {
+    get cacheOptions(): TypeRoboOptionItem[] {
         if (Array.isArray(this.options)) {
             return this.options;
         }
@@ -117,17 +118,38 @@ export default class RoboSelectMulti extends Vue {
         if (this.noOptions) {
             return '';
         }
-        if (this.isSelectAll) {
+        if (this.isSelectAll && !this.max) {
             return '已全选';
         }
         return this.selectedList.length;
     }
 
     get isSelectAll() {
-        return this.cacheOptions.length === this.selectedList.length;
+        const {cacheOptions} = this;
+        if (!Array.isArray(cacheOptions) || cacheOptions.length === 0) {
+            return false;
+        }
+        const validOptions = cacheOptions.filter((v) => !v.disabled);
+        return this.selectedList.length >= (this.max ? Math.min(this.max, validOptions.length) : validOptions.length);
     }
     set isSelectAll(isSelectAll: boolean) {
-        this.selectedList = isSelectAll ? this.cacheOptions.map((v) => v.value) : [];
+        if (isSelectAll) {
+            const {cacheOptions} = this;
+            if (!this.max || this.max <= 0) {
+                this.selectedList = cacheOptions.filter((v) => !v.disabled).map((v) => v.value);
+            } else {
+                const remainSize = this.max - this.selectedList.length;
+                if (remainSize > 0) {
+                    const toSelect = cacheOptions
+                        .filter((option) => !option.disabled && !this.selectedList.some((v) => v === option.value))
+                        .slice(0, remainSize)
+                        .map((v) => v.value);
+                    this.selectedList = [...this.selectedList, ...toSelect];
+                }
+            }
+        } else {
+            this.selectedList = [];
+        }
     }
 
     onClear() {

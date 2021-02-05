@@ -7,6 +7,7 @@ declare interface TypeRoboOptionItem {
 declare interface RoboCacheConfigItem {
     cacheKey: string;
     options: TypeRoboOptionItem[];
+    max?: number;
     groupTitle?: string;
 }
 

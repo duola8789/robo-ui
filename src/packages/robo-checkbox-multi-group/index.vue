@@ -8,6 +8,7 @@
             :title-length="titleLength"
             :cache-key="group.cacheKey"
             :value="selectedValue[group.cacheKey]"
+            :max="group.max"
             direction="horizontal"
             @change="(newVal) => updateSelectedValue(newVal, group.cacheKey)"
         />
@@ -57,7 +58,8 @@ export default class RoboCheckboxMultiGroup extends Vue {
                 cacheKey: v.cacheKey,
                 options: options,
                 groupTitle: v.groupTitle || (this.$roboOptions as any).cache[v.cacheKey].title,
-                value: this.value[v.cacheKey]
+                value: this.value[v.cacheKey],
+                max: v.max
             };
         });
     }

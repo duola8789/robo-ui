@@ -17,7 +17,7 @@
             <span v-if="title" class="robo-select-multi-group-title">{{ title }}</span>
             <div class="robo-select-multi-group-input">
                 <div v-if="inputValue" class="input-value-container">
-                    <p v-if="isSelectAll" class="input-value-all">{{ inputValue }}</p>
+                    <p v-if="isSelectAll && !totalMax" class="input-value-all">{{ inputValue }}</p>
                     <p v-else class="input-value">
                         <span>已选择</span>
                         <span class="input-value-count">{{ inputValue }}</span>
@@ -51,6 +51,7 @@
                                 :options="group.options"
                                 :cache-key="group.cacheKey"
                                 :value="selectedValue[group.cacheKey]"
+                                :max="group.max"
                                 direction="horizontal"
                                 @change="(newVal) => updateSelectedValue(newVal, group.cacheKey)"
                             />
@@ -66,11 +67,11 @@
 import {Component, Vue, Prop, Emit} from 'vue-property-decorator';
 
 import RoboOverflowText from '../robo-overflow-text/index.vue';
-import RoboSelectAll from '../robo-check-all/index.vue';
+import RoboCheckAll from '../robo-check-all/index.vue';
 import RoboSelectMultiCheckbox from '../robo-checkbox-multi/index.vue';
 
 @Component({
-    components: {RoboSelectAll, RoboOverflowText, RoboSelectMultiCheckbox}
+    components: {RoboCheckAll, RoboOverflowText, RoboSelectMultiCheckbox}
 })
 export default class RoboSelectMultiGroup extends Vue {
     @Prop({type: String, required: true}) title!: string;
@@ -114,9 +115,14 @@ export default class RoboSelectMultiGroup extends Vue {
                 cacheKey: v.cacheKey,
                 options: options,
                 groupTitle: v.groupTitle || (this.$roboOptions as any).cache[v.cacheKey].title,
-                value: this.value[v.cacheKey]
+                value: this.value[v.cacheKey],
+                max: v.max || undefined
             };
         });
+    }
+
+    get totalMax() {
+        return this.cacheOptionsGroups.reduce((t, v) => (typeof v.max === 'number' ? t + v.max : t), 0);
     }
 
     get selectedValue() {
@@ -128,13 +134,31 @@ export default class RoboSelectMultiGroup extends Vue {
     }
 
     get isSelectAll() {
-        return this.allOptionsList.length === this.allSelectedList.length;
+        const {allOptionsList, allSelectedList, totalMax} = this;
+        return (
+            allSelectedList.length ===
+            (totalMax > 0 ? Math.min(totalMax, allOptionsList.length) : allOptionsList.length)
+        );
     }
     set isSelectAll(isSelectAll: boolean) {
         const newVal = this.cacheOptionsGroups.reduce((t, v) => {
+            let newSelected: Array<string | number> = [];
+            if (isSelectAll) {
+                if (v.max && v.max > 0) {
+                    const remainSize = v.max - this.allSelectedList.length;
+                    if (remainSize > 0) {
+                        const toSelect = this.allOptionsList
+                            .filter((option) => !this.allSelectedList.some((v) => v === option))
+                            .slice(0, remainSize);
+                        newSelected = [...this.allSelectedList, ...toSelect];
+                    }
+                } else {
+                    newSelected = v.options.filter((v) => !v.disabled).map((v) => v.value);
+                }
+            }
             return {
                 ...t,
-                [v.cacheKey]: isSelectAll ? v.options.map((v) => v.value) : []
+                [v.cacheKey]: newSelected
             };
         }, {} as RoboCacheValue);
         this.selectedValue = {...this.selectedValue, ...newVal};
@@ -154,7 +178,7 @@ export default class RoboSelectMultiGroup extends Vue {
     get allOptionsList() {
         return this.cacheOptionsGroups.reduce((t, v) => {
             if (Array.isArray(v.options)) {
-                return [...t, ...v.options.map((v) => v.value)];
+                return [...t, ...v.options.filter((v) => !v.disabled).map((v) => v.value)];
             }
             return [...t];
         }, [] as Array<string | number>);
@@ -164,7 +188,7 @@ export default class RoboSelectMultiGroup extends Vue {
         if (this.noOptions) {
             return '';
         }
-        if (this.isSelectAll) {
+        if (this.isSelectAll && !this.totalMax) {
             return '已全选';
         }
         return this.allSelectedList.length;

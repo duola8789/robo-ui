@@ -5,8 +5,8 @@
                     添加类名，并使用 ele-form-prefix mixin 来扩展左侧标签宽度"
         >
             <el-form label-position="left" :model="value" inline class="robo-form-in-border">
-                <el-form-item label="名称" label-width="80px" class="name-item" required>
-                    <el-input v-model="value.name" placehloder="请输入"></el-input>
+                <el-form-item label="名称" label-width="70px" class="name-item" required>
+                    <el-input v-model="value.name" placeholder="请输入"></el-input>
                 </el-form-item>
                 <el-form-item label="活动区域">
                     <el-select v-model="value.region" placeholder="活动区域">
@@ -42,7 +42,7 @@
             <div class="form-container">
                 <el-form label-position="top" :model="value">
                     <el-form-item label="名称" label-width="80px" required>
-                        <el-input v-model="value.name" placehloder="请输入"></el-input>
+                        <el-input v-model="value.name" placeholder="请输入"></el-input>
                     </el-form-item>
                     <el-form-item label="活动区域">
                         <el-select v-model="value.region" placeholder="活动区域">
@@ -106,7 +106,7 @@ export default class Form extends Vue {
         return [
             '<el-form label-position="left" :model="value" inline class="robo-form-in-border">\n' +
                 '    <el-form-item label="名称" label-width="80px" class="name-item" required>\n' +
-                '        <el-input v-model="value.name" placehloder="请输入"></el-input>\n' +
+                '        <el-input v-model="value.name" placeholder="请输入"></el-input>\n' +
                 '    </el-form-item>\n' +
                 '    <el-form-item label="活动区域">\n' +
                 '        <el-select v-model="value.region" placeholder="活动区域">\n' +
@@ -146,7 +146,7 @@ export default class Form extends Vue {
         return (
             '<el-form label-position="top" :model="value">\n' +
             '    <el-form-item label="名称" label-width="80px" required>\n' +
-            '        <el-input v-model="value.name" placehloder="请输入"></el-input>\n' +
+            '        <el-input v-model="value.name" placeholder="请输入"></el-input>\n' +
             '    </el-form-item>\n' +
             '    <el-form-item label="吃点啥">\n' +
             '        <robo-select-multi :options="options" :value.sync="value1" :hide-title="true" :width="320" />\n' +
@@ -160,7 +160,7 @@ export default class Form extends Vue {
 <style lang="scss">
 .page-container {
     .name-item {
-        @include ele-form-prefix(280px, 60px);
+        @include ele-form-prefix(280px, 65px);
     }
 
     .date-range-item {

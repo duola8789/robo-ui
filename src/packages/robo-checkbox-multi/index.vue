@@ -61,13 +61,13 @@ export default class RoboCheckboxMulti extends Vue {
             return false;
         }
         const validOptions = cacheOptions.filter((v) => !v.disabled);
-        return this.selectedList.length === (this.max ? Math.min(this.max, validOptions.length) : validOptions.length);
+        return this.selectedList.length >= (this.max ? Math.min(this.max, validOptions.length) : validOptions.length);
     }
     set checkAll(isCheckAll: boolean) {
         const {cacheOptions} = this;
         if (isCheckAll) {
             if (Array.isArray(cacheOptions) && cacheOptions.length > 0) {
-                if (!this.max) {
+                if (!this.max || this.max <= 0) {
                     this.selectedList = cacheOptions.filter((v) => !v.disabled).map((v) => v.value);
                 } else {
                     const remainSize = this.max - this.selectedList.length;
