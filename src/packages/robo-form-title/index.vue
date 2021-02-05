@@ -21,6 +21,7 @@ export default class RoboFormTitle extends Vue {
     justify-content: flex-start;
     height: 40px;
     border-bottom: 1px solid #edf1f6;
+    margin-bottom: 24px;
 
     .robo-form-prefix-icon {
         display: inline-block;

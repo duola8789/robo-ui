@@ -4,11 +4,9 @@
             <robo-form-title title="个人信息" />
             <code-example :code="code1" />
         </el-card>
-        <el-card header="也可以放在<el-form-item>中配合表单使用">
+        <el-card header="可以配合<el-form>使用">
+            <robo-form-title title="个人信息" />
             <el-form label-position="top">
-                <el-form-item style="width: 100%;">
-                    <robo-form-title title="个人信息" />
-                </el-form-item>
                 <el-form-item label="Hello">
                     <el-input v-model="value" style="width: 280px;" />
                 </el-form-item>
