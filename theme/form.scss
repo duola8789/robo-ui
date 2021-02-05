@@ -9,9 +9,9 @@
         }
     }
     @include m(label-top) {
-        display: flex;
+        display: grid;
         justify-content: space-between;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(auto-fill, 320px);
 
         & .el-form-item {
             width: 320px;
