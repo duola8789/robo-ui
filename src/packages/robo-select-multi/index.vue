@@ -17,7 +17,7 @@
             <span v-if="!hideTitle && cacheTitle" class="robo-select-multi-title">{{ cacheTitle }}</span>
             <div class="robo-select-multi-input">
                 <div v-if="inputValue" class="input-value-container">
-                    <p v-if="isSelectAll && !this.max" class="input-value-all">{{ inputValue }}</p>
+                    <p v-if="isSelectAll && !max" class="input-value-all">{{ inputValue }}</p>
                     <p v-else class="input-value">
                         <span>已选择</span>
                         <span class="input-value-count">{{ inputValue }}</span>
