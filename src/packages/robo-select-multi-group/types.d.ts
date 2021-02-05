@@ -1,6 +1,7 @@
 declare interface TypeRoboOptionItem {
     label: string;
     value: number | string;
+    disabled?: boolean;
 }
 
 declare interface RoboCacheConfigItem {

@@ -3,9 +3,9 @@
         <div v-if="showTitle" class="label" :style="{flexBasis: titleLength + 'px'}">{{ title }}</div>
         <div class="content">
             <el-checkbox v-if="showCheckAll" v-model="checkAll" class="checkbox-all">全选</el-checkbox>
-            <el-checkbox-group v-model="selectedList" class="checkbox-list">
+            <el-checkbox-group v-model="selectedList" class="checkbox-list" :max="max">
                 <div v-for="option in cacheOptions" :key="option.value" class="checkbox-item">
-                    <el-checkbox :label="option.value">
+                    <el-checkbox :label="option.value" :disabled="setBtnDisabled(option)">
                         {{ option.label }}
                     </el-checkbox>
                 </div>
@@ -27,6 +27,7 @@ export default class RoboCheckboxMulti extends Vue {
     @Prop({type: Array, required: true}) value!: Array<string | number>;
     @Prop({type: String, default: 'horizontal'}) direction!: 'vertical' | 'horizontal';
     @Prop({type: Boolean, default: true}) showCheckAll!: boolean;
+    @Prop({default: undefined}) max!: undefined | number;
 
     get showTitle() {
         return this.direction === 'horizontal' && this.title;
@@ -55,15 +56,29 @@ export default class RoboCheckboxMulti extends Vue {
     }
 
     get checkAll() {
-        if (!Array.isArray(this.cacheOptions) || this.cacheOptions.length === 0) {
+        const {cacheOptions} = this;
+        if (!Array.isArray(cacheOptions) || cacheOptions.length === 0) {
             return false;
         }
-        return this.cacheOptions.length === this.selectedList.length;
+        const validOptions = cacheOptions.filter((v) => !v.disabled);
+        return this.selectedList.length === (this.max ? Math.min(this.max, validOptions.length) : validOptions.length);
     }
     set checkAll(isCheckAll: boolean) {
+        const {cacheOptions} = this;
         if (isCheckAll) {
-            if (Array.isArray(this.cacheOptions) && this.cacheOptions.length > 0) {
-                this.selectedList = this.cacheOptions.map((v) => v.value);
+            if (Array.isArray(cacheOptions) && cacheOptions.length > 0) {
+                if (!this.max) {
+                    this.selectedList = cacheOptions.filter((v) => !v.disabled).map((v) => v.value);
+                } else {
+                    const remainSize = this.max - this.selectedList.length;
+                    if (remainSize > 0) {
+                        const toSelect = cacheOptions
+                            .filter((option) => !option.disabled && !this.selectedList.some((v) => v === option.value))
+                            .slice(0, remainSize)
+                            .map((v) => v.value);
+                        this.selectedList = [...this.selectedList, ...toSelect];
+                    }
+                }
             }
         } else {
             this.selectedList = [];
@@ -92,6 +107,16 @@ export default class RoboCheckboxMulti extends Vue {
     @Emit('no-options')
     emitNoOptions(isNoOptions: boolean) {
         return isNoOptions;
+    }
+
+    setBtnDisabled(option: TypeRoboOptionItem) {
+        if (option.disabled) {
+            return true;
+        }
+        if (!this.max || !this.selectedList || this.selectedList.length < this.max) {
+            return false;
+        }
+        return !this.selectedList.some((v) => v === option.value);
     }
 }
 </script>

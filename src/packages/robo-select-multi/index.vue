@@ -67,6 +67,7 @@ export default class RoboSelectMulti extends Vue {
 
     @Prop({type: Array, required: true}) value!: Array<string | number>;
     @Prop({type: String}) title!: string;
+    @Prop({type: Boolean, default: true}) multi!: boolean;
     @Prop({type: Boolean, default: false}) hideTitle!: boolean;
     @Prop({type: Number, default: 280}) width!: string;
     @Prop({type: String, default: '请选择'}) placeholder!: string;

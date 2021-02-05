@@ -42,6 +42,26 @@
             </div>
             <code-example :code="code4" />
         </el-card>
+        <el-card header="设置不可点击选项，为该 option 添加 disabled: true 即可">
+            <div class="checkbox-container-horizontal">
+                <robo-checkbox-multi :options="options2" :value.sync="value7" title="吃货食谱" @change="onChange" />
+                <p class="select-content">我要吃：{{ food7 }}</p>
+            </div>
+            <code-example :code="code6" />
+        </el-card>
+        <el-card header="设置最大可选择数目，为 max 属性传入一个大于0的正整数即可">
+            <div class="checkbox-container-horizontal">
+                <robo-checkbox-multi
+                    :options="options"
+                    :value.sync="value8"
+                    title="吃货食谱"
+                    :max="2"
+                    @change="onChange"
+                />
+                <p class="select-content">我要吃：{{ food8 }}</p>
+            </div>
+            <code-example :code="code7" />
+        </el-card>
         <el-card
             header="使用缓存，需要配合 robo-option-cache 插件使用，传入的 cache-key 应该提前在插件中配置好，配置方法见插件"
         >
@@ -67,6 +87,8 @@ export default class SelectMultiCheckbox extends Vue {
     value4 = [];
     value5 = [];
     value6 = [];
+    value7 = [];
+    value8 = [];
 
     options = [
         {value: '选项1', label: '黄金糕'},
@@ -76,8 +98,16 @@ export default class SelectMultiCheckbox extends Vue {
         {value: '选项5', label: '北京烤鸭'}
     ];
 
+    options2 = [
+        {value: '选项1', label: '黄金糕', disabled: true},
+        {value: '选项2', label: '双皮奶'},
+        {value: '选项3', label: '蚵仔煎'},
+        {value: '选项4', label: '龙须面'},
+        {value: '选项5', label: '北京烤鸭'}
+    ];
+
     onChange(checkedList: string[]) {
-        this.$message.success(checkedList.join(', '));
+        this.$message.success(checkedList.length > 0 ? checkedList.join(', ') : '清空了');
     }
 
     get food1() {
@@ -102,6 +132,14 @@ export default class SelectMultiCheckbox extends Vue {
 
     get food6() {
         return getFoodToEat(this.value6, this.options);
+    }
+
+    get food7() {
+        return getFoodToEat(this.value7, this.options2);
+    }
+
+    get food8() {
+        return getFoodToEat(this.value8, this.options);
     }
 
     get code1() {
@@ -138,6 +176,34 @@ export default class SelectMultiCheckbox extends Vue {
 
     get code5() {
         return '<robo-checkbox-multi cache-key="recipe" :value.sync="value6" title="吃货食谱" />';
+    }
+
+    get code6() {
+        return [
+            '<robo-checkbox-multi :options="options2" :value.sync="value7" title="吃货食谱" />',
+            `value7 = [];`,
+            `options2 = [
+    {value: '选项1', label: '黄金糕, disabled: true'},
+    {value: '选项2', label: '双皮奶'},
+    {value: '选项3', label: '蚵仔煎'},
+    {value: '选项4', label: '龙须面'},
+    {value: '选项5', label: '北京烤鸭'}
+]`
+        ];
+    }
+
+    get code7() {
+        return [
+            '<robo-checkbox-multi :options="options" :value.sync="value8" :max="1" title="吃货食谱" />',
+            `value8 = [];`,
+            `options = [
+    {value: '选项1', label: '黄金糕'},
+    {value: '选项2', label: '双皮奶'},
+    {value: '选项3', label: '蚵仔煎'},
+    {value: '选项4', label: '龙须面'},
+    {value: '选项5', label: '北京烤鸭'}
+]`
+        ];
     }
 }
 </script>
