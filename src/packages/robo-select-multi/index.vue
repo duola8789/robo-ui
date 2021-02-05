@@ -1,7 +1,6 @@
 <template>
     <el-popover
-        placement="bottom"
-        :width="width"
+        placement="bottom-start"
         trigger="click"
         transition="el-zoom-in-top"
         popper-class="robo-select-multi-popper"
@@ -284,6 +283,7 @@ export default class RoboSelectMulti extends Vue {
     &-popper {
         &.el-popper.el-popover {
             padding: 4px 0;
+            min-width: 280px;
             max-height: 256px;
             overflow-y: auto;
             background: #fff;
