@@ -107,6 +107,10 @@ export default class HomePage extends Vue {
         font-weight: bold;
     }
 
+    > .el-card__body {
+        cursor: pointer;
+    }
+
     .home-title {
         margin-bottom: 16px;
     }
@@ -115,10 +119,6 @@ export default class HomePage extends Vue {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 16px;
-    }
-
-    .item {
-        cursor: pointer;
     }
 
     .item-bottom {
