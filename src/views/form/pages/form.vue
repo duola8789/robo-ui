@@ -41,6 +41,7 @@
         <el-card header="顶部对齐：label-position 设为 true，使用 robo-select-multi 时需要将 hide-title 设为 true">
             <div class="form-container">
                 <el-form label-position="top" :model="value">
+                    <robo-form-title title="个人信息" />
                     <el-form-item label="名称" label-width="80px" required>
                         <el-input v-model="value.name" placeholder="请输入"></el-input>
                     </el-form-item>
@@ -59,6 +60,7 @@
                     <el-form-item label="日期范围">
                         <el-date-picker v-model="value.dateRange" type="daterange"></el-date-picker>
                     </el-form-item>
+                    <robo-form-title title="个人信息" />
                     <el-form-item label="时间">
                         <el-time-picker
                             v-model="value.time"
@@ -105,6 +107,7 @@ export default class Form extends Vue {
     get code1() {
         return [
             '<el-form label-position="left" :model="value" inline class="robo-form-in-border">\n' +
+                '    <robo-form-title title="个人信息" />\n' +
                 '    <el-form-item label="名称" label-width="80px" class="name-item" required>\n' +
                 '        <el-input v-model="value.name" placeholder="请输入"></el-input>\n' +
                 '    </el-form-item>\n' +
@@ -123,6 +126,7 @@ export default class Form extends Vue {
                 '    <el-form-item label="日期范围" class="date-range-item">\n' +
                 '        <el-date-picker v-model="value.dateRange" type="daterange"></el-date-picker>\n' +
                 '    </el-form-item>\n' +
+                '    <robo-form-title title="个人信息" />\n' +
                 '    <el-form-item label="时间">\n' +
                 '        <el-time-picker\n' +
                 '            v-model="value.time"\n' +
@@ -145,13 +149,33 @@ export default class Form extends Vue {
     get code2() {
         return (
             '<el-form label-position="top" :model="value">\n' +
+            '    <robo-form-title title="个人信息" />\n' +
             '    <el-form-item label="名称" label-width="80px" required>\n' +
             '        <el-input v-model="value.name" placeholder="请输入"></el-input>\n' +
+            '    </el-form-item>\n' +
+            '    <el-form-item label="活动区域">\n' +
+            '        <el-select v-model="value.region" placeholder="活动区域">\n' +
+            '            <el-option label="区域一" value="shanghai"></el-option>\n' +
+            '            <el-option label="区域二" value="beijing"></el-option>\n' +
+            '        </el-select>\n' +
+            '    </el-form-item>\n' +
+            '    <el-form-item label="活动形式">\n' +
+            '        <el-input v-model="value.type"></el-input>\n' +
+            '    </el-form-item>\n' +
+            '    <el-form-item label="日期">\n' +
+            '        <el-date-picker v-model="value.date" type="date" placeholder="选择日期"></el-date-picker>\n' +
+            '    </el-form-item>\n' +
+            '    <el-form-item label="日期范围">\n' +
+            '        <el-date-picker v-model="value.dateRange" type="daterange"></el-date-picker>\n' +
+            '    </el-form-item>\n' +
+            '    <robo-form-title title="个人信息" />\n' +
+            '    <el-form-item label="时间">\n' +
+            '        <el-time-picker v-model="value.time" placeholder="任意时间点"></el-time-picker>\n' +
             '    </el-form-item>\n' +
             '    <el-form-item label="吃点啥">\n' +
             '        <robo-select-multi :options="options" :value.sync="value1" :hide-title="true" :width="320" />\n' +
             '    </el-form-item>\n' +
-            '</el-form>\n'
+            '</el-form>'
         );
     }
 }
