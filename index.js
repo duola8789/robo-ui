@@ -18,6 +18,7 @@ import ColumnsContainer from './src/packages/robo-columns-container';
 import Info from './src/packages/robo-info';
 import Tag from './src/packages/robo-tag';
 import FormTitle from './src/packages/robo-form-title';
+import ImagePreview from './src/packages/robo-image-preview';
 
 const components = [
     {name: 'RoboErrorPage', comp: ErrorPage},
@@ -35,7 +36,8 @@ const components = [
     {name: 'RoboCheckAll', comp: CheckAll},
     {name: 'RoboInfo', comp: Info},
     {name: 'RoboTag', comp: Tag},
-    {name: 'RoboFormTitle', comp: FormTitle}
+    {name: 'RoboFormTitle', comp: FormTitle},
+    {name: 'RoboImagePreview', comp: ImagePreview}
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -69,7 +71,8 @@ export default {
     ColumnsContainer,
     Info,
     Tag,
-    FormTitle
+    FormTitle,
+    ImagePreview
 };
 
 export {
@@ -89,5 +92,6 @@ export {
     ColumnsContainer,
     Info,
     Tag,
-    FormTitle
+    FormTitle,
+    ImagePreview
 };

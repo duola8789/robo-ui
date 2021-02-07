@@ -1,7 +1,7 @@
 <template>
-    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.2)">
+    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.3)">
         <robo-info class="home-title">
-            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-04）
+            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-07）
         </robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
@@ -53,7 +53,8 @@ export default class HomePage extends Vue {
             {name: '两栏布局', code: '<robo-columns-container />', url: '/columns-container'},
             {name: '异常页面', code: '<robo-error-page />', url: '/error-page'},
             {name: '导航', code: '<robo-aside-nav-menu />'},
-            {name: '侧边栏', code: '<robo-aside-nav />'}
+            {name: '侧边栏', code: '<robo-aside-nav />'},
+            {name: '图片预览', code: '<robo-image-preview />', url: '/image-preview'}
         ];
     }
 

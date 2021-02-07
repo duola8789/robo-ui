@@ -16,6 +16,7 @@ import RoboTag from '@/packages/robo-tag/index.vue';
 import RoboColumnsContainer from '@/packages/robo-columns-container/index.vue';
 import RoboInfo from '@/packages/robo-info/index.vue';
 import RoboFormTitle from '@/packages/robo-form-title/index.vue';
+import RoboImagePreview from '@/packages/robo-image-preview/index.vue';
 
 [
     {name: 'RoboTag', comp: RoboTag},
@@ -34,7 +35,8 @@ import RoboFormTitle from '@/packages/robo-form-title/index.vue';
     {name: 'RoboColumnsContainer', comp: RoboColumnsContainer},
     {name: 'RoboInfo', comp: RoboInfo},
     {name: 'RoboInfo', comp: RoboInfo},
-    {name: 'RoboFormTitle', comp: RoboFormTitle}
+    {name: 'RoboFormTitle', comp: RoboFormTitle},
+    {name: 'RoboImagePreview', comp: RoboImagePreview}
 ].forEach((v) => {
     Vue.component(v.name, v.comp);
 });

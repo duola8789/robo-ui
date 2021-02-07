@@ -59,6 +59,11 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
                 path: 'error-page',
                 componentPath: 'robo-ui/pages/error-page',
                 menuTitle: 'Robo Error Page'
+            },
+            {
+                path: 'image-preview',
+                componentPath: 'robo-ui/pages/image-preview',
+                menuTitle: 'Robo Image Preview'
             }
         ]
     },
