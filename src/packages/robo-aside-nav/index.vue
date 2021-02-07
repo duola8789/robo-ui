@@ -3,7 +3,7 @@
         <div class="robo-aside-nav-header">
             <div class="logo"></div>
             <div class="collapse-icon-container" @click="isCollapsed = !isCollapsed">
-                <robo-font-icon class="icon-menu" href="icon-view-headline" />
+                <robo-font-icon class="icon-menu" href="icon-menu" />
             </div>
         </div>
         <robo-aside-nav-menu :is-collapsed="isCollapsed" :menus="menus" :text-overflow="textOverflow" />
@@ -68,7 +68,7 @@ $iconActiveColor: #2067b3;
             cursor: pointer;
             user-select: none;
 
-            .collapse-icon {
+            .icon-menu {
                 color: #7f7f91;
                 font-size: 16px;
             }
@@ -76,7 +76,7 @@ $iconActiveColor: #2067b3;
             &:hover {
                 background: #26263c;
 
-                .collapse-icon {
+                .icon-menu {
                     color: $iconHoverColor;
                 }
             }
