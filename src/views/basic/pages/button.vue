@@ -26,11 +26,11 @@
                 <span>搜索</span>
             </el-button>
             <el-button>
-                <robo-font-icon href="workbench" />
+                <robo-font-icon href="icon-workbench" />
                 <span>个人工作台</span>
             </el-button>
             <el-button type="primary">
-                <robo-font-icon href="workbench" />
+                <robo-font-icon href="icon-workbench" />
                 <span>个人工作台</span>
             </el-button>
             <code-example :code="code3" />

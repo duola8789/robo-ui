@@ -10,7 +10,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/home',
         menuTitle: 'Home',
-        menuIcon: 'icon-home',
+        menuIcon: 'icon-overview',
         componentPath: 'home',
         meta: {
             hideBreadcrumb: true
@@ -19,7 +19,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/robo-ui',
         menuTitle: 'RoboUI',
-        menuIcon: 'icon-filter-vintage',
+        menuIcon: 'icon-monitor',
         componentPath: 'robo-ui/index',
         children: [
             {path: 'font-icon', componentPath: 'robo-ui/pages/font-icon', menuTitle: 'Robo Font Icon'},
@@ -65,14 +65,14 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/basic',
         menuTitle: 'Basic',
-        menuIcon: 'icon-storage',
+        menuIcon: 'icon-resource',
         componentPath: 'basic/index',
         children: [{path: 'el-button', componentPath: 'basic/pages/button', menuTitle: 'El Button'}]
     },
     {
         path: '/form',
         menuTitle: 'Form',
-        menuIcon: 'icon-content-copy',
+        menuIcon: 'icon-taxi',
         componentPath: 'form/index',
         children: [
             {path: 'el-input', componentPath: 'form/pages/input', menuTitle: 'Ele Input'},
@@ -85,7 +85,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/data',
         menuTitle: 'Data',
-        menuIcon: 'icon-data-usage',
+        menuIcon: 'icon-operation',
         componentPath: 'data/index',
         children: [
             {path: 'el-table', componentPath: 'data/pages/table', menuTitle: 'Ele Table'},
@@ -95,7 +95,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/notice',
         menuTitle: 'Notice',
-        menuIcon: 'icon-hearing',
+        menuIcon: 'icon-ota',
         componentPath: 'notice/index',
         children: [
             {path: 'el-message', componentPath: 'notice/pages/message', menuTitle: 'Ele Message'},
@@ -106,7 +106,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/navigation',
         menuTitle: 'Navigation',
-        menuIcon: 'icon-signal-wifi-statusba2',
+        menuIcon: 'icon-user',
         componentPath: 'navigation/index',
         children: [
             {path: 'el-tab', componentPath: 'navigation/pages/tab', menuTitle: 'Ele Tab'},
@@ -116,7 +116,7 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
     {
         path: '/others',
         menuTitle: 'Others',
-        menuIcon: 'icon-speaker-notes',
+        menuIcon: 'icon-maintain',
         componentPath: 'others/index',
         children: [
             {path: 'el-dialog', componentPath: 'others/pages/dialog', menuTitle: 'Ele Dialog'},
