@@ -7,6 +7,7 @@
             <el-button type="success">成功按钮</el-button>
             <el-button type="warning">警告按钮</el-button>
             <el-button type="info">信息按钮（替代幽灵按钮）</el-button>
+            <el-button type="text">文字按钮</el-button>
             <code-example :code="code1" />
         </el-card>
         <el-card header="禁用状态">
@@ -16,6 +17,7 @@
             <el-button type="success" disabled>成功按钮</el-button>
             <el-button type="warning" disabled>警告按钮</el-button>
             <el-button type="info" disabled>信息按钮（替代幽灵按钮）</el-button>
+            <el-button type="text" disabled>文字按钮</el-button>
             <code-example :code="code2" />
         </el-card>
         <el-card header="图标按钮">
