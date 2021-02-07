@@ -1,6 +1,6 @@
 <template>
     <el-avatar class="robo-user-avatar" :size="size" :src="avatar" :style="{fontSize}">
-        <robo-font-icon class="fallback-avatar-icon" href="icon-person" />
+        <robo-font-icon class="fallback-avatar-icon" href="person" />
     </el-avatar>
 </template>
 

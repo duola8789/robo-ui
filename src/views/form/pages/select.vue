@@ -65,7 +65,7 @@
         </el-card>
         <el-card header="前置图标，使用 prefiex 配合 robo-font-icon 实现">
             <el-select v-model="value4" placeholder="请选择">
-                <robo-font-icon slot="prefix" href="icon-search"></robo-font-icon>
+                <robo-font-icon slot="prefix" href="icon-dropfilter-search"></robo-font-icon>
                 <el-option
                     v-for="item in options"
                     :key="item.value"

@@ -3,7 +3,7 @@
         <div class="robo-aside-nav-header">
             <div class="logo"></div>
             <div class="collapse-icon-container" @click="isCollapsed = !isCollapsed">
-                <robo-font-icon class="collapse-icon" href="icon-view-headline" />
+                <robo-font-icon class="icon-menu" href="icon-view-headline" />
             </div>
         </div>
         <robo-aside-nav-menu :is-collapsed="isCollapsed" :menus="menus" :text-overflow="textOverflow" />

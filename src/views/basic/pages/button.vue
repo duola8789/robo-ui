@@ -26,11 +26,11 @@
                 <span>搜索</span>
             </el-button>
             <el-button>
-                <robo-font-icon href="icon-computer" />
+                <robo-font-icon href="workbench" />
                 <span>个人工作台</span>
             </el-button>
             <el-button type="primary">
-                <robo-font-icon href="icon-computer" />
+                <robo-font-icon href="workbench" />
                 <span>个人工作台</span>
             </el-button>
             <code-example :code="code3" />
@@ -69,11 +69,11 @@ export default class ButtonPage extends Vue {
         return [
             '<el-button>\n' + '    <i class="el-icon-search"></i>\n' + '    <span>搜索</span>\n' + ' </el-button>',
             '<el-button>\n' +
-                '    <robo-font-icon href="icon-computer" />\n' +
+                '    <robo-font-icon href="workbench" />\n' +
                 '    <span>个人工作台</span>\n' +
                 '</el-button>\n',
             '<el-button type="primary">\n' +
-                '    <robo-font-icon href="icon-computer" />\n' +
+                '    <robo-font-icon href="workbench" />\n' +
                 '    <span>个人工作台</span>\n' +
                 '</el-button>'
         ];
