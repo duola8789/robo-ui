@@ -43,6 +43,7 @@ export default class RoboColumnsContainer extends Vue {
     .robo-columns-main {
         flex: 1 1 896px;
         margin-right: 16px;
+        margin-bottom: 0;
     }
 
     .robo-columns-aside {
@@ -71,7 +72,6 @@ export default class RoboColumnsContainer extends Vue {
         padding: 16px;
         background: #fff;
         border-radius: 2px;
-        margin-bottom: 16px;
 
         &:last-child {
             margin-bottom: 0;
@@ -79,6 +79,11 @@ export default class RoboColumnsContainer extends Vue {
 
         &.robo-aside-columns-block {
             padding: 24px;
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             .el-button {
                 width: 100%;
