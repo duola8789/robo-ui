@@ -17,11 +17,12 @@
         .robo-form-title {
             grid-column-start: 1;
             grid-column-end: -1;
+            margin-bottom: 0;
         }
 
         & .el-form-item {
             width: 320px;
-            margin-bottom: 0 !important;
+            margin-bottom: 0;
 
             .el-form-item__label {
                 float: none;
