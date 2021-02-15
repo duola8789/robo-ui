@@ -46,6 +46,7 @@ $background-error-color: #ffe6e3;
 
     .robo-info-icon {
         margin-right: 8px;
+        vertical-align: middle;
     }
 
     .robo-info-text {
