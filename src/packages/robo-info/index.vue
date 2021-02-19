@@ -22,20 +22,12 @@ export default class RoboInfo extends Vue {
 $icon-info-color: #c2c6cc;
 $icon-warning-color: #ff8645;
 $icon-success-color: #1cbc9d;
-$icon-error-color: #ffe6e3;
+$icon-error-color: #ff6868;
 
 $background-info-color: #edf1f6;
 $background-warning-color: #fff3e8;
 $background-success-color: rgba(28, 188, 157, 0.08);
 $background-error-color: #ffefef;
-
-@mixin color($color) {
-    background: #fff3e8;
-
-    .robo-info-icon {
-        color: #ff8645;
-    }
-}
 
 .robo-info {
     padding: 16px;
