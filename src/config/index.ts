@@ -84,7 +84,8 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
             {path: 'el-checkbox', componentPath: 'form/pages/checkbox', menuTitle: 'Ele Checkbox'},
             {path: 'el-select', componentPath: 'form/pages/select', menuTitle: 'Ele Select'},
             {path: 'el-datepicker', componentPath: 'form/pages/datepicker', menuTitle: 'Ele Date Picker'},
-            {path: 'el-form', componentPath: 'form/pages/form', menuTitle: 'Ele Form'}
+            {path: 'el-form', componentPath: 'form/pages/form', menuTitle: 'Ele Form'},
+            {path: 'el-switch', componentPath: 'form/pages/switch', menuTitle: 'Ele Switch'}
         ]
     },
     {

@@ -1,7 +1,7 @@
 <template>
-    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.3)">
+    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.4)">
         <robo-info class="home-title">
-            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-07）
+            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-20）
         </robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
@@ -66,6 +66,7 @@ export default class HomePage extends Vue {
             {name: 'Select', url: '/form/el-select'},
             {name: 'DatePicker', url: '/form/el-datepicker'},
             {name: 'Form', url: '/form/el-form'},
+            {name: 'Switch', url: '/form/el-switch'},
             {name: 'Table', url: '/data/el-table'},
             {name: 'Pagination', url: '/data/el-pagination'},
             {name: 'Message', url: '/notice/el-message'},
