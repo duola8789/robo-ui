@@ -19,8 +19,8 @@ import Info from './src/packages/robo-info';
 import Tag from './src/packages/robo-tag';
 import FormTitle from './src/packages/robo-form-title';
 import ImagePreview from './src/packages/robo-image-preview';
-import RoboSteps from './src/packages/robo-steps';
-import RoboStep from './src/packages/robo-step';
+import Steps from './src/packages/robo-steps';
+import Step from './src/packages/robo-step';
 
 const components = [
     {name: 'RoboErrorPage', comp: ErrorPage},
@@ -77,8 +77,8 @@ export default {
     Tag,
     FormTitle,
     ImagePreview,
-    RoboSteps,
-    RoboStep
+    Steps,
+    Step
 };
 
 export {
@@ -100,6 +100,6 @@ export {
     Tag,
     FormTitle,
     ImagePreview,
-    RoboSteps,
-    RoboStep
+    Steps,
+    Step
 };
