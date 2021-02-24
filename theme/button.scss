@@ -59,7 +59,6 @@
 
     & svg[class$='-icon'] {
         font-size: calc(100% + 2px);
-        vertical-align: text-bottom;
 
         & + span {
             line-height: 1;
