@@ -3,7 +3,7 @@
  */
 import RoboStep from './index.vue';
 
-RoboStep.install = function(Vue) {
+RoboStep.install = function install(Vue) {
     Vue.component('RoboStep', RoboStep);
 };
 
