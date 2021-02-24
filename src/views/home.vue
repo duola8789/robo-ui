@@ -1,7 +1,7 @@
 <template>
-    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.4)">
+    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.5)">
         <robo-info class="home-title">
-            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-20）
+            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-24）
         </robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
@@ -45,6 +45,7 @@ export default class HomePage extends Vue {
             {name: '面包屑', code: '<robo-breadcrumb />', url: '/breadcrumb'},
             {name: '提示信息', code: '<robo-info />', url: '/info'},
             {name: '全选', code: '<robo-check-all />', url: '/check-all'},
+            {name: '步骤条', code: '<robo-step />', url: '/step'},
             {name: '表单标题', code: '<robo-form-title />', url: '/form-title'},
             {name: '缓存Checkbox', code: '<robo-checkbox-multi />', url: '/checkbox-multi'},
             {name: '缓存Checkbox组', code: '<robo-checkbox-multi-group />', url: '/checkbox-multi-group'},

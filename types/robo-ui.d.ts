@@ -17,6 +17,8 @@ import {RoboTag} from './packages/tag';
 import {RoboColumnsContainer} from './packages/columns-container';
 import {RoboFormTitle} from './packages/form-title';
 import {RoboImagePreview} from './packages/image-preview';
+import {RoboSteps} from './packages/steps';
+import {RoboStep} from './packages/step';
 
 export function install(vue: typeof Vue): void;
 
@@ -37,3 +39,5 @@ export class Tag extends RoboTag {}
 export class ColumnsContainer extends RoboColumnsContainer {}
 export class FormTitle extends RoboFormTitle {}
 export class ImagePreview extends RoboImagePreview {}
+export class Steps extends RoboSteps {}
+export class Step extends RoboStep {}

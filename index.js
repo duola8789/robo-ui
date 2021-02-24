@@ -19,6 +19,8 @@ import Info from './src/packages/robo-info';
 import Tag from './src/packages/robo-tag';
 import FormTitle from './src/packages/robo-form-title';
 import ImagePreview from './src/packages/robo-image-preview';
+import RoboSteps from './src/packages/robo-steps';
+import RoboStep from './src/packages/robo-step';
 
 const components = [
     {name: 'RoboErrorPage', comp: ErrorPage},
@@ -37,7 +39,9 @@ const components = [
     {name: 'RoboInfo', comp: Info},
     {name: 'RoboTag', comp: Tag},
     {name: 'RoboFormTitle', comp: FormTitle},
-    {name: 'RoboImagePreview', comp: ImagePreview}
+    {name: 'RoboImagePreview', comp: ImagePreview},
+    {name: 'RoboSteps', comp: RoboSteps},
+    {name: 'RoboStep', comp: RoboStep}
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -72,7 +76,9 @@ export default {
     Info,
     Tag,
     FormTitle,
-    ImagePreview
+    ImagePreview,
+    RoboSteps,
+    RoboStep
 };
 
 export {
@@ -93,5 +99,7 @@ export {
     Info,
     Tag,
     FormTitle,
-    ImagePreview
+    ImagePreview,
+    RoboSteps,
+    RoboStep
 };
