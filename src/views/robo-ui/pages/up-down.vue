@@ -5,7 +5,7 @@
             <code-example :code="code1" />
         </el-card>
         <el-card header="可分别传入 up-disable 和 down-disable，来控制不可点击状态">
-            <robo-up-down @move="onMove" :up-disabled="true" />
+            <robo-up-down :up-disabled="true" @move="onMove" />
             <code-example :code="code1" />
         </el-card>
     </div>
