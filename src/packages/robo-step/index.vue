@@ -21,7 +21,6 @@ export default class RoboStep extends Vue {
 
     get space() {
         const space = (this.$parent as any).space;
-        debugger;
         if (space) {
             return {
                 height: `${space + 28}px`
