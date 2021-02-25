@@ -19,6 +19,7 @@ import {RoboFormTitle} from './packages/form-title';
 import {RoboImagePreview} from './packages/image-preview';
 import {RoboSteps} from './packages/steps';
 import {RoboStep} from './packages/step';
+import {RoboUpDown} from './packages/up-down';
 
 export function install(vue: typeof Vue): void;
 
@@ -41,3 +42,4 @@ export class FormTitle extends RoboFormTitle {}
 export class ImagePreview extends RoboImagePreview {}
 export class Steps extends RoboSteps {}
 export class Step extends RoboStep {}
+export class UpDown extends RoboUpDown {}
