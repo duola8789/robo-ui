@@ -59,6 +59,8 @@
 
     & svg[class$='-icon'] {
         font-size: calc(100% + 2px);
+        vertical-align: middle;
+        color: inherit;
 
         & + span {
             line-height: 1;
