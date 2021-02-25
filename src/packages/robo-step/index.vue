@@ -1,5 +1,5 @@
 <template>
-    <div class="robo-step">
+    <div class="robo-step" :style="space">
         <div class="robo-step-left">
             <i class="robo-step-icon" :class="status"></i>
             <div class="robo-step-line"></div>
@@ -18,6 +18,16 @@ import {Component, Vue, Prop} from 'vue-property-decorator';
 export default class RoboStep extends Vue {
     @Prop({type: String, default: ''}) status!: 'finish' | 'default';
     @Prop({type: String, required: true}) title!: string;
+
+    get space() {
+        const space = (this.$parent as any).space;
+        if (space) {
+            return {
+                height: `${space}px`
+            };
+        }
+        return {height: '100%'};
+    }
 }
 </script>
 
@@ -30,6 +40,7 @@ $finish-color: #055fe7;
     align-items: flex-start;
     justify-content: flex-start;
     flex: 1;
+    height: 100%;
 
     .robo-step-left {
         height: 100%;

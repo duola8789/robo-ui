@@ -2,7 +2,6 @@
     <div class="page-container">
         <el-card
             header="垂直步骤条，传入 title 设置标题，传入 status 设置左侧小圆点颜色，目前只支持默认 finish 和 default，robo-step 的默认 slot 插入额外内容"
-            class="tab-container-card"
         >
             <div class="steps-container">
                 <robo-steps>
@@ -19,7 +18,23 @@
             <code-example :code="code1" />
         </el-card>
 
-        <el-card header="通过robo-step 的默认 slot 插入下拉选框、按钮等节点" class="tab-container-card">
+        <el-card header="不传入 space 时会默认将剩余空间占满，为 space 传入一个数字后，会按照固定间隔排列">
+            <div class="steps-container">
+                <robo-steps :space="50">
+                    <robo-step
+                        v-for="step in steps1"
+                        :key="step.title"
+                        :title="step.title"
+                        :status="step.processStatus"
+                    >
+                        {{ step.content }}
+                    </robo-step>
+                </robo-steps>
+            </div>
+            <code-example :code="code2" />
+        </el-card>
+
+        <el-card header="通过robo-step 的默认 slot 插入下拉选框、按钮等节点">
             <div class="steps-container">
                 <robo-steps>
                     <robo-step title="起点" status="finish">
@@ -54,7 +69,7 @@
                     </robo-step>
                 </robo-steps>
             </div>
-            <code-example :code="code1" />
+            <code-example :code="code3" />
         </el-card>
     </div>
 </template>
@@ -85,6 +100,58 @@ export default class Tab extends Vue {
     ];
 
     get code1() {
+        return (
+            '<robo-steps>\n' +
+            '    <robo-step title="起点" status="finish">\n' +
+            '        <el-select v-model="value1" placeholder="请选择">\n' +
+            '            <el-option\n' +
+            '                v-for="item in options"\n' +
+            '                :key="item.value"\n' +
+            '                :label="item.label"\n' +
+            '                :value="item.value"\n' +
+            '            ></el-option>\n' +
+            '        </el-select>\n' +
+            '    </robo-step>\n' +
+            '    <robo-step title="途经点">\n' +
+            '        <el-button type="text">\n' +
+            '            <robo-font-icon href="icon-add" />\n' +
+            '            已有站点\n' +
+            '        </el-button>\n' +
+            '        <el-button type="text">\n' +
+            '            <robo-font-icon href="icon-add" />\n' +
+            '            新采集站点\n' +
+            '        </el-button>\n' +
+            '    </robo-step>\n' +
+            '    <robo-step title="终点" status="finish">\n' +
+            '        <el-select v-model="value2" placeholder="请选择">\n' +
+            '            <el-option\n' +
+            '                v-for="item in options"\n' +
+            '                :key="item.value"\n' +
+            '                :label="item.label"\n' +
+            '                :value="item.value"\n' +
+            '            ></el-option>\n' +
+            '        </el-select>\n' +
+            '    </robo-step>\n' +
+            '</robo-steps>'
+        );
+    }
+
+    get code2() {
+        return (
+            '<robo-steps :space="50">\n' +
+            '    <robo-step\n' +
+            '        v-for="step in steps1"\n' +
+            '        :key="step.title"\n' +
+            '        :title="step.title"\n' +
+            '        :status="step.processStatus"\n' +
+            '    >\n' +
+            '        {{ step.content }}\n' +
+            '    </robo-step>\n' +
+            '</robo-steps>'
+        );
+    }
+
+    get code3() {
         return (
             '<robo-steps>\n' +
             '    <robo-step title="起点" status="finish">\n' +

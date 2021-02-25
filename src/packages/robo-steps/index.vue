@@ -1,14 +1,16 @@
 <template>
-    <div class="robo-steps">
-        <slot></slot>
+    <div class="robo-steps" :style="{height: space ? 'auto' : '100%'}">
+        <slot :space="space"></slot>
     </div>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import {Component, Vue, Prop} from 'vue-property-decorator';
 
 @Component
-export default class RoboSteps extends Vue {}
+export default class RoboSteps extends Vue {
+    @Prop({type: Number}) space!: number;
+}
 </script>
 
 <style lang="scss">
