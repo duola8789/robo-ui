@@ -83,6 +83,7 @@ $finish-color: #055fe7;
 
     &:last-child {
         flex-grow: 0;
+        height: auto !important;
 
         .robo-step-line {
             display: none;

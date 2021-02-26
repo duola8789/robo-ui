@@ -8,7 +8,7 @@
                 <el-card :header="roboHeader">
                     <div class="inside-card">
                         <el-card v-for="item in roboItems" :key="item.name" shadow="hover">
-                            <div class="item" @click="onClick('/robo-ui', item.url)">
+                            <div @click="onClick('/robo-ui', item.url)">
                                 <div class="item-top">{{ item.name }}</div>
                                 <div class="item-bottom">{{ item.code }}</div>
                             </div>
@@ -20,7 +20,7 @@
                 <el-card :header="eleHeader">
                     <div class="inside-card">
                         <el-card v-for="item in eleItems" :key="item.name" shadow="hover">
-                            <div class="item" @click="onClick('', item.url)">
+                            <div @click="onClick('', item.url)">
                                 <div class="item-top">{{ item.name }}</div>
                             </div>
                         </el-card>
