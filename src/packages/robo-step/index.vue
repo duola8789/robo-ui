@@ -44,7 +44,7 @@ $finish-color: #055fe7;
 
     .robo-step-left {
         height: 100%;
-        margin-top: 2px;
+        margin-top: 6px;
         margin-right: 8px;
 
         .robo-step-icon {
