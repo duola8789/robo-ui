@@ -1,7 +1,7 @@
 <template>
-    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.6)">
+    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.7)">
         <robo-info class="home-title">
-            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-25）
+            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-03-13）
         </robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
@@ -77,7 +77,8 @@ export default class HomePage extends Vue {
             {name: 'Tab', url: '/navigation/el-tab'},
             {name: 'Dropdown', url: '/navigation/el-dropdown'},
             {name: 'Dialog', url: '/others/el-dialog'},
-            {name: 'Collapse', url: '/others/el-collapse'}
+            {name: 'Collapse', url: '/others/el-collapse'},
+            {name: 'Tooltip', url: '/others/el-tooltip'}
         ];
     }
 

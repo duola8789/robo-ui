@@ -12,9 +12,11 @@
         padding: $--tooltip-padding;
         z-index: $--index-popper;
         font-size: $--tooltip-font-size;
-        line-height: 1.2;
+        line-height: 22px;
         min-width: 10px;
         word-wrap: break-word;
+        color: #6e768e;
+        box-shadow: 0 18px 28px 10px rgba(0, 21, 51, 0.08);
 
         .popper__arrow,
         .popper__arrow::after {
