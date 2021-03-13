@@ -13,6 +13,10 @@
             </el-form>
             <code-example :code="code2" />
         </el-card>
+        <el-card header="可通过 slot 传入附加内容">
+            <robo-form-title title="个人信息">Hello</robo-form-title>
+            <code-example :code="code1" />
+        </el-card>
     </div>
 </template>
 
@@ -38,6 +42,10 @@ export default class Tag extends Vue {
             '    </el-form-item>\n' +
             '</el-form>'
         );
+    }
+
+    get code3() {
+        return '<robo-form-title title="个人信息">Hello</robo-form-title>';
     }
 }
 </script>
