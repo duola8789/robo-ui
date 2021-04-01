@@ -161,7 +161,7 @@
             border: none;
             border-radius: 0;
             box-sizing: border-box;
-            border-right: 1px solid #edf1f6;
+            //border-right: 1px solid #edf1f6;
         }
         > .el-tabs__header .el-tabs__active-bar {
             display: none;
@@ -180,7 +180,7 @@
         }
         > .el-tabs__header .el-tabs__item {
             border-bottom: 1px solid #edf1f6;
-            border-left: 1px solid #edf1f6;
+            //border-left: 1px solid #edf1f6;
             transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
                 padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             background-color: #f8f9fb;
