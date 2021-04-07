@@ -28,7 +28,8 @@
             </div>
             <i class="robo-select-multi-select-icon el-icon-arrow-up"></i>
         </div>
-        <div class="robo-select-multi-content">
+
+        <div class="robo-select-multi-content" :style="{width: width + 'px'}">
             <template>
                 <div class="option-header" :class="noOptions ? 'hide-border' : ''">
                     <robo-check-all
@@ -285,7 +286,7 @@ export default class RoboSelectMulti extends Vue {
             padding: 4px 0;
             min-width: 280px;
             max-height: 256px;
-            overflow-y: auto;
+            // overflow-y: auto;
             background: #fff;
             box-shadow: 0 2px 8px 0 #dcdee0;
             border-radius: 4px;
