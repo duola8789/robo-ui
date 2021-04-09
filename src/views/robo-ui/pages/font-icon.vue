@@ -4,6 +4,8 @@
         <el-card header="将 icon 名称传给组件的 href 属性 ">
             <robo-font-icon href="icon-maintain-solid" />
             <robo-font-icon href="icon-maintain" />
+            <i class="iconfont">&#xe622;</i>
+
             <code-example :code="code" />
         </el-card>
     </div>

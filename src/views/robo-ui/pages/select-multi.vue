@@ -88,6 +88,10 @@ export default class SelectMulti extends Vue {
         return this.value7.map((v) => this.options.find((option) => option.value === v)!.label).join(', ');
     }
 
+    get food8() {
+        return this.value8.map((v) => this.options.find((option) => option.value === v)!.label).join(', ');
+    }
+
     get code1() {
         return [
             '<robo-select-multi title="吃货食谱" :options="options" :value.sync="value1" />',
