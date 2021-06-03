@@ -690,13 +690,13 @@ $--popover-title-font-color: $--color-text-primary !default;
 /* Tooltip
 -------------------------- */
 /// color|1|Color|0
-$--tooltip-fill: $--color-text-primary !default;
+$--tooltip-fill: $--color-white !default;
 /// color|1|Color|0
 $--tooltip-color: $--color-white !default;
 /// fontSize||Font|1
-$--tooltip-font-size: 12px !default;
+$--tooltip-font-size: 14px !default;
 /// color||Color|0
-$--tooltip-border-color: $--color-text-primary !default;
+$--tooltip-border-color: $--color-white !default;
 $--tooltip-arrow-size: 6px !default;
 /// padding||Spacing|3
 $--tooltip-padding: 10px !default;

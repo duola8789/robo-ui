@@ -2,6 +2,7 @@
     <div class="robo-form-title">
         <i class="robo-form-prefix-icon"></i>
         <span class="robo-form-prefix-content">{{ title }}</span>
+        <slot></slot>
     </div>
 </template>
 

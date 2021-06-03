@@ -1,14 +1,14 @@
 <template>
-    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.6)">
+    <el-card class="home-card" header="RoboUI For RoboX FE Team（V0.0.7)">
         <robo-info class="home-title">
-            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-02-25）
+            共包含两部分内容，共{{ totalLength }}个基础组件和业务组件（2020-03-13）
         </robo-info>
         <el-row :gutter="20">
             <el-col :span="14">
                 <el-card :header="roboHeader">
                     <div class="inside-card">
                         <el-card v-for="item in roboItems" :key="item.name" shadow="hover">
-                            <div class="item" @click="onClick('/robo-ui', item.url)">
+                            <div @click="onClick('/robo-ui', item.url)">
                                 <div class="item-top">{{ item.name }}</div>
                                 <div class="item-bottom">{{ item.code }}</div>
                             </div>
@@ -20,7 +20,7 @@
                 <el-card :header="eleHeader">
                     <div class="inside-card">
                         <el-card v-for="item in eleItems" :key="item.name" shadow="hover">
-                            <div class="item" @click="onClick('', item.url)">
+                            <div @click="onClick('', item.url)">
                                 <div class="item-top">{{ item.name }}</div>
                             </div>
                         </el-card>
@@ -77,7 +77,8 @@ export default class HomePage extends Vue {
             {name: 'Tab', url: '/navigation/el-tab'},
             {name: 'Dropdown', url: '/navigation/el-dropdown'},
             {name: 'Dialog', url: '/others/el-dialog'},
-            {name: 'Collapse', url: '/others/el-collapse'}
+            {name: 'Collapse', url: '/others/el-collapse'},
+            {name: 'Tooltip', url: '/others/el-tooltip'}
         ];
     }
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="robo-up-down">
+    <div class="robo-up-down" :class="size">
         <robo-font-icon
             class="robo-up robo-up-down-icon"
             href="icon-arrow-drop-up"
@@ -22,6 +22,7 @@ import {Component, Vue, Prop, Emit} from 'vue-property-decorator';
 export default class RoboUpDown extends Vue {
     @Prop({type: Boolean, default: false}) upDisabled!: boolean;
     @Prop({type: Boolean, default: false}) downDisabled!: boolean;
+    @Prop({type: String, default: 'small'}) size!: 'medium' | 'small' | 'mini';
 
     @Emit('move')
     emitMove(direction: 'up' | 'down') {
@@ -47,12 +48,53 @@ $disabledColor: #c2c6cc;
     position: relative;
     width: 16px;
     height: 16px;
-    font-size: 10px;
     text-align: center;
+
+    &.medium {
+        font-size: 12px;
+
+        .robo-up-down-icon {
+            &.robo-up {
+                transform: translate(-50%, -3px);
+            }
+
+            &.robo-down {
+                transform: translate(-50%, 3px);
+            }
+        }
+    }
+
+    &.small {
+        font-size: 10px;
+
+        .robo-up-down-icon {
+            &.robo-up {
+                transform: translate(-50%, -1px);
+            }
+
+            &.robo-down {
+                transform: translate(-50%, 1px);
+            }
+        }
+    }
+
+    &.mini {
+        font-size: 8px;
+
+        .robo-up-down-icon {
+            &.robo-up {
+                transform: translate(-50%, 0.5px);
+            }
+
+            &.robo-down {
+                transform: translate(-50%, -0.5px);
+            }
+        }
+    }
 
     .robo-up-down-icon {
         position: absolute;
-        left: 0;
+        left: 50%;
         font-size: inherit;
         color: $primaryColor;
 
@@ -68,12 +110,10 @@ $disabledColor: #c2c6cc;
 
         &.robo-up {
             top: 0;
-            transform: translateY(-2px);
         }
 
         &.robo-down {
             bottom: 0;
-            transform: translateY(2px);
         }
 
         &.disabled {

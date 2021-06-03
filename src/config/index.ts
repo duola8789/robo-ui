@@ -128,7 +128,8 @@ export const PAGE_CONFIGS: TypePageConfig[] = [
         componentPath: 'others/index',
         children: [
             {path: 'el-dialog', componentPath: 'others/pages/dialog', menuTitle: 'Ele Dialog'},
-            {path: 'el-collapse', componentPath: 'others/pages/collapse', menuTitle: 'Ele Collapse'}
+            {path: 'el-collapse', componentPath: 'others/pages/collapse', menuTitle: 'Ele Collapse'},
+            {path: 'el-tooltip', componentPath: 'others/pages/tooltip', menuTitle: 'Ele Tooltip'}
         ]
     },
     {

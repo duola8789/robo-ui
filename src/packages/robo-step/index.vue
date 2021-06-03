@@ -23,7 +23,7 @@ export default class RoboStep extends Vue {
         const space = (this.$parent as any).space;
         if (space) {
             return {
-                height: `${space + 28}px`
+                height: `${space + 20}px`
             };
         }
         return {height: '100%'};
@@ -44,7 +44,7 @@ $finish-color: #055fe7;
 
     .robo-step-left {
         height: 100%;
-        margin-top: 2px;
+        margin-top: 6px;
         margin-right: 8px;
 
         .robo-step-icon {
@@ -83,6 +83,7 @@ $finish-color: #055fe7;
 
     &:last-child {
         flex-grow: 0;
+        height: auto !important;
 
         .robo-step-line {
             display: none;
